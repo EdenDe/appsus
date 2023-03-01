@@ -36,20 +36,35 @@ function save(note) {
   }
 }
 
-function getEmptyNote() {
+function getEmptyNote(type) {
+  if (!type) type = 'NoteTxt'
+
   const emptyNote = {
     createdAt: Date.now(),
-    type: 'NoteTxt',
+    type,
     isPinned: false,
     style: {
-      backgroundColor: '#00d',
+      backgroundColor: '#aecbfa',
     },
-    info: {
-      txt: '',
-    },
+    info: getInfo(type),
   }
-  console.log(emptyNote)
   return emptyNote
+}
+
+function getInfo(type) {
+  if (type === 'NoteTxt')
+    return {
+      title: '',
+    }
+
+  if (type === 'NoteTodos')
+    return {
+      todos: [],
+    }
+
+  return {
+    url: '',
+  }
 }
 
 function _createNotes() {
@@ -66,7 +81,6 @@ function _setNextPrevNoteId(note) {
     note.prevNoteId = notes[NoteIdx - 1]
       ? notes[NoteIdx - 1].id
       : notes[notes.length - 1].id
-    console.log(note)
     return note
   })
 }

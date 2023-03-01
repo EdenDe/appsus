@@ -13,7 +13,7 @@ export default {
   template: `
     
       <section class="note-index">
-          <input v-model="filterBy.title" type="search" placeholder="Search" @input="onSetFilterBy"/>
+          <input v-model="filterBy.title" type="search" placeholder="Search"/>
         <NoteFilter @onSetFilter="onSetFilterBy" />
         <RouterLink to="/note/edit" class="btn-new-note">Add Note</RouterLink>
         <NoteList 
@@ -42,8 +42,7 @@ export default {
   computed: {
     filteredNotes() {
       let title = new RegExp(this.filterBy.title, 'i')
-
-      return this.notes.filter((note) => title.test(note.title))
+      return this.notes.filter((note) => title.test(note.info.title))
     },
   },
   methods: {
@@ -62,10 +61,6 @@ export default {
     savedNote(note) {
       this.notes.push(note)
     },
-    onSetFilterBy() {
-      this.filteredNotes()
-    },
-
     setBgColor(color, noteId) {
       let note = this.notes.find((note) => note.id === noteId)
       note.style.backgroundColor = color

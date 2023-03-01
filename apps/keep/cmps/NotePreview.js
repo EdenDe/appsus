@@ -9,11 +9,15 @@ export default {
       <article>
           <component :is="note.type" :info="note.info"
               @changeInfo="updateNote" />
-         
+        
       </article>
   `,
 
-  methods: {},
+  methods: {
+    updateNote() {
+      console.log('update')
+    },
+  },
   computed: {},
   components: {
     NoteTxt,

@@ -70,6 +70,17 @@
 	content: '\f53f';
 }
 
+.fa.txt::before {
+	content: '\41';
+}
+.fa.list::before {
+	content: '\f0ca';
+}
+.fa.video::before {
+	content: '\f04b';
+}
+
+
 /* regular */
 .fa-regular.clock::before {
 	content: '\f017';
@@ -110,3 +121,9 @@
 .fa-regular.bell::before {
 	content: '\f0f3';
 }
+
+.fa-regular.image::before {
+	content: '\f03e';
+}
+
+

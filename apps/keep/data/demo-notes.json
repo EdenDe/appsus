@@ -52,8 +52,7 @@
     "type": "NoteImg",
     "isPinned": false,
     "info": {
-    "url": "https://cdn.pixabay.com/photo/2014/04/14/20/11/pink-324175_960_720.jpg",
-    "title": "Flowers"
+    "url": "https://cdn.pixabay.com/photo/2014/04/14/20/11/pink-324175_960_720.jpg"
     },
     "style": {
     "backgroundColor": "#aecbfa"
@@ -64,8 +63,7 @@
     "type": "NoteVideo",
     "isPinned": false,
     "info": {
-    "url": "https://www.youtube.com/embed/t5YnU8gPnYM",
-    "title": "Miley Cyrus - Flowers"
+    "url": "https://www.youtube.com/embed/t5YnU8gPnYM"
     },
     "style": {
     "backgroundColor": "#aecbfa"

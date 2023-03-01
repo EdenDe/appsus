@@ -10,8 +10,7 @@ export default {
           <NotePreview :note="note"/>
 					<RouterLink :to="'/note/'+note.id">...more</RouterLink> 
           <noteActions :note="note" @setBgColor="setBgColor"></noteActions>
-				
-         
+	        
         </li>  
       </ul>
      
