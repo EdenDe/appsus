@@ -13,18 +13,18 @@
 	--clr-active-filter: #d3e3fd;
 	--clr-gmail-read: #f2f6fc;
 	--clr-gmail-tag: #f3c74a;
+	--clr-gmail-input: #eaf1fb;
 	--clr-bg-color-mail: #f6f8fc;
+	--clr-gmail-input-focus: #f5f8fd;
 
-  --clr-keep-active: #feefc3 ;
-  --clr-keep-hover: #f1f3f4 ; 
-  --clr-keep-grey: #e8eaed ;
-  --clr-keep-red: #e6c9a8 ;
-  --clr-keep-pink: #fdcfe8 ;
-  --clr-keep-purple: #d7aefb ;
-  --clr-keep-blue: #aecbfa ;
-  --clr-keep-green: #ccff90 ;
+	--clr-keep-active: #feefc3;
+	--clr-keep-hover: #f1f3f4;
+	--clr-keep-grey: #e8eaed;
+	--clr-keep-red: #e6c9a8;
+	--clr-keep-pink: #fdcfe8;
+	--clr-keep-purple: #d7aefb;
+	--clr-keep-blue: #aecbfa;
+	--clr-keep-green: #ccff90;
 
-  --border-radius: 5px;
-  
-} 
-
+	--border-radius: 5px;
+}

@@ -51,3 +51,8 @@
 .fa.fa-behance::before {
 	content: '\f1b4';
 }
+
+.circle-hover:hover {
+	border-radius: 100%;
+	background-color: #e7eaed;
+}
