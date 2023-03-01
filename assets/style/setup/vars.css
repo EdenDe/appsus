@@ -6,7 +6,18 @@
   --clr5: rgb(0, 0, 0);
 
 
-  --secondary-clr1: rgb(88, 201, 58);
-  --secondary-clr2: rgb(122, 7, 70);
+  --clr-gmail-txt: #001d35;
+  --clr-gmail-active: #0b57d0;
+  --clr-gmail-button: #c2e7ff;
+  --clr-gmail-hover: #f2f6fc;
+  --clr-gmail-tag: #f3c74a;
 
+  --clr-keep-active: #feefc3 ;
+  --clr-keep-hover: #f1f3f4 ; 
+  --clr-keep-grey: #e8eaed ;
+  --clr-keep-red: #e6c9a8 ;
+  --clr-keep-pink: #fdcfe8 ;
+  --clr-keep-purple: #d7aefb ;
+  --clr-keep-blue: #aecbfa ;
+  --clr-keep-green: #ccff90 ;
 } 
