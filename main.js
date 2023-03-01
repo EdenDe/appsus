@@ -7,19 +7,20 @@ import AppFooter from './cmps/AppFooter.js'
 import UserMsg from './cmps/UserMsg.js'
 
 const options = {
-	template: `
+  template: `
         <section>
             <AppHeader />
             <RouterView />
             <AppFooter />
             <UserMsg />
+            <!-- <labelPicker/> -->
         </section>
     `,
-	components: {
-		AppHeader,
-		AppFooter,
-		UserMsg,
-	},
+  components: {
+    AppHeader,
+    AppFooter,
+    UserMsg,
+  },
 }
 
 const app = createApp(options)
