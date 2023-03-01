@@ -70,6 +70,10 @@
 	content: '\f53f';
 }
 
+.fa.bars::before {
+	content: '\f0c9';
+}
+
 /* regular */
 .fa-regular.clock::before {
 	content: '\f017';

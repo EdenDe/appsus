@@ -1,16 +1,26 @@
 import { mailService } from '../services/mail.service.js'
 import MailList from '../cmps/MailList.js'
-import MailFilter from '../cmps/MailFilter.js'
+import MailFileFilter from '../cmps/MailFileFilter.js'
+import MailSearchFilter from '../cmps/MailSearchFilter.js'
 
 export default {
 	template: `
-  <section class="mail-index" v-if="mails">
+  <section class="mail-index" >
+		<div class="flex justify-between hamburger-logo-container"> 
+			<button class="fa bars circle-hover" @click="toggleIconOnly">	</button>
+			<img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png"/>
+		</div>
+	
+	
+		<MailSearchFilter @setFilter="setFilter"/>
     <aside class="mail-options"> 
-      <MailFilter @setFilter="setFilter"/>
+      <MailFileFilter @setFilter="setFilter" :iconsOnly="iconsOnly"/>
     </aside>
+		<template v-if="mails"> 
     <MailList
       :mails="mails" 						     
     />
+		</template>
   </section>
     `,
 	data() {
@@ -19,23 +29,17 @@ export default {
 			criteria: {
 				status: 'inbox',
 				txt: '',
-				isRead: false,
-				isStared: false,
+				isRead: null,
+				isStared: null,
 				lables: [],
 			},
+			iconsOnly: false,
 		}
 	},
 	created() {
 		this.getMails()
 	},
 	methods: {
-		// countMails() {
-		// 	mails.forEach(mail => {
-		// 		if (!mail.isRead) {
-		// 			this.filterBy.inbox++
-		// 		}
-		// 	})
-		// },
 		getMails() {
 			mailService
 				.query(this.criteria)
@@ -44,19 +48,21 @@ export default {
 				})
 				.catch(console.log)
 		},
-		setFilter(filterBy) {
+		setFilter(filters) {
 			debugger
-			console.log(filterBy)
-			if (filterBy === 'starred') {
-				this.criteria.isStared = true
-				this.criteria.status = 'inbox'
+			for (let filter in filters) {
+				this.criteria[filter] = filters[filter]
 			}
-			this.criteria.status = filterBy
+
 			this.getMails()
+		},
+		toggleIconOnly() {
+			this.iconsOnly = !this.iconsOnly
 		},
 	},
 	components: {
 		MailList,
-		MailFilter,
+		MailSearchFilter,
+		MailFileFilter,
 	},
 }

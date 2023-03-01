@@ -1,39 +1,26 @@
 export default {
+	props: ['iconsOnly'],
 	template: `
       <ul class="mail-filter clean-list">
          <li v-for="filter,index in filterBy" :class="icon(index)" @click="setFilter(filter)" :key="index"> 
-            {{filter}}
+           	<span v-show="!iconsOnly">{{filter}}</span> 
          </li>
       </ul>
   `,
 	data() {
 		return {
 			filterBy: ['inbox', 'starred', 'sent', 'draft', 'trash'],
-
-			// filterBy: [
-			// 	{ filterName: 'inbox', unreadCount: 0 },
-			// 	{ filterName: 'starred', unreadCount: 0 },
-			// 	{ filterName: 'sent', unreadCount: 0 },
-			// 	{ filterName: 'draft', unreadCount: 0 },
-			// 	{ filterName: 'trash', unreadCount: 0 },
-			// ],
+			filters: { status: 'inbox', isRead: null, isStared: null, lables: [] },
 		}
 	},
 	methods: {
-		setFilter(filterBy) {
-			console.log(filterBy)
-			this.filterBy = filterBy
-			this.$emit('setFilter', this.filterBy)
+		setFilter(filter) {
+			this.filters.status = filter === 'starred' ? 'inbox' : filter
+			this.filters.isStared = filter === 'starred' ? true : false
+
+			this.$emit('setFilter', this.filters)
 		},
 	},
-	// watch: {
-	// 	filterBy: {
-	// 		handler() {
-	// 			this.$emit('filter', filterBy)
-	// 		},
-	// 		//deep: true,
-	// 	},
-	// },
 	computed: {
 		icon() {
 			return index => {

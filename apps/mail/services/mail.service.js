@@ -22,7 +22,7 @@ export const mailService = {
 
 function query(criteria) {
 	return storageService.query(MAIL_KEY).then(mails => {
-		const regex = new RegExp(criteria.txt, 'i')
+		const regex = new RegExp('^' + criteria.txt, 'i')
 
 		//TODO: label filter
 		let filteredList = mails.filter(
@@ -33,14 +33,15 @@ function query(criteria) {
 		)
 
 		if (criteria.status === 'inbox') {
-			filteredList = filteredList.filter(mail => mail.sentAt || mail.to === getUser().email)
+			filteredList = filteredList.filter(mail => mail.sentAt && mail.to === getUser().email)
 		} else if (criteria.status === 'sent') {
-			filteredList = filteredList.filter(mail => mail.sentAt || mail.from === getUser().email)
+			filteredList = filteredList.filter(mail => mail.sentAt && mail.from === getUser().email)
 		} else if (criteria.status === 'trash') {
 			filteredList = filteredList.filter(mail => mail.removeAt)
 		} else if (criteria.status === 'draft') {
 			filteredList = filteredList.filter(mail => !mail.sentAt)
 		}
+
 		return filteredList
 	})
 }

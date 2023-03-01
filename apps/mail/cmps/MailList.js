@@ -11,6 +11,9 @@ export default {
         </li>  
       </ul>
   `,
+	created() {
+		console.log(this.mails)
+	},
 	components: {
 		MailPreview,
 	},
