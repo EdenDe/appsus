@@ -1,0 +1,6 @@
+.mail-index {
+	background-color: var(--clr-bg-color-mail);
+	height: 75vh;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}

@@ -1,18 +1,3 @@
-.mail-preview {
-	display: grid;
-	grid-template-columns: minmax(120px, 2fr) minmax(100px, 2fr) minmax(200px, 3fr) minmax(50px, 1fr);
-	gap: 3vw;
-	font-size: 14px;
-}
-
-.mail-preview:hover {
-	background-color: var(--clr-gmail-hover);
-	border-radius: 10px;
-}
-
-.mail-preview > * {
-	margin: 0;
-	align-items: center;
-	justify-self: start;
-	padding: 5px;
+.mail-list {
+	background-color: var(--clr-google-bg);
 }
