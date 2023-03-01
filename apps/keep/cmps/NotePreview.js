@@ -1,7 +1,10 @@
 export default {
+  props: ['note'],
   template: `
-    
-     
-    `,
-  components: {},
+      <article>
+         <p> {{ note.info.txt}} </p>
+      </article>
+  `,
+
+  computed: {},
 }

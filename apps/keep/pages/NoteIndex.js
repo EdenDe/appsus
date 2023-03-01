@@ -2,15 +2,20 @@ import { noteService } from '../services/note.service.js'
 
 import NoteFilter from '../cmps/NoteFilter.js'
 import NoteList from '../cmps/NoteList.js'
-import NotePreview from '../cmps/NotePreview.js'
+import addNote from '../cmps/addNote.js'
 
-// import { eventBusService } from '../../../services/event-bus.service.js'
+import {
+  showErrorMsg,
+  showSuccessMsg,
+} from '../../../services/event-bus.service.js'
 
 export default {
   template: `
     
       <section class="note-index">
+
         <NoteFilter @onSetFilter="onSetFilterBy" />
+        <RouterLink to="/note/edit" class="btn-new-note">Add Note</RouterLink>
         <NoteList 
         :notes="filteredNotes"
         v-if="notes"
@@ -38,7 +43,7 @@ export default {
     filteredNotes() {
       let title = new RegExp(this.filterBy.title, 'i')
 
-      return this.books.filter((book) => title.test(book.title))
+      return this.notes.filter((note) => title.test(note.title))
     },
   },
   methods: {
@@ -46,21 +51,16 @@ export default {
       noteService
         .remove(noteId)
         .then((notes) => {
-          eventBusService.emit('show-msg', {
-            txt: 'note Deleted',
-            type: 'success',
-          })
-          this.notes = notes
+          const idx = this.notes.findIndex((note) => note.id === noteId)
+          this.notes.splice(idx, 1)
+          showSuccessMsg('Note deleted')
         })
         .catch((err) => {
-          eventBusService.emit('show-msg', {
-            txt: 'Book Removed Failed',
-            type: 'error',
-          })
+          showErrorMsg('Note remove failed')
         })
     },
-    savedBook(book) {
-      this.books.push(book)
+    savedNote(note) {
+      this.notes.push(note)
     },
     onSetFilterBy(filterBy) {
       this.filterBy = filterBy
@@ -69,6 +69,6 @@ export default {
   components: {
     NoteFilter,
     NoteList,
-    NotePreview,
+    addNote,
   },
 }
