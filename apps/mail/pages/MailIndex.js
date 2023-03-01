@@ -4,7 +4,7 @@ import MailFilter from '../cmps/MailFilter.js'
 
 export default {
 	template: `
-  <section class="mail-index">
+  <section class="mail-index" v-if="mails">
     <aside class="mail-options"> 
       <MailFilter @setFilter="setFilter"/>
     </aside>
@@ -16,33 +16,43 @@ export default {
 	data() {
 		return {
 			mails: null,
-			filterBy: {},
+			criteria: {
+				status: 'inbox',
+				txt: '',
+				isRead: false,
+				isStared: false,
+				lables: [],
+			},
 		}
 	},
 	created() {
-		mailService
-			.query()
-			.then(mails => {
-				this.mails = mails
-			})
-			.catch(console.log)
+		this.getMails()
 	},
 	methods: {
-		countMails() {
-			mails.forEach(mail => {
-				if (!mail.isRead) {
-					this.filterBy.inbox++
-				}
-			})
+		// countMails() {
+		// 	mails.forEach(mail => {
+		// 		if (!mail.isRead) {
+		// 			this.filterBy.inbox++
+		// 		}
+		// 	})
+		// },
+		getMails() {
+			mailService
+				.query(this.criteria)
+				.then(mails => {
+					this.mails = mails
+				})
+				.catch(console.log)
 		},
 		setFilter(filterBy) {
-			this.filterBy = filterBy
-		},
-		computed: {
-			filteredMail() {
-				console.log(this.mails)
-				return this.mails
-			},
+			debugger
+			console.log(filterBy)
+			if (filterBy === 'starred') {
+				this.criteria.isStared = true
+				this.criteria.status = 'inbox'
+			}
+			this.criteria.status = filterBy
+			this.getMails()
 		},
 	},
 	components: {

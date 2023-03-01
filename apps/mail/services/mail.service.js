@@ -6,6 +6,8 @@ import { storageService } from '../../../services/async-storage.service.js'
 import demoMails from '../data/demo-mails.json' assert { type: 'json' }
 
 const MAIL_KEY = 'mailDB'
+const USER_KEY = 'userDB'
+let gUser
 
 _createMails()
 
@@ -15,14 +17,43 @@ export const mailService = {
 	remove,
 	save,
 	getEmptyMail,
+	getUser,
 }
 
-function query() {
-	return storageService.query(MAIL_KEY)
+function query(criteria) {
+	return storageService.query(MAIL_KEY).then(mails => {
+		const regex = new RegExp(criteria.txt, 'i')
+
+		//TODO: label filter
+		let filteredList = mails.filter(
+			mail =>
+				(criteria.isRead === null || mail.isRead === criteria.isRead) &&
+				(criteria.isStared === null || mail.isStared === criteria.isStared) &&
+				(regex.test(mail.subject) || regex.test(mail.body) || regex.test(mail.from))
+		)
+
+		if (criteria.status === 'inbox') {
+			filteredList = filteredList.filter(mail => mail.sentAt || mail.to === getUser().email)
+		} else if (criteria.status === 'sent') {
+			filteredList = filteredList.filter(mail => mail.sentAt || mail.from === getUser().email)
+		} else if (criteria.status === 'trash') {
+			filteredList = filteredList.filter(mail => mail.removeAt)
+		} else if (criteria.status === 'draft') {
+			filteredList = filteredList.filter(mail => !mail.sentAt)
+		}
+		return filteredList
+	})
 }
 
 function get(mailId) {
 	return storageService.get(MAIL_KEY, mailId)
+}
+
+function getUser() {
+	return {
+		email: 'user@appsus.com',
+		fullname: 'Mahatma Appsus',
+	}
 }
 
 function remove(mailId) {

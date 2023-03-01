@@ -8,24 +8,32 @@ export default {
   `,
 	data() {
 		return {
-			// 	filterBy: ['inbox', 'starred', 'sent', 'draft', 'trash'],
-			//   filterBy: {{filterName:'inbox',
-			// }, 'starred', 'sent', 'draft', 'trash'},
+			filterBy: ['inbox', 'starred', 'sent', 'draft', 'trash'],
+
+			// filterBy: [
+			// 	{ filterName: 'inbox', unreadCount: 0 },
+			// 	{ filterName: 'starred', unreadCount: 0 },
+			// 	{ filterName: 'sent', unreadCount: 0 },
+			// 	{ filterName: 'draft', unreadCount: 0 },
+			// 	{ filterName: 'trash', unreadCount: 0 },
+			// ],
 		}
 	},
 	methods: {
 		setFilter(filterBy) {
-			this.$emit('filter', filterBy)
+			console.log(filterBy)
+			this.filterBy = filterBy
+			this.$emit('setFilter', this.filterBy)
 		},
 	},
-	watch: {
-		filterBy: {
-			handler() {
-				console.log('filterBy changed', this.filterBy)
-				this.$emit('filter', this.filterBy)
-			},
-		},
-	},
+	// watch: {
+	// 	filterBy: {
+	// 		handler() {
+	// 			this.$emit('filter', filterBy)
+	// 		},
+	// 		//deep: true,
+	// 	},
+	// },
 	computed: {
 		icon() {
 			return index => {
