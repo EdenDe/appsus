@@ -10,7 +10,7 @@ export default {
 			
         <h2>Add a note</h2>
         <form @submit.prevent="save">
-          <input type="text" v-model="note.title" placeholder="note title" name="title"/>
+          <input type="text" v-model="note.info.txt" placeholder="note title" name="title"/>
      
           <button type="submit" class="form-save">Save</button>
 					<RouterLink to="/note" class="form-back">back</RouterLink>
@@ -29,8 +29,8 @@ export default {
     if (!noteId) return
     noteService.get(noteId).then((note) => {
       this.note = note
+      console.log(this.note)
     })
-    console.log(this.note)
   },
   methods: {
     save() {

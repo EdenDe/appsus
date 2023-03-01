@@ -1,0 +1,30 @@
+.pick-color{
+  display: grid;
+  grid-auto-flow: column;
+  max-width: 280px;
+}
+
+.btn-pick-color{
+width: 50px;
+border: none;
+}
+
+.btn-pick-color:hover{
+  opacity: 0.8;
+}
+
+.btn-red{
+  background-color: var(--clr-keep-red);
+}
+.btn-pink{
+  background-color: var(--clr-keep-pink);
+}
+.btn-purple{
+  background-color: var(--clr-keep-purple);
+}
+.btn-blue{
+  background-color: var(--clr-keep-blue);
+}
+.btn-green{
+  background-color: var(--clr-keep-green);
+}

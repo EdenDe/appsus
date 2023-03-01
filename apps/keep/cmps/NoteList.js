@@ -4,8 +4,9 @@ export default {
   props: ['notes'],
   template: `
     <ul class="note-list">
-        <li v-for="note in notes" :key="note.id" class="note-preview">
-          <NotePreview :note="note"/>
+        <li v-for="note in notes" :key="note.id" class="note-preview" 
+        :style="{backgroundColor: note.style.backgroundColor}" >
+          <NotePreview :note="note" @setBgColor="setBgColor"/>
 					<RouterLink :to="'/note/'+note.id">...more</RouterLink> 
 				
 					<button @click="onRemove(note.id)" class="btn-remove" title="Delete">
@@ -22,6 +23,9 @@ export default {
   methods: {
     onRemove(noteId) {
       this.$emit('remove', noteId)
+    },
+    setBgColor(color, noteId) {
+      this.$emit('setBgColor', color, noteId)
     },
   },
   components: {
