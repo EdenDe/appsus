@@ -1,0 +1,52 @@
+[
+  {
+    "id": "Ze8ri",
+    "subject": "Miss you!",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt" : 1551133930594,
+    "removedAt" : null,
+    "from": "momo@momo.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "FcrgZ",
+    "subject": "Miss you!",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt" : 1551133930594,
+    "removedAt" : null,
+    "from": "momo@momo.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "COcYc",
+    "subject": "Miss you!",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt" : 1551133930594,
+    "removedAt" : null,
+    "from": "momo@momo.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "ZJoIa",
+    "subject": "Miss you!",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt" : 1551133930594,
+    "removedAt" : null,
+    "from": "momo@momo.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "PEg6J",
+    "subject": "Miss you!",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt" : 1551133930594,
+    "removedAt" : null,
+    "from": "user@appsus.com",
+    "to": "momo@momo.com"
+  }
+]
