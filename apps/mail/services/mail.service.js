@@ -1,7 +1,7 @@
 'use strict'
 
-import { utilService } from '/services/util.service.js'
-import { storageService } from '/services/async-storage.service.js'
+import { utilService } from '../../../services/util.service.js'
+import { storageService } from '../../../services/async-storage.service.js'
 
 import demoMails from '../data/demo-mails.json' assert { type: 'json' }
 

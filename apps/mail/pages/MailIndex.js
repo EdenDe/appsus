@@ -5,9 +5,8 @@ export default {
 	template: `
   <section class="mail-index">
   <MailList
-						:books="mails" 					
-				     
-					/>
+		:mails="mails" 						     
+	/>
 
   </section>
     `,
