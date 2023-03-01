@@ -1,12 +1,19 @@
 .pick-color{
   display: grid;
   grid-auto-flow: column;
-  max-width: 280px;
+  max-width: 220px;
+  background-color: var(--clr-keep-grey);
+  padding: 5px;
+  position: absolute;
+  border-radius: var(--border-radius);
 }
 
 .btn-pick-color{
-width: 50px;
-border: none;
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  border: none;
+  border-radius: var(--border-radius);
 }
 
 .btn-pick-color:hover{
