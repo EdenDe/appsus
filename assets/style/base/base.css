@@ -7,9 +7,14 @@ html {
 }
 
 body {
-	/* margin: 0; */
-	/* padding: 0; */
+	margin: 0;
+	padding: 0;
 	color: var(--clr4);
+	font-family: 'roboto', 'sans-serif';
+}
+
+ul {
+	list-style: none;
 }
 
 h1,
@@ -19,7 +24,7 @@ h4,
 h5,
 h6 {
 	margin: 0 0 1em;
-	font-family: 'Edu VIC WA NT Beginner', cursive;
+	font-family: 'roboto bold', 'sans-serif';
 }
 
 p {
