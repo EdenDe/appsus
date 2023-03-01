@@ -1,4 +1,4 @@
-import { note } from '../services/note.service'
+import { noteService } from '../services/note.service.js'
 import NoteList from '../cmps/NoteList.js'
 import NoteFilter from '../cmps/NoteFilter.js'
 import NotePreview from '../cmps/NotePreview.js'
