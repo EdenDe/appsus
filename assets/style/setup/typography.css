@@ -1,15 +1,14 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'); */
 
-
 @font-face {
-  font-family: 'roboto bold';
-  src: url(../../fonts/Roboto/Roboto-Bold.ttf);
+	font-family: 'roboto bold';
+	src: url(../../fonts/Roboto/Roboto-Bold.ttf);
 }
 
 @font-face {
-  font-family: 'roboto';
-  src: url(../../fonts/Roboto/Roboto-Regular.ttf);
+	font-family: 'roboto';
+	src: url(../../fonts/Roboto/Roboto-Regular.ttf);
 }
 
 /* @font-face {
@@ -18,7 +17,84 @@
 } */
 
 @font-face {
-  font-family: fa;
-  src: url(../../fonts/fontAwesome/fa-solid-900.ttf);
+	font-family: 'fa regular';
+	src: url(../../fonts/fontAwesome/fa-regular-400.ttf);
 }
 
+@font-face {
+	font-family: fa;
+	src: url(../../fonts/fontAwesome/fa-solid-900.ttf);
+}
+
+.fa::before {
+	font-family: fa;
+}
+
+.fa-regular::before {
+	font-family: 'fa regular';
+}
+
+.fa.trash-can::before {
+	content: '\f2ed';
+}
+
+.fa.pencil::before {
+	content: '\f303';
+}
+
+.fa.filledStar::before {
+	content: '\f005';
+}
+
+.fa.check::before {
+	content: '\f00c';
+}
+
+.fa.magnifying-glass::before {
+	content: '\f002';
+}
+
+.fa.sent::before {
+	content: '\f1d8';
+}
+
+.fa.image::before {
+	content: '\f03e';
+}
+
+/* regular */
+.fa-regular.clock::before {
+	content: '\f017';
+}
+
+.fa-regular.star::before {
+	content: '\f005';
+}
+
+.fa-regular.user-group::before {
+	content: '\f500';
+}
+
+.fa-regular.forums::before {
+	content: '\f086';
+}
+
+.fa-regular.updates::before {
+	content: '\f06a';
+}
+
+.fa-regular.tag::before {
+	content: '\f02b';
+}
+
+.fa-regular.mail::before {
+	content: '\f0e0';
+}
+
+.fa-regular.bulb {
+	content: '\f0eb';
+}
+
+.fa-regular.bell {
+	content: '\f0f3';
+}

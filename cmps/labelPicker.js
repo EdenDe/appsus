@@ -6,11 +6,9 @@ export default {
   <template v-if="showLabels">
     <input type="search" placeholder="Pick a label" v-model="searchKey"/>
     <ul>
-      <li v-for="label in labelsToShow" @click="addLabel(label)" :key="label.title">
-        {{label.title}}
-        {{label.isSelected}}
-        
-        <button>+</button>
+      <li v-for="label in labelsToShow"  @click="addLabel(label)" :key="label.title">
+        <span>  {{label.title}}</span>
+        <span :class="{'fa check':label.isSelected}"></span>
       </li>
     </ul>
     </template>
