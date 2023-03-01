@@ -20,6 +20,7 @@ export default {
         :notes="filteredNotes"
         v-if="notes"
         @remove="remove"
+        @setBgColor="setBgColor"
         />
       </section>
     `,
@@ -64,6 +65,12 @@ export default {
     },
     onSetFilterBy(filterBy) {
       this.filterBy = filterBy
+    },
+
+    setBgColor(color, noteId) {
+      let note = this.notes.find((note) => note.id === noteId)
+      note.style.backgroundColor = color
+      noteService.save(note)
     },
   },
   components: {

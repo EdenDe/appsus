@@ -21,7 +21,7 @@ function query() {
 }
 
 function get(noteId) {
-  return storageService.get(NOTE_KEY, noteId).then(_setNextPrevNotekId)
+  return storageService.get(NOTE_KEY, noteId).then(_setNextPrevNoteId)
 }
 
 function remove(noteId) {
@@ -37,8 +37,7 @@ function save(note) {
 }
 
 function getEmptyNote() {
-  return {
-    id: utilService.makeId(),
+  const emptyNote = {
     createdAt: Date.now(),
     type: 'NoteTxt',
     isPinned: false,
@@ -49,6 +48,8 @@ function getEmptyNote() {
       txt: '',
     },
   }
+  console.log(emptyNote)
+  return emptyNote
 }
 
 function _createNotes() {
@@ -58,14 +59,14 @@ function _createNotes() {
   }
 }
 
-// function _setNextPrevBookId(book) {
-//   return storageService.query(NOTE_KEY).then((books) => {
-//     const bookIdx = books.findIndex((currBook) => currBook.id === book.id)
-//     book.nextBookId = books[bookIdx + 1] ? books[bookIdx + 1].id : books[0].id
-//     book.prevBookId = books[bookIdx - 1]
-//       ? books[bookIdx - 1].id
-//       : books[books.length - 1].id
-//     console.log(book)
-//     return book
-//   })
-// }
+function _setNextPrevNoteId(note) {
+  return storageService.query(NOTE_KEY).then((notes) => {
+    const NoteIdx = notes.findIndex((currNote) => currNote.id === note.id)
+    note.nextNoteId = notes[NoteIdx + 1] ? notes[NoteIdx + 1].id : notes[0].id
+    note.prevNoteId = notes[NoteIdx - 1]
+      ? notes[NoteIdx - 1].id
+      : notes[notes.length - 1].id
+    console.log(note)
+    return note
+  })
+}
