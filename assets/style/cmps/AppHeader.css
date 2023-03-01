@@ -1,12 +1,16 @@
 .app-header {
-  background-color: var(--clr5);
-  color: var(--secondary-clr1);
-  padding: 1em;
+	background-color: var(--clr5);
+	color: var(--secondary-clr1);
+	padding: 1em;
 }
 
-@media(max-width: 720px) {
-  .app-header {
-    background-color: var(--clr3);
-    color: var(--secondary-clr2);
-  }
+.app-header nav a {
+	margin-inline-end: 3vw;
+}
+
+@media (max-width: 720px) {
+	.app-header {
+		background-color: var(--clr3);
+		color: var(--secondary-clr2);
+	}
 }
