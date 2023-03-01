@@ -1,23 +1,26 @@
 :root {
-  --clr1: rgb(255, 255, 255);
-  --clr2: rgb(240, 240, 240);
-  --clr3: rgb(155, 155, 155);
-  --clr4: rgb(96, 96, 96);
-  --clr5: rgb(0, 0, 0);
+	--clr1: rgb(255, 255, 255);
+	--clr2: rgb(240, 240, 240);
+	--clr3: rgb(155, 155, 155);
+	--clr4: rgb(96, 96, 96);
+	--clr5: rgb(0, 0, 0);
 
+	--clr-google-bg: #ffffff;
 
-  --clr-gmail-txt: #001d35;
-  --clr-gmail-active: #0b57d0;
-  --clr-gmail-button: #c2e7ff;
-  --clr-gmail-hover: #f2f6fc;
-  --clr-gmail-tag: #f3c74a;
+	--clr-gmail-txt: #001d35;
+	--clr-gmail-active: #0b57d0;
+	--clr-gmail-button: #c2e7ff;
+	--clr-active-filter: #d3e3fd;
+	--clr-gmail-read: #f2f6fc;
+	--clr-gmail-tag: #f3c74a;
+	--clr-bg-color-mail: #f6f8fc;
 
-  --clr-keep-active: #feefc3 ;
-  --clr-keep-hover: #f1f3f4 ; 
-  --clr-keep-grey: #e8eaed ;
-  --clr-keep-red: #e6c9a8 ;
-  --clr-keep-pink: #fdcfe8 ;
-  --clr-keep-purple: #d7aefb ;
-  --clr-keep-blue: #aecbfa ;
-  --clr-keep-green: #ccff90 ;
-} 
+	--clr-keep-active: #feefc3;
+	--clr-keep-hover: #f1f3f4;
+	--clr-keep-grey: #e8eaed;
+	--clr-keep-red: #e6c9a8;
+	--clr-keep-pink: #fdcfe8;
+	--clr-keep-purple: #d7aefb;
+	--clr-keep-blue: #aecbfa;
+	--clr-keep-green: #ccff90;
+}

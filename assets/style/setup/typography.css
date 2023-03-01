@@ -27,7 +27,7 @@
 }
 
 .fa::before {
-	font-family: fa;
+	font-family: 'fa';
 }
 
 .fa-regular::before {
@@ -62,6 +62,10 @@
 	content: '\f03e';
 }
 
+.fa.inbox::before {
+	content: '\f01c';
+}
+
 /* regular */
 .fa-regular.clock::before {
 	content: '\f017';
@@ -83,6 +87,10 @@
 	content: '\f06a';
 }
 
+.fa-regular.file::before {
+	content: '\f15b';
+}
+
 .fa-regular.tag::before {
 	content: '\f02b';
 }
@@ -91,10 +99,10 @@
 	content: '\f0e0';
 }
 
-.fa-regular.bulb {
+.fa-regular.bulb::before {
 	content: '\f0eb';
 }
 
-.fa-regular.bell {
+.fa-regular.bell::before {
 	content: '\f0f3';
 }

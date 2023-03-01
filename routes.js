@@ -1,7 +1,7 @@
 import HomePage from './views/HomePage.js'
 import AboutUs from './views/AboutUs.js'
 import MailIndex from './apps/mail/pages/MailIndex.js'
-import MailDetail from './apps/mail/pages/MailDetail.js'
+import MailDetail from './apps/mail/pages/MailDetails.js'
 import note from './apps/keep/pages/NoteIndex.js'
 import addNote from './apps/keep/cmps/addNote.js'
 

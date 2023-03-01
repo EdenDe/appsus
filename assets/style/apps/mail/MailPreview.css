@@ -1,0 +1,27 @@
+.mail-preview {
+	display: grid;
+	grid-template-columns: minmax(120px, 2fr) minmax(100px, 2fr) minmax(200px, 3fr) minmax(50px, 1fr);
+	gap: 3vw;
+	font-size: 14px;
+	background-color: var(--clr-gmail-read);
+}
+
+.mail-preview:hover {
+	border-radius: 10px;
+}
+
+.mail-preview > * {
+	margin: 0;
+	align-self: center;
+	justify-self: start;
+	padding: 5px;
+}
+
+.mail-preview.unread-mail p {
+	font-family: 'roboto bold';
+}
+
+.mail-preview.unread-mail p:last-of-type {
+	font-size: 0.8em;
+	justify-self: center;
+}

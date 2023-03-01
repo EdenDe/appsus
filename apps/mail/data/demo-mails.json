@@ -1,15 +1,5 @@
 [
   {
-    "id": "Ze8ri",
-    "subject": "hey what's up!?!",
-    "body": "Would love to catch up sometimes",
-    "isRead": false,
-    "sentAt" : 1646085600000,
-    "removedAt" : null,
-    "from": "momo@momo.com",
-    "to": "user@appsus.com"
-  },
-  {
     "id": "FcrgZ",
     "subject": "Miss you!",
     "body": "Would love to catch up sometimes",
@@ -48,5 +38,15 @@
     "removedAt" : null,
     "from": "user@appsus.com",
     "to": "momo@momo.com"
+  }, 
+   {
+    "id": "Ze8ri",
+    "subject": "hey what's up!?!",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt" : 1646085600000,
+    "removedAt" : null,
+    "from": "momo@momo.com",
+    "to": "user@appsus.com"
   }
 ]
