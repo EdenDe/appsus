@@ -3,9 +3,6 @@ import { mailService } from '../services/mail.service.js'
 export default {
 	template: `
 	<template v-if="mail">
-		<nav>
-			<RouterLink to="/mail"> back</RouterLink>
-		</nav>
     <section class="mail-details" >
      <h2>{{mail.subject}}</h2> 
      <div class="flex justify-between">
@@ -33,8 +30,17 @@ export default {
 		loadMail() {
 			mailService
 				.get(this.mailId)
-				.then(mail => (this.mail = mail))
+				.then(mail => {
+					this.mail = mail
+					if (!mail.isRead) {
+						this.mail.isRead = true
+						this.updateToRead()
+					}
+				})
 				.catch(console.log)
+		},
+		updateToRead() {
+			mailService.save(this.mail).catch(console.log)
 		},
 	},
 	computed: {

@@ -54,5 +54,5 @@
 
 .circle-hover:hover {
 	border-radius: 100%;
-	background-color: #e7eaed;
+	background-color: var(--clr-gmail-hover);
 }

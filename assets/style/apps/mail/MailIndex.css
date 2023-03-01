@@ -1,7 +1,5 @@
 .mail-index {
 	background-color: var(--clr-bg-color-mail);
-	display: grid;
-	grid-template-columns: 1fr 3fr;
 }
 
 .mail-index .bars {
@@ -12,9 +10,16 @@
 }
 
 .mail-index .bars:hover {
-	background-color: #e7eaed;
+	background-color: var(--clr-gmail-hover);
 }
 
 .hamburger-logo-container {
 	padding: 5px;
+	padding-inline-end: 20px;
+	gap: 10px;
+}
+
+.hamburger-logo-container img {
+	width: 25px;
+	height: 20px;
 }

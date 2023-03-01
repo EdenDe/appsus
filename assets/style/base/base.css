@@ -32,6 +32,11 @@ a {
 	color: unset;
 }
 
+button,
+input {
+	font-family: inherit;
+}
+
 /* Dont stretch my Media */
 img,
 embed,

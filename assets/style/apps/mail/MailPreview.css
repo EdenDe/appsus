@@ -1,13 +1,21 @@
 .mail-preview {
 	display: grid;
 	grid-template-columns: minmax(120px, 2fr) minmax(100px, 2fr) minmax(200px, 3fr) minmax(50px, 1fr);
-	gap: 3vw;
-	font-size: 14px;
+
+	padding: 5px;
+	font-size: 13px;
 	background-color: var(--clr-gmail-read);
+	border-bottom: 0.5px solid #80808035;
+}
+
+.mail-preview:first-child {
+	border-top: 0.5px solid #80808035;
 }
 
 .mail-preview:hover {
-	border-radius: 10px;
+	border-radius: var(--border-radius);
+	box-shadow: 0 0 3px 0 grey;
+	scale: 1;
 }
 
 .mail-preview > * {
@@ -15,6 +23,10 @@
 	align-self: center;
 	justify-self: start;
 	padding: 5px;
+}
+
+.mail-preview.unread-mail {
+	background-color: var(--clr-bg-color-mail);
 }
 
 .mail-preview.unread-mail p {

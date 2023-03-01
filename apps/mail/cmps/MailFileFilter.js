@@ -2,8 +2,14 @@ export default {
 	props: ['iconsOnly'],
 	template: `
       <ul class="mail-filter clean-list">
-         <li v-for="filter,index in filterBy" :class="icon(index)" @click="setFilter(filter)" :key="index"> 
-           	<span v-show="!iconsOnly">{{filter}}</span> 
+         <li v-for="filter,index in filterBy" 
+						@click="setFilter(filter)" 
+						class="flex align-center file-filter"
+						:class="{'active-filter': filter === filters.status,
+										'icons-only':iconsOnly}"
+						:key="index"> 
+				 		<span :class="icon(index)" class="flex align-center justify-center filter-icon"> </span>
+				 		<span class="filter-file-name" >{{filter}}</span> 
          </li>
       </ul>
   `,
@@ -15,7 +21,7 @@ export default {
 	},
 	methods: {
 		setFilter(filter) {
-			this.filters.status = filter === 'starred' ? 'inbox' : filter
+			this.filters.status = filter
 			this.filters.isStared = filter === 'starred' ? true : false
 
 			this.$emit('setFilter', this.filters)

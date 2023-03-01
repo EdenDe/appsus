@@ -2,25 +2,28 @@ import { mailService } from '../services/mail.service.js'
 import MailList from '../cmps/MailList.js'
 import MailFileFilter from '../cmps/MailFileFilter.js'
 import MailSearchFilter from '../cmps/MailSearchFilter.js'
+import MailCompose from '../cmps/MailCompose.js'
 
 export default {
 	template: `
-  <section class="mail-index" >
-		<div class="flex justify-between hamburger-logo-container"> 
+  <section class="mail-index flex-column" >
+		<header class="flex align-center justify-between hamburger-logo-container"> 
 			<button class="fa bars circle-hover" @click="toggleIconOnly">	</button>
-			<img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png"/>
-		</div>
-	
-	
-		<MailSearchFilter @setFilter="setFilter"/>
-    <aside class="mail-options"> 
-      <MailFileFilter @setFilter="setFilter" :iconsOnly="iconsOnly"/>
+			<img src="../../../assets/img/gmail.jpg"/>
+			<span>Email</span>
+			<MailSearchFilter @setFilter="setFilter"/>
+		</header>
+		<main class="flex justify-between"> 
+    <aside class="mail-options" :class="{'icons-only':iconsOnly}"> 
+			<MailCompose />
+      <MailFileFilter @setFilter="setFilter" />
     </aside>
 		<template v-if="mails"> 
     <MailList
       :mails="mails" 						     
     />
 		</template>
+		</main>
   </section>
     `,
 	data() {
@@ -49,7 +52,6 @@ export default {
 				.catch(console.log)
 		},
 		setFilter(filters) {
-			debugger
 			for (let filter in filters) {
 				this.criteria[filter] = filters[filter]
 			}
@@ -64,5 +66,6 @@ export default {
 		MailList,
 		MailSearchFilter,
 		MailFileFilter,
+		MailCompose,
 	},
 }

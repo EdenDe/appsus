@@ -1,8 +1,8 @@
 export default {
 	template: `
-  <section class="search-filter"> 
+  <section class="search-filter "> 
     <div class="fa magnifying-glass flex align-center justify-center circle-hover"></div>
-  <input v-model="search.txt"  @input="onSearch"/>
+    <input v-model="search.txt"  @input="onSearch"/>
   </section>
 `,
 

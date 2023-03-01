@@ -1,9 +1,6 @@
 .search-filter {
 	position: relative;
-	width: 90%;
-	height: fit-content;
-	margin-top: 10px;
-	margin: auto;
+	width: 100%;
 }
 
 .search-filter .magnifying-glass {
@@ -16,8 +13,7 @@
 }
 
 .search-filter input {
-	width: 90%;
-	margin: auto;
+	width: 100%;
 	border-radius: var(--border-radius);
 	padding: 15px;
 	padding-left: 50px;
@@ -29,4 +25,58 @@
 	box-shadow: 0 0 4px 0px #808080c2;
 	outline: none;
 	background-color: var(--clr-gmail-input-focus);
+}
+
+.mail-filter .file-filter {
+	width: 90%;
+	font-size: 13px;
+	gap: 30px;
+	margin-inline-end: 100px;
+	padding-inline-start: 20px;
+	border-end-end-radius: 20px;
+	border-start-end-radius: 20px;
+}
+
+.mail-filter .file-filter > *:first-of-type {
+	width: 25px;
+	height: 25px;
+}
+
+.filter-file-name {
+	display: inline-flex;
+	text-transform: capitalize;
+}
+
+.mail-filter > .file-filter:not(.active-filter):hover {
+	background-color: var(--clr-gmail-hover);
+}
+
+.active-filter {
+	background-color: var(--clr-active-filter);
+	font-family: 'roboto bold';
+	color: var(--clr-gmail-txt);
+}
+
+.icons-only .filter-file-name {
+	display: none;
+}
+
+.icons-only .active-filter .filter-icon {
+	border-radius: 100%;
+	background-color: var(--clr-active-filter);
+}
+
+.icons-only .filter-icon:not(.active-filter *):hover {
+	border-radius: 100%;
+	background-color: var(--clr-gmail-hover);
+}
+
+.icons-only .mail-filter .file-filter {
+	width: fit-content;
+	background-color: transparent;
+	margin-inline-end: 0;
+}
+
+.icons-only .mail-filter .file-filter:not(.active-filter):hover {
+	background-color: transparent;
 }
