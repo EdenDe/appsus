@@ -1,11 +1,12 @@
 import { mailService } from '../services/mail.service.js'
+import MailList from '../cmps/MailList.js'
 
 export default {
 	template: `
   <section class="mail-index">
-  <BookList
-						:books="filteredBooks" 					
-						@remove="remove"	      
+  <MailList
+						:books="mails" 					
+				     
 					/>
 
   </section>
@@ -24,5 +25,7 @@ export default {
 			})
 			.catch(console.log)
 	},
-	components: {},
+	components: {
+		MailList,
+	},
 }
