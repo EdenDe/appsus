@@ -1,7 +1,9 @@
+import selectType from './selectType.js'
+
 export default {
   template: `
-    
-   
+    <selectType @setType="setType"></selectType>
+  
     `,
   data() {
     return {
@@ -9,8 +11,13 @@ export default {
     }
   },
   methods: {
-    onSetFilter() {
-      this.$emit('onSetFilter', this.input)
+    onSetFilter() {},
+    setType(currType, type) {
+      this.$emit('onSetFilter', type)
     },
+  },
+
+  components: {
+    selectType,
   },
 }

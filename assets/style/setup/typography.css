@@ -130,4 +130,8 @@
 	content: '\f03e';
 }
 
+.fa-regular.copy::before {
+	content: '\f24d';
+}
+
 
