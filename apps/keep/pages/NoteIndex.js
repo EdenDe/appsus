@@ -13,7 +13,7 @@ export default {
   template: `
     
       <section class="note-index">
-
+          <input v-model="filterBy.title" type="search" placeholder="Search" @input="onSetFilterBy"/>
         <NoteFilter @onSetFilter="onSetFilterBy" />
         <RouterLink to="/note/edit" class="btn-new-note">Add Note</RouterLink>
         <NoteList 
@@ -29,7 +29,6 @@ export default {
       notes: null,
       filterBy: {
         title: '',
-        type: '',
         createdAt: Date.now(),
       },
     }
@@ -63,8 +62,8 @@ export default {
     savedNote(note) {
       this.notes.push(note)
     },
-    onSetFilterBy(filterBy) {
-      this.filterBy = filterBy
+    onSetFilterBy() {
+      this.filteredNotes()
     },
 
     setBgColor(color, noteId) {

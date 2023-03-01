@@ -1,7 +1,16 @@
 export default {
   template: `
     
-     
+   
     `,
-  components: {},
+  data() {
+    return {
+      input: '',
+    }
+  },
+  methods: {
+    onSetFilter() {
+      this.$emit('onSetFilter', this.input)
+    },
+  },
 }

@@ -66,6 +66,10 @@
 	content: '\f01c';
 }
 
+.fa.palette::before {
+	content: '\f53f';
+}
+
 /* regular */
 .fa-regular.clock::before {
 	content: '\f017';
