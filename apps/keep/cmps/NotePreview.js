@@ -7,8 +7,7 @@ export default {
   props: ['note'],
   template: `
       <article>
-          <component :is="note.type" :info="note.info"
-              @changeInfo="updateNote" />
+          <component :is="note.type" :info="note.info" />
         
       </article>
   `,

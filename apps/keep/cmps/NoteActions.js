@@ -12,6 +12,7 @@ export default {
         <button class="btn-pick-color btn-green" @click="setBgColor('#ccff90', note.id)"></button>
       </div>
       <RouterLink :to="'/note/edit/'+note.id" class="fa pencil"></RouterLink>		
+      <button @click="onCopy(note)" class="fa-regular copy"></button>
         <button @click="onRemove(note.id)" class="btn-remove fa trash-can" title="Delete">
         </button>
     </section>
@@ -22,6 +23,12 @@ export default {
     }
   },
   methods: {
+    onCopy(note) {
+      this.$emit('copy', note)
+    },
+    onRemove(noteId) {
+      this.$emit('remove', noteId)
+    },
     toggleChoseColor() {
       this.isChoseColor = !this.isChoseColor
     },

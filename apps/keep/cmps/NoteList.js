@@ -9,7 +9,7 @@ export default {
         :style="{backgroundColor: note.style.backgroundColor}" >
           <NotePreview :note="note"/>
 					<RouterLink :to="'/note/'+note.id">...more</RouterLink> 
-          <noteActions :note="note" @setBgColor="setBgColor"></noteActions>
+          <noteActions :note="note" @copy="onCopy" @remove="onRemove" @setBgColor="setBgColor"></noteActions>
 	        
         </li>  
       </ul>
@@ -19,6 +19,9 @@ export default {
   methods: {
     onRemove(noteId) {
       this.$emit('remove', noteId)
+    },
+    onCopy(note) {
+      this.$emit('copy', note)
     },
     toggleChoseColor() {
       this.isChoseColor = !this.isChoseColor

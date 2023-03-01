@@ -4,6 +4,8 @@ import {
   showSuccessMsg,
 } from '../../../services/event-bus.service.js'
 
+import selectType from './selectType.js'
+
 export default {
   template: `
     <section class="note-edit">	
@@ -14,11 +16,12 @@ export default {
           <input type="text" v-model="input" :placeholder="setPlaceHolder" name="title" />
           <button type="submit" class="form-save">Save</button>
           </form>
-          <p @click="setType('NoteTxt')" class="fa txt" :class="{'active-type': type.NoteTxt}" title="Text"></p>
-          <p @click="setType('NoteTodos')" class="fa list" :class="{'active-type': type.NoteTodos}" title="List"></p>
-          <p @click="setType('NoteImg')" class="fa-regular image" :class="{'active-type': type.NoteImg}"title="Image"></p>
-          <p @click="setType('NoteVideo')" class="fa video" :class="{'active-type': type.NoteVideo}" title="Video"></p>
-     
+          <selectType @setType="setType"></selectType>
+          <!-- <button @click="setType('NoteTxt')" class="fa txt" :class="{'active-type': type.NoteTxt}" title="Text"></button>
+          <button @click="setType('NoteTodos')" class="fa list" :class="{'active-type': type.NoteTodos}" title="List"></button>
+          <button @click="setType('NoteImg')" class="fa-regular image" :class="{'active-type': type.NoteImg}"title="Image"></button>
+          <button @click="setType('NoteVideo')" class="fa video" :class="{'active-type': type.NoteVideo}" title="Video"></button>
+      -->
 					<RouterLink to="/note" class="form-back">back</RouterLink>
         
 		
@@ -75,14 +78,10 @@ export default {
         })
       }
     },
-    setType(type) {
-      if (type === this.currType) return
-
-      this.type[this.currType] = false
-      this.type[type] = true
-
-      this.currType = type
-      this.note.type = type
+    setType(currType, type) {
+      this.currType = currType
+      this.type = type
+      this.note.type = currType
     },
   },
   computed: {
@@ -91,5 +90,8 @@ export default {
       if (this.currType === 'NoteTxt') return "What's on your mind?"
       return 'Enter URL...'
     },
+  },
+  components: {
+    selectType,
   },
 }
