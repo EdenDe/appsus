@@ -5,6 +5,7 @@ import { router } from './routes.js'
 import AppHeader from './cmps/AppHeader.js'
 import AppFooter from './cmps/AppFooter.js'
 import UserMsg from './cmps/UserMsg.js'
+import labelPicker from './cmps/labelPicker.js'
 
 const options = {
   template: `
@@ -13,13 +14,14 @@ const options = {
             <RouterView />
             <AppFooter />
             <UserMsg />
-            <!-- <labelPicker/> -->
+            <labelPicker/>
         </section>
     `,
   components: {
     AppHeader,
     AppFooter,
     UserMsg,
+    labelPicker,
   },
 }
 
