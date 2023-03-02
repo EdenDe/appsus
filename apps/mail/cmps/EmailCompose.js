@@ -1,15 +1,17 @@
 export default {
 	props: [],
 	template: `
-    <button class="fa pencil btn-compose flex">
-      <span >Compose</span>
+    <button class="fa pencil btn-compose flex" @click="compose">
+      <span>Compose</span>
     </button>
 `,
 
 	data() {
 		return {}
 	},
-	methods: {},
+	methods: {
+		compose() {},
+	},
 	computed: {},
 	created() {},
 	components: {},

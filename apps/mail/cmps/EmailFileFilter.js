@@ -12,7 +12,7 @@ export default {
 						:key="index"> 
 				 		<span :class="icon(index)" class="flex align-center justify-center filter-icon"> </span>
 				 		<span class="filter-file-name" >{{filter.filterName}}</span> 
-						<span class="unread-number">{{filter.unreadCount}}</span> 
+						<span class="unread-number" v-show="filter.unreadCount!=0">{{filter.unreadCount}}</span> 
          </li>
       </ul>
   `,
@@ -25,17 +25,21 @@ export default {
 				{ filterName: 'draft', unreadCount: 0 },
 				{ filterName: 'trash', unreadCount: 0 },
 			],
-			filters: { status: 'inbox', isRead: null, isStared: null, lables: [] },
+			filters: { status: 'inbox', isRead: null, lables: [] },
+			unreadUpdatesInterval: null,
 		}
 	},
 	created() {
-		this.unreadCount()
+		this.unreadUpdatesInterval = setInterval(() => {
+			this.unreadCount()
+		}, 10000)
+	},
+	unmounted() {
+		clearInterval(this.unreadUpdatesInterval)
 	},
 	methods: {
 		setFilter(filter) {
 			this.filters.status = filter
-			this.filters.isStared = filter === 'starred' ? true : false
-
 			this.$emit('setFilter', this.filters)
 		},
 		unreadCount() {
@@ -44,7 +48,6 @@ export default {
 					.query({ status: filter.filterName, isRead: false, isStared: null, txt: '' })
 					.then(res => {
 						filter.unreadCount = res.length
-						console.log(filter.filterName, filter.unreadCount)
 					})
 			})
 		},

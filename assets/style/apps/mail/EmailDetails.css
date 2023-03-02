@@ -24,5 +24,7 @@
 .details-options > * {
 	background-color: transparent;
 	border: none;
+	width: 25px;
+	height: 25px;
 	color: var(--clr4);
 }

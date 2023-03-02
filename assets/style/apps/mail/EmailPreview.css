@@ -1,8 +1,8 @@
 .mail-preview {
 	display: grid;
 	grid-template-columns:
-		50px
-		minmax(100px, 2fr)
+		40px
+		minmax(120px, 2fr)
 		minmax(120px, 2fr)
 		minmax(200px, 3fr)
 		minmax(50px, 1fr);
@@ -15,6 +15,16 @@
 
 .filledStar {
 	color: var(--clr-gmail-tag);
+}
+
+.mail-preview .btn-star:not(:hover) {
+	background-color: transparent;
+}
+
+.mail-preview .btn-star {
+	border: none;
+	width: 30px;
+	height: 30px;
 }
 
 .mail-preview:first-child {

@@ -5,7 +5,7 @@ export default {
 	props: ['criteria'],
 	template: `
     <section>
-      <EmailList :mails="mails" v-if="mails"/>
+      <EmailList :mails="mails" v-if="mails" @toggleStar="toggleStar"/>
     </section>  
   `,
 	created() {
@@ -27,6 +27,15 @@ export default {
 				.query(this.criteria)
 				.then(mails => {
 					this.mails = mails
+				})
+				.catch(console.log)
+		},
+		toggleStar(mailId) {
+			mailService
+				.get(mailId)
+				.then(mail => {
+					mail.isStared = !mail.isStared
+					mailService.save(mail).then(this.getMails).catch(console.log)
 				})
 				.catch(console.log)
 		},

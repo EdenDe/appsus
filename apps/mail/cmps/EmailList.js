@@ -5,8 +5,8 @@ export default {
 	template: `
       <ul class="mail-list clean-list">
         <li v-for="mail in mails" :key="mail.id" >
-          <RouterLink :to="'/mail/'+mail.id" @remove="remove">
-            <EmailPreview :mail="mail"/>		
+          <RouterLink :to="'/mail/'+mail.id">
+            <EmailPreview :mail="mail" @setToggleStar="setToggleStar"/>		
           </RouterLink>         
         </li>  
       </ul>
@@ -16,8 +16,8 @@ export default {
 		return {}
 	},
 	methods: {
-		remove(id) {
-			console.log(id)
+		setToggleStar(id) {
+			this.$emit('toggleStar', id)
 		},
 	},
 	components: {

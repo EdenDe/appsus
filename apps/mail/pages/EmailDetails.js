@@ -4,8 +4,8 @@ export default {
 	template: `
 	 <section v-if="mail" class="email-details-container">
 		<div class="details-options">
-			<RouterLink to="/mail" class="fa back"> </RouterLink>
-			<button class="fa trash-can" @click="remove"></button>
+			<RouterLink to="/mail" class="fa back circle-hover flex align-center justify-center"> </RouterLink>
+			<button class="fa trash-can circle-hover flex align-center justify-center" @click="remove"></button>
 		</div>
     <section class="email-details" >
      <h2>{{mail.subject}}</h2> 

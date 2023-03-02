@@ -37,7 +37,7 @@
     "subject": "Miss you!",
     "body": "Would love to catch up sometimes",
     "isStared":false,
-    "isRead": false,
+    "isRead": true,
     "sentAt" : 1674654240000,
     "removedAt" : null,
     "from": "user@appsus.com",

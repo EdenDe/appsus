@@ -27,7 +27,6 @@ function query(criteria) {
 		let filteredList = mails.filter(
 			mail =>
 				(criteria.isRead === null || mail.isRead === criteria.isRead) &&
-				(criteria.isStared === null || mail.isStared === criteria.isStared) &&
 				(regex.test(mail.subject) || regex.test(mail.body) || regex.test(mail.from))
 		)
 
@@ -39,6 +38,8 @@ function query(criteria) {
 			filteredList = filteredList.filter(mail => mail.removeAt)
 		} else if (criteria.status === 'draft') {
 			filteredList = filteredList.filter(mail => !mail.sentAt)
+		} else if (criteria.status === 'starred') {
+			filteredList = filteredList.filter(mail => mail.isStared)
 		}
 
 		return filteredList

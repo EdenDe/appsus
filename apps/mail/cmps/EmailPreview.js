@@ -3,14 +3,24 @@ export default {
 	props: ['mail'],
 	template: ` 
   <article :class="{'mail-preview':true,'unread-mail':!mail.isRead}">
-		<span :class="starIcon"></span>
+		<button :class="starIcon" class="btn-star circle-hover" @click.prevent="setStar"></button>
     <p> {{mail.from}} </p>
     <p> {{mail.subject}} </p>
 		<p class="mail-body"> {{mail.body}} </p>
     <p> {{dateFormatted}} </p>
   </article>
   `,
-
+	data() {
+		return {
+			isStar: this.mail.isStared,
+		}
+	},
+	methods: {
+		setStar() {
+			this.isStar = !this.isStar
+			this.$emit('setToggleStar', this.mail.id)
+		},
+	},
 	computed: {
 		dateFormatted() {
 			const date = new Date(this.mail.sentAt)
@@ -23,7 +33,7 @@ export default {
 			}
 		},
 		starIcon() {
-			return this.mail.isStared ? 'fa filledStar' : 'fa-regular star'
+			return this.isStar ? 'fa filledStar' : 'fa-regular star'
 		},
 	},
 
