@@ -22,14 +22,8 @@ export default {
 
   methods: {
     setType(type) {
-      if (type === this.currType) return
-
-      this.type[this.currType] = false
-      this.type[type] = true
-
       this.currType = type
-
-      this.$emit('setType', this.currType, this.type)
+      this.$emit('setType', type)
     },
   },
 }

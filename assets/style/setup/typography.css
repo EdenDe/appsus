@@ -83,6 +83,9 @@
 .fa.bars::before {
 	content: '\f0c9';
 }
+.fa.pin::before {
+	content: '\f08d';
+}
 
 .fa.back::before {
 	content: '\f060';

@@ -49,6 +49,8 @@ export default {
 
     noteService.get(noteId).then((note) => {
       this.note = note
+      console.log(note)
+      this.input = this.setTodosInput(note) || note.info.url || note.info.title
       this.setType(note.type)
     })
   },
@@ -78,10 +80,20 @@ export default {
         })
       }
     },
-    setType(currType, type) {
-      this.currType = currType
-      this.type = type
-      this.note.type = currType
+    setTodosInput(note) {
+      if (!note.info.todos) return
+      return note.info.todos.map((todo, idx) => {
+        return this.note.info.todos[idx].txt
+      })
+    },
+
+    setType(type) {
+      if (type === this.currType) return
+
+      this.type[this.currType] = false
+      this.type[type] = true
+
+      this.currType = type
     },
   },
   computed: {
