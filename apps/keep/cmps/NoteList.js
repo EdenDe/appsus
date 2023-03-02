@@ -6,8 +6,8 @@ import NoteImg from './NoteImg.js'
 import NoteVideo from './NoteVideo.js'
 
 export default {
-  props: ['notes'],
-  template: `
+	props: ['notes'],
+	template: `
     <ul class="note-list">
         <li v-for="note in notes" :key="note.id" class="note-preview" 
         :style="{backgroundColor: note.style.backgroundColor}" @click="toggleEditor()">
@@ -16,43 +16,42 @@ export default {
         </div> -->
          <button @click="onPin(note)" class="btn-pin fa pin" :class="{pinned: note.isPinned}"></button>
           <component :is="note.type" :info="note.info" /> 
-          <noteActions :note="note" @pin="onPin" @copy="onCopy" @remove="onRemove" @setBgColor="setBgColor"></noteActions>
-	        
+          <noteActions :note="note" @pin="onPin" @copy="onCopy" @remove="onRemove" @setBgColor="setBgColor"></noteActions>      
         </li>  
       </ul>
-     
+      <RouterView/>
     `,
-  data() {
-    return {
-      isEditing: false,
-    }
-  },
+	data() {
+		return {
+			isEditing: false,
+		}
+	},
 
-  methods: {
-    onPin(note) {
-      this.$emit('pin', note)
-    },
-    toggleEditor() {
-      this.isEditing = !this.isEditing
-    },
-    onRemove(noteId) {
-      this.$emit('remove', noteId)
-    },
-    onCopy(note) {
-      this.$emit('copy', note)
-    },
-    toggleChoseColor() {
-      this.isChoseColor = !this.isChoseColor
-    },
-    setBgColor(color, noteId) {
-      this.$emit('setBgColor', color, noteId)
-    },
-  },
-  components: {
-    NoteActions,
-    NoteTxt,
-    NoteTodos,
-    NoteImg,
-    NoteVideo,
-  },
+	methods: {
+		onPin(note) {
+			this.$emit('pin', note)
+		},
+		toggleEditor() {
+			this.isEditing = !this.isEditing
+		},
+		onRemove(noteId) {
+			this.$emit('remove', noteId)
+		},
+		onCopy(note) {
+			this.$emit('copy', note)
+		},
+		toggleChoseColor() {
+			this.isChoseColor = !this.isChoseColor
+		},
+		setBgColor(color, noteId) {
+			this.$emit('setBgColor', color, noteId)
+		},
+	},
+	components: {
+		NoteActions,
+		NoteTxt,
+		NoteTodos,
+		NoteImg,
+		NoteVideo,
+	},
 }

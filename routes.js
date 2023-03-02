@@ -41,10 +41,12 @@ const routerOptions = {
 		{
 			path: '/note',
 			component: note,
-		},
-		{
-			path: '/note/edit/:noteId?',
-			component: AddNote,
+			children: [
+				{
+					path: 'edit/:noteId?',
+					component: AddNote,
+				},
+			],
 		},
 	],
 }

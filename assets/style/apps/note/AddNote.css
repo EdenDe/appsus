@@ -1,8 +1,76 @@
-.active-type{
-  color: var(--clr3);
-} 
+.active-type {
+	color: var(--clr3);
+}
 
-.editor{
-  background-color: antiquewhite;
-  position: absolute;
+.editor {
+	background-color: antiquewhite;
+	position: absolute;
+}
+
+.note-edit {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(182, 181, 181);
+	z-index: 1;
+	width: 60vw;
+	border-radius: var(--border-radius);
+}
+
+.note-edit div {
+	width: 90%;
+	margin: auto;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.note-edit input {
+	width: 100%;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.717);
+	border-radius: var(--border-radius);
+}
+
+.note-edit h2 {
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+.note-edit .selectType > * {
+	background-color: transparent;
+	border: none;
+}
+
+.note-edit .selectType {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.note-edit .selectType > *:not(.active-type):hover {
+	scale: 1.1;
+}
+
+.screen {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(128, 128, 128, 0.3);
+}
+
+.note-edit .form-btns {
+	width: 50%;
+}
+
+.note-edit .form-btns > * {
+	background-color: transparent;
+	border: none;
+	color: var(--clr-gmail-txt);
+	font-size: 1rem;
+}
+
+.note-edit .form-btns > *:hover {
+	opacity: 0.8;
+	scale: 1.1;
 }
