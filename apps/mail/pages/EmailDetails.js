@@ -33,8 +33,12 @@ export default {
 	},
 	methods: {
 		remove() {
-			this.mail.removedAt = Date.now()
-			emailService.save(this.mail).then(this.back).catch(console.log)
+			if (this.mail.removedAt) {
+				emailService.remove(this.mailId).then(this.back).catch(console.log)
+			} else {
+				this.mail.removedAt = Date.now()
+				emailService.save(this.mail).then(this.back).catch(console.log)
+			}
 		},
 		back() {
 			this.$router.push('/mail')

@@ -1,0 +1,24 @@
+.note-index .selectType {
+	position: absolute;
+	display: flex;
+	gap: 5px;
+	top: 50%;
+	right: 5px;
+}
+
+.note-index .filter-search {
+	position: relative;
+}
+
+.note-index .selectType > * {
+	background-color: transparent;
+	border: none;
+}
+
+.note-index .selectType > *:hover {
+	scale: 1.1;
+}
+
+.note-index .selectType > .active-type {
+	scale: 1.2;
+}
