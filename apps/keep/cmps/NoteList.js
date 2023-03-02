@@ -15,7 +15,7 @@ export default {
           {{note.info.title}}
         </div> -->
          <button @click="onPin(note)" class="btn-pin fa pin" :class="{pinned: note.isPinned}"></button>
-          <component :is="note.type" :info="note.info" /> 
+          <component :is="note.type" :info="note.info" @save="save(note)" /> 
           <noteActions :note="note" @pin="onPin" @copy="onCopy" @remove="onRemove" @setBgColor="setBgColor"></noteActions>
 	        
         </li>  
@@ -29,6 +29,9 @@ export default {
   },
 
   methods: {
+    save(note) {
+      this.$emit('save', note)
+    },
     onPin(note) {
       this.$emit('pin', note)
     },

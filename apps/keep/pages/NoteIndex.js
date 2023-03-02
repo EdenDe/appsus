@@ -25,6 +25,7 @@ export default {
         <NoteList 
         :notes="pinnedNotes"
         v-if="notes"
+        @save='savedNote'
         @pin="pin"
         @remove="remove"
         @copy="copy"
@@ -32,6 +33,7 @@ export default {
         />
         <NoteList 
         :notes="filteredNotes"
+        @save='savedNote'
         v-if="notes"
         @pin="pin"
         @remove="remove"
@@ -97,6 +99,13 @@ export default {
     },
     copy(note) {
       note.id = ''
+      saveNoteToLocalStorage(note)
+    },
+    savedNote(note) {
+      // this.notes.push(note)
+      saveNoteToLocalStorage(note)
+    },
+    saveNoteToLocalStorage(note) {
       noteService
         .save(note)
         .then((note) => {
@@ -106,9 +115,6 @@ export default {
         .catch((err) => {
           showErrorMsg('Note copied failed')
         })
-    },
-    savedNote(note) {
-      this.notes.push(note)
     },
     setBgColor(color, noteId) {
       let note = this.notes.find((note) => note.id === noteId)

@@ -6,6 +6,37 @@ margin: auto;
 margin-bottom: 5px;
 }
 
+.note-preview{
+  height: fit-content;
+}
+
+.note-preview>ul{
+  list-style: none;
+}
+
+.edit-txt{
+  background-color: transparent;
+  border: none;
+  color: var(--clr-google-font);
+  width: 90%;
+  overflow: hidden;
+}
+
+.edit-txt:focus{
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius);
+}
+
+.edit-title{
+  font-family: 'roboto bold';
+  font-size: 1.2em;
+}
+
+.edit-todo{
+  font-family: roboto;
+  font-size: 1.1em
+}
+
 .btn-pin{
   width: 20px;
   background-color: transparent;
@@ -29,6 +60,7 @@ margin-bottom: 5px;
 .pinned {
   color: var(--clr-gmail-tag);
 }
+  
 .note-preview>h1{
   margin: 0;
   margin-left: .6em;
@@ -84,3 +116,15 @@ margin-bottom: 5px;
   background-color: var(--clr-keep-green);
 }
 
+.checked-box, 
+.check-box{
+  background-color: transparent;
+  border: none;
+  font-size: 1.1em;
+  color: var(--clr-google-font);
+}
+
+.todo-list>li{
+  display: grid;
+  grid-auto-flow: column;
+}

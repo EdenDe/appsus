@@ -147,3 +147,11 @@
 .fa-regular.copy::before {
 	content: '\f24d';
 }
+
+.fa-regular.checked-box::before {
+	content: '\f14a';
+}
+
+.fa-regular.check-box::before {
+	content: '\f0c8';
+}

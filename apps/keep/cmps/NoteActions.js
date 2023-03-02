@@ -27,7 +27,6 @@ export default {
       this.$emit('remove', noteId)
     },
     setBgColor(color, noteId) {
-      this.toggleChoseColor()
       this.$emit('setBgColor', color, noteId)
     },
   },
