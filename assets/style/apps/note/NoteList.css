@@ -2,6 +2,7 @@
   columns: 4 220px;
   column-gap: 1em;
   align-content: center;
+  margin-bottom: 1em;
 
 }
 .note-list:first-child{

@@ -1,0 +1,20 @@
+.note-index .search-filter{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: .3fr 2fr;
+  margin-bottom: 10px;
+}
+.note-index .search-filter .magnifying-glass{
+  left: 15%;
+  transform: translateY(-50%);
+}
+
+.btn-new-note{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  box-shadow: var(--box-shadow-all);
+  width: 50px;
+
+}

@@ -99,6 +99,10 @@
 	content: '\f2d1';
 }
 
+.fa.plus::before {
+	content: '\2b';
+}
+
 /* regular */
 .fa-regular.clock::before {
 	content: '\f017';
