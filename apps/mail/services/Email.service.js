@@ -82,8 +82,10 @@ function getEmptyMail() {
 function _createMails() {
 	let mails = utilService.loadFromStorage(MAIL_KEY)
 	if (!mails || !mails.length) {
-		fetch('../data/demo-emails.json').then(res => {
-			utilService.saveToStorage(MAIL_KEY, res)
-		})
+		fetch('../data/demo-emails.json')
+			.then(res => res.json())
+			.then(res => {
+				utilService.saveToStorage(MAIL_KEY, res)
+			})
 	}
 }
