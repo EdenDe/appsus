@@ -1,11 +1,20 @@
 .mail-preview {
 	display: grid;
-	grid-template-columns: minmax(120px, 2fr) minmax(100px, 2fr) minmax(200px, 3fr) minmax(50px, 1fr);
+	grid-template-columns:
+		50px
+		minmax(100px, 2fr)
+		minmax(120px, 2fr)
+		minmax(200px, 3fr)
+		minmax(50px, 1fr);
 
 	padding: 5px;
 	font-size: 13px;
 	background-color: var(--clr-gmail-read);
 	border-bottom: 0.5px solid #80808035;
+}
+
+.filledStar {
+	color: var(--clr-gmail-tag);
 }
 
 .mail-preview:first-child {
@@ -18,12 +27,15 @@
 	scale: 1;
 }
 
-.mail-preview > * {
-	margin: 0;
-	align-self: center;
+.mail-body {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow-x: hidden;
+}
+
+.mail-preview > * {
+	margin: 0;
+	align-self: center;
 	padding: 5px;
 }
 

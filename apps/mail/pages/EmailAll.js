@@ -16,6 +16,11 @@ export default {
 			mails: null,
 		}
 	},
+	watch: {
+		criteria() {
+			this.getMails()
+		},
+	},
 	methods: {
 		getMails() {
 			mailService

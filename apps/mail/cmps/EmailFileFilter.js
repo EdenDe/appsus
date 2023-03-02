@@ -5,7 +5,7 @@ export default {
 	template: `
       <ul class="mail-filter clean-list">
          <li v-for="filter,index in filterBy" 
-						@click="setFilter(filter)" 
+						@click="setFilter(filter.filterName)" 
 						class="flex align-center file-filter"
 						:class="{'active-filter': filter === filters.status,
 										'icons-only':iconsOnly}"
