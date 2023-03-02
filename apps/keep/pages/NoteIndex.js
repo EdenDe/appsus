@@ -16,7 +16,7 @@ export default {
           <input v-model="searchKey" type="search" placeholder="Search"/>
           <NoteFilter @onSetFilter="onSetFilterBy" />
         </section>
-        <RouterLink to="/edit" class="btn-new-note">Add Note</RouterLink>
+        <RouterLink to="note/edit" class="btn-new-note">Add Note</RouterLink>
         <NoteList 
           :notes="pinnedNotes"
           v-if="notes"
