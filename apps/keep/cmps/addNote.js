@@ -9,17 +9,19 @@ import selectType from './selectType.js'
 export default {
   template: `
     <section class="note-edit">	
-			
-        <h2>Add a note</h2>
-        <form @submit.prevent="save">
-          
+      <h2>Add a note</h2>
+      <form @submit.prevent="save">
+        <div> 
           <input type="text" v-model="input" :placeholder="setPlaceHolder" name="title" />
+            <selectType :isAdd="true" @setType="setType"></selectType>
+        </div>
+        <div class="form-btns flex align-center justify-between"> 
           <button type="submit" class="form-save">Save</button>
-          </form>
-          <selectType @setType="setType"></selectType>
-         	<RouterLink to="/note" class="form-back">back</RouterLink>
-  	
+          <RouterLink to="/note" class="form-back">Close</RouterLink>
+        </div>
+      </form>
     </section>
+    <div class="screen"></div> 
   `,
   data() {
     return {

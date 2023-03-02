@@ -42,7 +42,7 @@ function query(criteria) {
 			filteredList = filteredList.filter(mail => mail.isStared)
 		}
 
-		return filteredList.sort((a, b) => b.sentAt - a.sentAt)
+		return filteredList.sort((a, b) => new Date(b.sentAt) - new Date(a.sentAt))
 	})
 }
 

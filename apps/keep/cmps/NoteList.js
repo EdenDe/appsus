@@ -20,7 +20,7 @@ export default {
 	        
         </li>  
       </ul>
-     
+      <RouterView/>
     `,
   data() {
     return {

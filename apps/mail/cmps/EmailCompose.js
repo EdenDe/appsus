@@ -15,7 +15,7 @@ export default {
 				</div>
 			</header>
 			<form v-if="!minimize" @submit.prevent="send">
-				<input type="text" v-model="formData.to" placeholder="Recipients" required>
+				<input type="text" v-model="formData.to" placeholder="Recipients" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
 				<input type="text" v-model="formData.subject" placeholder="Subject" required>
 				<textarea type="text" v-model="formData.body" rows="5" required></textarea>
 				<div class="flex justify-between"> 

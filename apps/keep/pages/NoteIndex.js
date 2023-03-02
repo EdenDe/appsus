@@ -14,18 +14,15 @@ export default {
   template: `
     
       <section class="note-index">
-
         <section class="search-filter "> 
           <div class="fa magnifying-glass flex align-center justify-center circle-hover"></div>
           <input v-model="searchKey" type="search" placeholder="Search"/>
+          <NoteFilter @onSetFilter="onSetFilterBy" />
         </section>
-        <NoteFilter @onSetFilter="onSetFilterBy" />
-      
-        <RouterLink to="/note/edit" class="btn-new-note">Add Note</RouterLink>
+        <RouterLink to="note/edit" class="btn-new-note">Add Note</RouterLink>
         <NoteList 
         :notes="pinnedNotes"
         v-if="notes"
-        @save='savedNote'
         @pin="pin"
         @remove="remove"
         @copy="copy"
@@ -33,7 +30,6 @@ export default {
         />
         <NoteList 
         :notes="filteredNotes"
-        @save='savedNote'
         v-if="notes"
         @pin="pin"
         @remove="remove"
@@ -99,13 +95,6 @@ export default {
     },
     copy(note) {
       note.id = ''
-      saveNoteToLocalStorage(note)
-    },
-    savedNote(note) {
-      // this.notes.push(note)
-      saveNoteToLocalStorage(note)
-    },
-    saveNoteToLocalStorage(note) {
       noteService
         .save(note)
         .then((note) => {
@@ -115,6 +104,9 @@ export default {
         .catch((err) => {
           showErrorMsg('Note copied failed')
         })
+    },
+    savedNote(note) {
+      this.notes.push(note)
     },
     setBgColor(color, noteId) {
       let note = this.notes.find((note) => note.id === noteId)
