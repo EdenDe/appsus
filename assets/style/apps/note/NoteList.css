@@ -4,7 +4,9 @@
   align-content: center;
 
 }
-
+.note-list:first-child{
+  column-span: all;
+}
 .note-list > .note-preview{
   display: grid;
   margin-bottom: 1em;

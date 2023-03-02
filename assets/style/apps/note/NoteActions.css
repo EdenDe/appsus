@@ -1,0 +1,28 @@
+.note-actions{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+}
+.note-actions:last-child{
+  margin-right: 10px;
+}
+
+.note-actions>*{
+  background-color: transparent;
+  border: none;
+  color: var(--clr4);
+  padding: 3px;
+  margin-bottom: 5px;
+ font-size: 1em;
+}
+
+.note-actions>*:hover{
+  color: var(--clr-keep-hover);
+}
+/* .note-actions>*:hover{
+  color: var(--clr-keep-hover);
+} */
+
+.pinned {
+  color: var(--clr-gmail-tag);
+}

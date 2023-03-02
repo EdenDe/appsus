@@ -1,22 +1,29 @@
-import NotePreview from '../cmps/NotePreview.js'
 import NoteActions from '../cmps/NoteActions.js'
+
+import NoteTxt from './NoteTxt.js'
+import NoteTodos from './NoteTodos.js'
+import NoteImg from './NoteImg.js'
+import NoteVideo from './NoteVideo.js'
 
 export default {
   props: ['notes'],
   template: `
     <ul class="note-list">
         <li v-for="note in notes" :key="note.id" class="note-preview" 
-        :style="{backgroundColor: note.style.backgroundColor}" >
-          <NotePreview :note="note"/>
-					<RouterLink :to="'/note/'+note.id">...more</RouterLink> 
-          <noteActions :note="note" @copy="onCopy" @remove="onRemove" @setBgColor="setBgColor"></noteActions>
+        :style="{backgroundColor: note.style.backgroundColor}">
+          <component :is="note.type" :info="note.info" /> 
+          <noteActions :note="note" @pin="onPin" @copy="onCopy" @remove="onRemove" @setBgColor="setBgColor"></noteActions>
 	        
         </li>  
       </ul>
      
     `,
+  created() {},
 
   methods: {
+    onPin(note) {
+      this.$emit('pin', note)
+    },
     onRemove(noteId) {
       this.$emit('remove', noteId)
     },
@@ -31,7 +38,10 @@ export default {
     },
   },
   components: {
-    NotePreview,
     NoteActions,
+    NoteTxt,
+    NoteTodos,
+    NoteImg,
+    NoteVideo,
   },
 }

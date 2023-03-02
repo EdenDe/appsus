@@ -17,8 +17,17 @@ export default {
         <NoteFilter @onSetFilter="onSetFilterBy" />
         <RouterLink to="/note/edit" class="btn-new-note">Add Note</RouterLink>
         <NoteList 
+        :notes="pinnedNotes"
+        v-if="notes"
+        @pin="pin"
+        @remove="remove"
+        @copy="copy"
+        @setBgColor="setBgColor"
+        />
+        <NoteList 
         :notes="filteredNotes"
         v-if="notes"
+        @pin="pin"
         @remove="remove"
         @copy="copy"
         @setBgColor="setBgColor"
@@ -28,16 +37,14 @@ export default {
   data() {
     return {
       notes: null,
-      filterBy: {
-        types: [
-          { NoteTxt: true },
-          { NoteTodos: true },
-          { NoteImg: true },
-          { NoteVideo: true },
-        ],
-        createdAt: Date.now(),
-      },
+      filterBy: [
+        { NoteTxt: true },
+        { NoteTodos: true },
+        { NoteImg: true },
+        { NoteVideo: true },
+      ],
       searchKey: '',
+      pinNotes: [],
     }
   },
   created() {
@@ -49,13 +56,34 @@ export default {
   computed: {
     filteredNotes() {
       let txt = new RegExp(this.searchKey, 'i')
+
       return this.notes.filter(
         (note) =>
-          txt.test(note.info.title) || this.filterBy.types[note.type] === true
+          txt.test(note.info.title) &&
+          note.isPinned === false &&
+          this.typeFilter(note)
       )
+    },
+    pinnedNotes() {
+      this.pinNotes = this.notes.filter((note) => note.isPinned === true)
+      return this.pinNotes
     },
   },
   methods: {
+    typeFilter(note) {
+      let isType = false
+
+      for (let idx in this.filterBy) {
+        if (Object.keys(this.filterBy[idx]).toString() !== note.type) continue
+        isType = this.filterBy[idx][note.type]
+      }
+      return isType
+    },
+    pin(note) {
+      this.notes.find((currNote) => currNote.id === note.id)
+      note.isPinned = !note.isPinned
+      noteService.save(note)
+    },
     remove(noteId) {
       noteService
         .remove(noteId)
@@ -91,15 +119,10 @@ export default {
       note.style.backgroundColor = color
       noteService.save(note)
     },
-    onSetFilterBy(type) {
-      let types = this.filterBy.types
-      let newTypes = types.map((currType) => {
-        currType = { currType: false }
-      })
-      console.log(newTypes)
-
-      // types[type] = true
-      // types = types
+    onSetFilterBy(filterBy) {
+      console.log(filterBy)
+      this.filterBy = filterBy
+      console.log(this.filterBy)
     },
   },
   components: {
