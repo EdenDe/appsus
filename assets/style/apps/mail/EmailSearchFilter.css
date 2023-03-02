@@ -1,0 +1,28 @@
+.search-filter {
+	position: relative;
+	width: 100%;
+}
+
+.search-filter .magnifying-glass {
+	position: absolute;
+	top: 50%;
+	width: 35px;
+	height: 35px;
+	left: 5px;
+	transform: translateY(-50%);
+}
+
+.search-filter input {
+	width: 100%;
+	border-radius: var(--border-radius);
+	padding: 15px;
+	padding-left: 50px;
+	background-color: var(--clr-gmail-input);
+	border: none;
+}
+
+.search-filter input:focus {
+	box-shadow: 0 0 4px 0px #808080c2;
+	outline: none;
+	background-color: var(--clr-gmail-input-focus);
+}

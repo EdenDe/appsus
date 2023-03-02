@@ -5,7 +5,7 @@ export default {
   <article :class="{'mail-preview':true,'unread-mail':!mail.isRead}">
     <p> {{mail.from}} </p>
     <p> {{mail.subject}} </p>
-    <LongTxt :txt="mail.body"/>
+		<p> {{mail.body}} </p>
     <p> {{dateFormatted}} </p>
   </article>
   `,

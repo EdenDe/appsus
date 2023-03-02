@@ -21,7 +21,9 @@
 .mail-preview > * {
 	margin: 0;
 	align-self: center;
-	justify-self: start;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow-x: hidden;
 	padding: 5px;
 }
 
@@ -33,7 +35,7 @@
 	font-family: 'roboto bold';
 }
 
-.mail-preview.unread-mail p:last-of-type {
-	font-size: 0.8em;
+.mail-preview p:last-of-type {
+	font-size: 0.9em;
 	justify-self: center;
 }

@@ -1,9 +1,13 @@
-import { mailService } from '../services/mail.service.js'
+import { mailService } from '../services/Email.service.js'
 
 export default {
 	template: `
-	<template v-if="mail">
-    <section class="mail-details" >
+	 <section v-if="mail" class="email-details-container">
+		<div class="details-options">
+			<RouterLink to="/mail" class="fa back"> </RouterLink>
+			<button class="fa trash-can" @click="remove(mail.id)"></button>
+		</div>
+    <section class="email-details" >
      <h2>{{mail.subject}}</h2> 
      <div class="flex justify-between">
       <p>{{mail.from}}</p>
@@ -11,7 +15,7 @@ export default {
      </div>
      <p>{{mail.body}}</p>
     </section>
-	</template>
+	 </section> 
   `,
 	data() {
 		return {
@@ -27,6 +31,10 @@ export default {
 		},
 	},
 	methods: {
+		remove(id) {
+			console.log(id)
+			this.$emit('remove', id)
+		},
 		loadMail() {
 			mailService
 				.get(this.mailId)

@@ -1,3 +1,5 @@
+import { mailService } from '../services/Email.service.js'
+
 export default {
 	props: ['iconsOnly'],
 	template: `
@@ -9,15 +11,25 @@ export default {
 										'icons-only':iconsOnly}"
 						:key="index"> 
 				 		<span :class="icon(index)" class="flex align-center justify-center filter-icon"> </span>
-				 		<span class="filter-file-name" >{{filter}}</span> 
+				 		<span class="filter-file-name" >{{filter.filterName}}</span> 
+						<span class="unread-number">{{filter.unreadCount}}</span> 
          </li>
       </ul>
   `,
 	data() {
 		return {
-			filterBy: ['inbox', 'starred', 'sent', 'draft', 'trash'],
+			filterBy: [
+				{ filterName: 'inbox', unreadCount: 0 },
+				{ filterName: 'starred', unreadCount: 0 },
+				{ filterName: 'sent', unreadCount: 0 },
+				{ filterName: 'draft', unreadCount: 0 },
+				{ filterName: 'trash', unreadCount: 0 },
+			],
 			filters: { status: 'inbox', isRead: null, isStared: null, lables: [] },
 		}
+	},
+	created() {
+		this.unreadCount()
 	},
 	methods: {
 		setFilter(filter) {
@@ -25,6 +37,16 @@ export default {
 			this.filters.isStared = filter === 'starred' ? true : false
 
 			this.$emit('setFilter', this.filters)
+		},
+		unreadCount() {
+			this.filterBy.forEach(filter => {
+				mailService
+					.query({ status: filter.filterName, isRead: false, isStared: null, txt: '' })
+					.then(res => {
+						filter.unreadCount = res.length
+						console.log(filter.filterName, filter.unreadCount)
+					})
+			})
 		},
 	},
 	computed: {

@@ -15,11 +15,13 @@
 
 /* Apps */
 /* MAIL */
-@import 'apps/mail/MailIndex.css';
-@import 'apps/mail/MailList.css';
-@import 'apps/mail/MailPreview.css';
-@import 'apps/mail/Filters.css';
-@import 'apps/mail/MailCompose.css';
+@import 'apps/mail/EmailIndex.css';
+@import 'apps/mail/EmailList.css';
+@import 'apps/mail/EmailPreview.css';
+@import 'apps/mail/EmailFileFilters.css';
+@import 'apps/mail/EmailSearchFilter.css';
+@import 'apps/mail/EmailCompose.css';
+@import 'apps/mail/EmailDetails.css';
 
 /* NOTE */
 @import 'apps/note/NoteIndex.css';

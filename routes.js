@@ -1,7 +1,8 @@
 import HomePage from './views/HomePage.js'
 import AboutUs from './views/AboutUs.js'
-import MailIndex from './apps/mail/pages/MailIndex.js'
-import MailDetail from './apps/mail/pages/MailDetails.js'
+import EmailIndex from './apps/mail/pages/EmailIndex.js'
+import EmailDetail from './apps/mail/pages/EmailDetails.js'
+import EmailAll from './apps/mail/pages/EmailAll.js'
 import note from './apps/keep/pages/NoteIndex.js'
 import AddNote from './apps/keep/cmps/addNote.js'
 
@@ -21,15 +22,21 @@ const routerOptions = {
 		// mail
 		{
 			path: '/mail',
-			component: MailIndex,
+			component: EmailIndex,
 			children: [
 				{
+					path: '',
+					component: EmailAll,
+					props: true,
+				},
+				{
 					path: ':mailId',
-					component: MailDetail,
+					component: EmailDetail,
+					props: false,
 				},
 			],
 		},
-		{},
+
 		// notes
 		{
 			path: '/note',

@@ -1,0 +1,28 @@
+.email-details-container {
+	flex: 1;
+}
+
+.email-details {
+	width: 90%;
+}
+
+.email-details h2 {
+	margin-bottom: 10px;
+}
+
+.email-details > div {
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.details-options {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.details-options > * {
+	background-color: transparent;
+	border: none;
+	color: var(--clr4);
+}

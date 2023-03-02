@@ -3,11 +3,9 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
 
-import demoMails from '../data/demo-mails.json' assert { type: 'json' }
+import demoMails from '../data/demo-emails.json' assert { type: 'json' }
 
 const MAIL_KEY = 'mailDB'
-const USER_KEY = 'userDB'
-let gUser
 
 _createMails()
 
@@ -25,6 +23,7 @@ function query(criteria) {
 		const regex = new RegExp('^' + criteria.txt, 'i')
 
 		//TODO: label filter
+
 		let filteredList = mails.filter(
 			mail =>
 				(criteria.isRead === null || mail.isRead === criteria.isRead) &&

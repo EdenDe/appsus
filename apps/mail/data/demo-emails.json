@@ -1,0 +1,57 @@
+[
+  {
+    "id": "FcrgZ",
+    "subject": "Miss you!",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "isStared":true,
+    "sentAt" : 1677654900000,
+    "removedAt" : null,
+    "from": "momo@momo.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "COcYc",
+    "subject": "Confirm Your Font Awesome Account Email Address",
+    "body": "You're so close to using your first Font Awesome Kit and there's a Font Awesome account waiting just for you. We just need you to confirm your email address to finish setting you up! We promise, it'll just take a sec.",
+    "isStared":false,
+    "isRead": false,
+    "sentAt" : 1677521820000,
+    "removedAt" : null,
+    "from": "momo@momo.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "ZJoIa",
+    "subject": "Your GitLens Pro Trial is ending!",
+    "body": "Hey there,Today is the last day of your GitLens Pro trial. To continue using the powerful GitLens+ features like the Commit Graph, richer integration with GitLab Self-Managed, Worktrees and Visual File History with your private repos, upgrade to a paid GitLens plan. If you don't need access to GitLens+ features with private repos, no action is needed! You can continue to use these features for free with public repos forever.",
+    "isStared":false,
+    "isRead": false,
+    "sentAt" : 1677328260000,
+    "removedAt" : null,
+    "from": "momo@momo.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "PEg6J",
+    "subject": "Miss you!",
+    "body": "Would love to catch up sometimes",
+    "isStared":false,
+    "isRead": false,
+    "sentAt" : 1674654240000,
+    "removedAt" : null,
+    "from": "user@appsus.com",
+    "to": "momo@momo.com"
+  }, 
+   {
+    "id": "Ze8ri",
+    "subject": "OpenWeatherMap API Instruction",
+    "body": "API key: Your API key is adsgksdmgklnkh1124nlsdf, Within the next couple of hours, it will be activated and ready to use - You can later create more API keys on your account page - Please, always use your API key in each API call",
+    "isStared":false,
+    "isRead": false,
+    "sentAt" : 1646085600000,
+    "removedAt" : null,
+    "from": "momo@momo.com",
+    "to": "user@appsus.com"
+  }
+]
