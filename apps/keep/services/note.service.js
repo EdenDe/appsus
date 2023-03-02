@@ -68,9 +68,11 @@ function getInfo(type) {
 function _createNotes() {
 	let notes = utilService.loadFromStorage(NOTE_KEY)
 	if (!notes || !notes.length) {
-		fetch('../data/demo-notes.json').then(res => {
-			utilService.saveToStorage(NOTE_KEY, res)
-		})
+		fetch('../data/demo-notes.json')
+			.then(res => res.json())
+			.then(res => {
+				utilService.saveToStorage(NOTE_KEY, res)
+			})
 	}
 }
 
