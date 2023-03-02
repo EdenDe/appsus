@@ -1,3 +1,4 @@
+import { utilService } from '../../../services/util.service.js'
 import selectType from './selectType.js'
 
 export default {
@@ -7,21 +8,23 @@ export default {
     `,
   data() {
     return {
-      filters: [
-        { NoteTxt: false },
-        { NoteTodos: false },
-        { NoteImg: false },
-        { NoteVideo: false },
-      ],
+      filters: {
+        NoteTxt: this.fixQueryParams('NoteTxt'),
+        NoteTodos: this.fixQueryParams('NoteTodos'),
+        NoteImg: this.fixQueryParams('NoteImg'),
+        NoteVideo: this.fixQueryParams('NoteVideo'),
+      },
     }
   },
   methods: {
     onSetFilters(type) {
-      for (let idx in this.filters) {
-        if (Object.keys(this.filters[idx]).toString() !== type) continue
-        this.filters[idx][type] = !this.filters[idx][type]
-      }
+      this.filters[type] = !this.filters[type]
       this.$emit('onSetFilter', this.filters)
+    },
+    fixQueryParams(val) {
+      let res = utilService.getValFromParam(val)
+      res = res === 'true' || !res ? true : false
+      return res
     },
   },
 

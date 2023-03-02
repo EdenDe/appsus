@@ -12,9 +12,14 @@ margin-bottom: 5px;
   border: none;
   color: var(--clr4);
   opacity: 0;
-  margin: 5px;
+  margin: 7px;
+  padding: 0;
   font-size: 1em;
   transition: .3s;  
+}
+
+.btn-pin:hover{
+  opacity: 0.8;
 }
 
 .note-preview:hover .btn-pin{
@@ -25,10 +30,17 @@ margin-bottom: 5px;
   color: var(--clr-gmail-tag);
 }
 .note-preview>h1{
-  padding: .4em;
+  margin: 0;
+  margin-left: .6em;
+  margin-bottom: .6em;
+}
+
+.note-preview>ul{
+  margin-bottom: .4em;
 }
 
 .pick-color{
+  opacity: 0;
   display: grid;
   grid-auto-flow: column;
   max-width: 220px;
@@ -36,9 +48,15 @@ margin-bottom: 5px;
   padding: 5px;
   position: absolute;
   border-radius: var(--border-radius);
+  transition: .3s;
+}
+
+.btn-palette:hover .pick-color{
+  opacity: 1;
 }
 
 .btn-pick-color{
+  /* opacity: 0; */
   width: 30px;
   height: 30px;
   margin: 2px;
@@ -47,7 +65,7 @@ margin-bottom: 5px;
 }
 
 .btn-pick-color:hover{
-  opacity: 0.8;
+  scale: 1.2;
 }
 
 .btn-red{

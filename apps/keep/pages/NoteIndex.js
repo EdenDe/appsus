@@ -1,4 +1,5 @@
 import { noteService } from '../services/note.service.js'
+import { utilService } from '../../../services/util.service.js'
 
 import NoteFilter from '../cmps/NoteFilter.js'
 import NoteList from '../cmps/NoteList.js'
@@ -17,9 +18,9 @@ export default {
         <section class="search-filter "> 
           <div class="fa magnifying-glass flex align-center justify-center circle-hover"></div>
           <input v-model="searchKey" type="search" placeholder="Search"/>
-      </section>
-      
+        </section>
         <NoteFilter @onSetFilter="onSetFilterBy" />
+      
         <RouterLink to="/note/edit" class="btn-new-note">Add Note</RouterLink>
         <NoteList 
         :notes="pinnedNotes"
@@ -42,12 +43,12 @@ export default {
   data() {
     return {
       notes: null,
-      filterBy: [
-        { NoteTxt: true },
-        { NoteTodos: true },
-        { NoteImg: true },
-        { NoteVideo: true },
-      ],
+      filterBy: {
+        NoteTxt: this.fixQueryParams('NoteTxt'),
+        NoteTodos: this.fixQueryParams('NoteTodos'),
+        NoteImg: this.fixQueryParams('NoteImg'),
+        NoteVideo: this.fixQueryParams('NoteVideo'),
+      },
       searchKey: '',
       pinNotes: [],
     }
@@ -55,7 +56,9 @@ export default {
   created() {
     noteService
       .query()
-      .then((notes) => (this.notes = notes))
+      .then((notes) => {
+        this.notes = notes
+      })
       .catch(console.log)
   },
   computed: {
@@ -66,7 +69,7 @@ export default {
         (note) =>
           txt.test(note.info.title) &&
           note.isPinned === false &&
-          this.typeFilter(note)
+          this.filterBy[note.type] === true
       )
     },
     pinnedNotes() {
@@ -75,15 +78,6 @@ export default {
     },
   },
   methods: {
-    typeFilter(note) {
-      let isType = false
-
-      for (let idx in this.filterBy) {
-        if (Object.keys(this.filterBy[idx]).toString() !== note.type) continue
-        isType = this.filterBy[idx][note.type]
-      }
-      return isType
-    },
     pin(note) {
       this.notes.find((currNote) => currNote.id === note.id)
       note.isPinned = !note.isPinned
@@ -123,6 +117,12 @@ export default {
     },
     onSetFilterBy(filterBy) {
       this.filterBy = filterBy
+      utilService.setQueryParams(this.filterBy)
+    },
+    fixQueryParams(val) {
+      let res = utilService.getValFromParam(val)
+      res = res === 'true' || !res ? true : false
+      return res
     },
   },
   components: {

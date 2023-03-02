@@ -2,9 +2,7 @@
   display: grid;
   grid-auto-flow: column;
   justify-content: space-around;
-}
-.note-actions:last-child{
-  margin-right: 10px;
+  margin-bottom: 0.4em;
 }
 
 .note-actions>*{
@@ -22,12 +20,7 @@
 }
 
 .note-actions>*:hover{
-  
-  
   color: var(--clr-keep-hover);
 }
-/* .note-actions>*:hover{
-  color: var(--clr-keep-hover);
-} */
 
 

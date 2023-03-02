@@ -10,7 +10,10 @@ export default {
   template: `
     <ul class="note-list">
         <li v-for="note in notes" :key="note.id" class="note-preview" 
-        :style="{backgroundColor: note.style.backgroundColor}">
+        :style="{backgroundColor: note.style.backgroundColor}" @click="toggleEditor()">
+        <!-- <div class="editor" v-if="isEditing">
+          {{note.info.title}}
+        </div> -->
          <button @click="onPin(note)" class="btn-pin fa pin" :class="{pinned: note.isPinned}"></button>
           <component :is="note.type" :info="note.info" /> 
           <noteActions :note="note" @pin="onPin" @copy="onCopy" @remove="onRemove" @setBgColor="setBgColor"></noteActions>
@@ -19,11 +22,18 @@ export default {
       </ul>
      
     `,
-  created() {},
+  data() {
+    return {
+      isEditing: false,
+    }
+  },
 
   methods: {
     onPin(note) {
       this.$emit('pin', note)
+    },
+    toggleEditor() {
+      this.isEditing = !this.isEditing
     },
     onRemove(noteId) {
       this.$emit('remove', noteId)

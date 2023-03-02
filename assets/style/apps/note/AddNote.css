@@ -1,3 +1,8 @@
 .active-type{
   color: var(--clr3);
 } 
+
+.editor{
+  background-color: antiquewhite;
+  position: absolute;
+}
