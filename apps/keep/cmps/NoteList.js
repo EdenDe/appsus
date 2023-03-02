@@ -11,9 +11,7 @@ export default {
     <ul class="note-list">
         <li v-for="note in notes" :key="note.id" class="note-preview" 
         :style="{backgroundColor: note.style.backgroundColor}" @click="toggleEditor()">
-        <!-- <div class="editor" v-if="isEditing">
-          {{note.info.title}}
-        </div> -->
+  
          <button @click="onPin(note)" class="btn-pin fa pin" :class="{pinned: note.isPinned}"></button>
           <component :is="note.type" :info="note.info" @save="save(note)" /> 
           <noteActions :note="note" @pin="onPin" @copy="onCopy" @remove="onRemove" @setBgColor="setBgColor"></noteActions>
@@ -30,6 +28,7 @@ export default {
 
   methods: {
     save(note) {
+      console.log(note)
       this.$emit('save', note)
     },
     onPin(note) {

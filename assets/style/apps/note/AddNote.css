@@ -14,7 +14,8 @@
 	transform: translate(-50%, -50%);
 	background-color: rgb(182, 181, 181);
 	z-index: 1;
-	width: 60vw;
+	width: 70vw;
+  padding: 30px;
 	border-radius: var(--border-radius);
 }
 
@@ -30,6 +31,8 @@
 	border: none;
 	background-color: rgba(255, 255, 255, 0.717);
 	border-radius: var(--border-radius);
+  overflow: clip;
+  padding-right: 120px;
 }
 
 .note-edit h2 {
