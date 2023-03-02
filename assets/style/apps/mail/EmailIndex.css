@@ -1,5 +1,7 @@
 .mail-index {
 	background-color: var(--clr-bg-color-mail);
+
+	position: relative;
 }
 
 .mail-index .bars {

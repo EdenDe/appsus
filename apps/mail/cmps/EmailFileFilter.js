@@ -1,4 +1,4 @@
-import { mailService } from '../services/Email.service.js'
+import { emailService } from '../services/Email.service.js'
 
 export default {
 	props: ['iconsOnly'],
@@ -7,7 +7,7 @@ export default {
          <li v-for="filter,index in filterBy" 
 						@click="setFilter(filter.filterName)" 
 						class="flex align-center file-filter"
-						:class="{'active-filter': filter === filters.status,
+						:class="{'active-filter': filter.filterName === filters.status,
 										'icons-only':iconsOnly}"
 						:key="index"> 
 				 		<span :class="icon(index)" class="flex align-center justify-center filter-icon"> </span>
@@ -30,6 +30,7 @@ export default {
 		}
 	},
 	created() {
+		this.unreadCount()
 		this.unreadUpdatesInterval = setInterval(() => {
 			this.unreadCount()
 		}, 10000)
@@ -44,7 +45,7 @@ export default {
 		},
 		unreadCount() {
 			this.filterBy.forEach(filter => {
-				mailService
+				emailService
 					.query({ status: filter.filterName, isRead: false, isStared: null, txt: '' })
 					.then(res => {
 						filter.unreadCount = res.length

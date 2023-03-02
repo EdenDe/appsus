@@ -1,4 +1,3 @@
-import { mailService } from '../services/Email.service.js'
 import EmailAll from '../pages/EmailAll.js'
 import EmailFileFilter from '../cmps/EmailFileFilter.js'
 import EmailSearchFilter from '../cmps/EmailSearchFilter.js'
@@ -6,7 +5,7 @@ import EmailCompose from '../cmps/EmailCompose.js'
 
 export default {
 	template: `
-  <section class="mail-index flex-column" >
+  <section class="mail-index flex-column full" >
 		<header class="flex align-center justify-between hamburger-logo-container"> 
 			<button class="fa bars circle-hover" @click="toggleIconOnly">	</button>
 			<img src="../../../assets/img/gmail.jpg"/>

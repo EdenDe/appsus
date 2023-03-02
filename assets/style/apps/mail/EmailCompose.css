@@ -9,9 +9,95 @@
 }
 
 .btn-compose:hover {
-	box-shadow:var(--box-shadow-all);
+	box-shadow: var(--box-shadow-all);
 }
 
 .icons-only .btn-compose span {
 	display: none;
+}
+
+.email-compose {
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	background-color: var(--clr-google-bg);
+	box-shadow: var(--box-shadow-all);
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	min-width: 30vw;
+	z-index: 1;
+}
+
+.email-compose h3 {
+	margin: 0;
+}
+
+.email-compose header {
+	background-color: var(--clr-gmail-read);
+	padding: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	font-family: 'roboto bold';
+	cursor: pointer;
+}
+
+.email-compose form {
+	display: grid;
+	gap: 5px;
+}
+
+.email-compose input,
+textarea {
+	font-size: 12px;
+	padding: 5px;
+	margin: 5px;
+	border: none;
+	border-bottom: 1px solid lightgrey;
+	background-color: transparent;
+}
+
+textarea {
+	resize: none;
+	font-family: inherit;
+}
+
+.email-compose input:focus,
+textarea:focus {
+	outline: none;
+}
+
+.email-compose form button[type='submit'] {
+	background-color: #0b57d0;
+	color: white;
+	border-radius: 15px;
+	border: none;
+	margin-inline-start: 10px;
+	padding: 5px 10px;
+}
+
+.email-compose form button[type='submit']:hover {
+	box-shadow: var(--box-shadow-all);
+}
+
+.email-compose form button.trash-can {
+	border: none;
+	background-color: transparent;
+}
+
+.email-compose form div {
+	margin-bottom: 10px;
+}
+
+.btns-compose-options > * {
+	background-color: transparent;
+	border: none;
+	color: var(--clr-google-font);
+}
+
+.btns-compose-options > *:hover {
+	opacity: 0.7;
+}
+
+.minimize {
+	transform: translateY(-25%);
 }

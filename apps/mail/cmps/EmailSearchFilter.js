@@ -18,8 +18,4 @@ export default {
 			this.$emit('setFilter', this.search)
 		},
 	},
-	computed: {},
-	created() {},
-	components: {},
-	emits: [],
 }

@@ -1,4 +1,4 @@
-import { mailService } from '../services/Email.service.js'
+import { emailService } from '../services/Email.service.js'
 
 export default {
 	template: `
@@ -27,18 +27,20 @@ export default {
 	},
 	watch: {
 		mailId() {
+			if (!this.mailId) return
 			this.loadMail()
 		},
 	},
 	methods: {
 		remove() {
-			mailService.remove(this.mailId).then(this.back).catch(console.log)
+			this.mail.removedAt = Date.now()
+			emailService.save(this.mail).then(this.back).catch(console.log)
 		},
 		back() {
 			this.$router.push('/mail')
 		},
 		loadMail() {
-			mailService
+			emailService
 				.get(this.mailId)
 				.then(mail => {
 					this.mail = mail
@@ -50,7 +52,7 @@ export default {
 				.catch(console.log)
 		},
 		updateToRead() {
-			mailService.save(this.mail).catch(console.log)
+			emailService.save(this.mail).catch(console.log)
 		},
 	},
 	computed: {

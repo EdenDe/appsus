@@ -91,6 +91,14 @@
 	content: '\f060';
 }
 
+.fa.close::before {
+	content: '\f00d';
+}
+
+.fa.minimize::before {
+	content: '\f2d1';
+}
+
 /* regular */
 .fa-regular.clock::before {
 	content: '\f017';

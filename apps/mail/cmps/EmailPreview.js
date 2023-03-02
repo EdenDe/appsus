@@ -23,7 +23,9 @@ export default {
 	},
 	computed: {
 		dateFormatted() {
+			if (!this.mail.sentAt) return ''
 			const date = new Date(this.mail.sentAt)
+
 			if (date.getFullYear() < new Date().getFullYear()) {
 				return date.getFullYear()
 			} else if (date.toLocaleDateString() === new Date().toLocaleDateString()) {

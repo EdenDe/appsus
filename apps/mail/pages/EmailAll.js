@@ -1,5 +1,5 @@
 import EmailList from '../cmps/EmailList.js'
-import { mailService } from '../services/Email.service.js'
+import { emailService } from '../services/Email.service.js'
 
 export default {
 	props: ['criteria'],
@@ -23,7 +23,7 @@ export default {
 	},
 	methods: {
 		getMails() {
-			mailService
+			emailService
 				.query(this.criteria)
 				.then(mails => {
 					this.mails = mails
@@ -31,11 +31,11 @@ export default {
 				.catch(console.log)
 		},
 		toggleStar(mailId) {
-			mailService
+			emailService
 				.get(mailId)
 				.then(mail => {
 					mail.isStared = !mail.isStared
-					mailService.save(mail).then(this.getMails).catch(console.log)
+					emailService.save(mail).then(this.getMails).catch(console.log)
 				})
 				.catch(console.log)
 		},

@@ -9,7 +9,7 @@ const MAIL_KEY = 'mailDB'
 
 _createMails()
 
-export const mailService = {
+export const emailService = {
 	query,
 	get,
 	remove,
@@ -22,8 +22,8 @@ function query(criteria) {
 	return storageService.query(MAIL_KEY).then(mails => {
 		const regex = new RegExp('^' + criteria.txt, 'i')
 
-		//TODO: label filter
-
+		//TODO: sort by date
+		console.log(criteria)
 		let filteredList = mails.filter(
 			mail =>
 				(criteria.isRead === null || mail.isRead === criteria.isRead) &&
@@ -35,14 +35,14 @@ function query(criteria) {
 		} else if (criteria.status === 'sent') {
 			filteredList = filteredList.filter(mail => mail.sentAt && mail.from === getUser().email)
 		} else if (criteria.status === 'trash') {
-			filteredList = filteredList.filter(mail => mail.removeAt)
+			filteredList = filteredList.filter(mail => mail.removedAt)
 		} else if (criteria.status === 'draft') {
 			filteredList = filteredList.filter(mail => !mail.sentAt)
 		} else if (criteria.status === 'starred') {
 			filteredList = filteredList.filter(mail => mail.isStared)
 		}
 
-		return filteredList
+		return filteredList.sort((a, b) => b.sentAt - a.sentAt)
 	})
 }
 
@@ -71,13 +71,13 @@ function save(mail) {
 
 function getEmptyMail() {
 	return {
-		id: '',
+		id: null,
 		subject: '',
 		body: '',
-		isRead: false,
+		isRead: true,
 		sentAt: null,
 		removedAt: null,
-		from: '',
+		from: getUser().email,
 		to: '',
 	}
 }
