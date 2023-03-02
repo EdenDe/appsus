@@ -102,10 +102,7 @@ export default {
         .save(note)
         .then((note) => {
           showSuccessMsg('Copied note')
-          noteService
-            .query()
-            .then((notes) => (this.notes = notes))
-            .catch(console.log)
+          noteService.query().then((notes) => (this.notes = notes))
         })
         .catch((err) => {
           showErrorMsg('Note copied failed')
@@ -120,9 +117,7 @@ export default {
       noteService.save(note)
     },
     onSetFilterBy(filterBy) {
-      console.log(filterBy)
       this.filterBy = filterBy
-      console.log(this.filterBy)
     },
   },
   components: {

@@ -8,10 +8,6 @@ export default {
   data() {
     return {
       filters: [
-        // 'NoteTxt',
-        // 'NoteTodos',
-        // 'NoteImg',
-        // 'NoteVideo',
         { NoteTxt: false },
         { NoteTodos: false },
         { NoteImg: false },
