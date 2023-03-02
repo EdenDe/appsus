@@ -5,7 +5,7 @@ export default {
 	 <section v-if="mail" class="email-details-container">
 		<div class="details-options">
 			<RouterLink to="/mail" class="fa back"> </RouterLink>
-			<button class="fa trash-can" @click="remove(mail.id)"></button>
+			<button class="fa trash-can" @click="remove"></button>
 		</div>
     <section class="email-details" >
      <h2>{{mail.subject}}</h2> 
@@ -31,9 +31,11 @@ export default {
 		},
 	},
 	methods: {
-		remove(id) {
-			console.log(id)
-			this.$emit('remove', id)
+		remove() {
+			mailService.remove(this.mailId).then(this.back).catch(console.log)
+		},
+		back() {
+			this.$router.push('/mail')
 		},
 		loadMail() {
 			mailService

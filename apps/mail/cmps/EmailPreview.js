@@ -3,9 +3,10 @@ export default {
 	props: ['mail'],
 	template: ` 
   <article :class="{'mail-preview':true,'unread-mail':!mail.isRead}">
+		<span :class="starIcon"></span>
     <p> {{mail.from}} </p>
     <p> {{mail.subject}} </p>
-		<p> {{mail.body}} </p>
+		<p class="mail-body"> {{mail.body}} </p>
     <p> {{dateFormatted}} </p>
   </article>
   `,
@@ -21,7 +22,11 @@ export default {
 				return new Intl.DateTimeFormat('en-He', { month: 'short', day: 'numeric' }).format(date)
 			}
 		},
+		starIcon() {
+			return this.mail.isStared ? 'fa filledStar' : 'fa-regular star'
+		},
 	},
+
 	components: {
 		LongTxt,
 	},

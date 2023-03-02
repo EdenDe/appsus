@@ -39,6 +39,7 @@ export default {
 			for (let filter in filters) {
 				this.criteria[filter] = filters[filter]
 			}
+			this.criteria = { ...this.criteria }
 		},
 		toggleIconOnly() {
 			this.iconsOnly = !this.iconsOnly
