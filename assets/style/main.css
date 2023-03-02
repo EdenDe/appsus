@@ -1,7 +1,6 @@
 /* Setup */
 @import 'setup/vars.css';
 @import 'setup/typography.css';
-@import 'setup/mq.css';
 
 /* Base */
 @import 'base/base.css';
@@ -35,3 +34,4 @@
 @import 'apps/note/AddNote.css';
 @import 'apps/note/NoteActions.css';
 
+@import 'setup/mq.css';

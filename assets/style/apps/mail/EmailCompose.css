@@ -1,11 +1,11 @@
 .btn-compose {
 	background-color: var(--clr-gmail-button);
-	padding: 15px;
+	padding: 1em;
 	border-radius: 10px;
 	border: none;
 	gap: 15px;
 	font-size: 0.875rem;
-	margin: 10px 10px;
+	margin: 5px;
 }
 
 .btn-compose:hover {

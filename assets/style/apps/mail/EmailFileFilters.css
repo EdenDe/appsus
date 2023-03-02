@@ -1,9 +1,7 @@
 .mail-filter .file-filter {
-	width: 90%;
 	font-size: 13px;
-	gap: 30px;
-	margin-inline-end: 100px;
-	padding-inline-start: 20px;
+	gap: 2vw;
+	padding-inline-start: 0.5em;
 	border-end-end-radius: 20px;
 	border-start-end-radius: 20px;
 	position: relative;
@@ -63,4 +61,12 @@
 
 .icons-only .unread-number {
 	display: none;
+}
+
+.mail-file-filters {
+	min-width: 15vw;
+}
+
+.icons-only.mail-file-filters {
+	min-width: fit-content;
 }

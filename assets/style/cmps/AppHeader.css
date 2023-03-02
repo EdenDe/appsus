@@ -4,7 +4,7 @@
 	box-shadow: var(--box-shadow-all);
 	height: 15vh;
 	padding: 1em;
-	margin-bottom: 20px;
+	margin-bottom: 8px;
 }
 
 .app-header nav a {

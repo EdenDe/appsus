@@ -1,6 +1,6 @@
 .mail-index {
 	background-color: var(--clr-bg-color-mail);
-
+	height: 78vh;
 	position: relative;
 }
 
@@ -24,4 +24,8 @@
 .hamburger-logo-container img {
 	width: 25px;
 	height: 20px;
+}
+
+.mail-index main {
+	gap: 5px;
 }

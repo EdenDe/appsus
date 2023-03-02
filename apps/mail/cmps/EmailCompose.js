@@ -1,7 +1,6 @@
 import { emailService } from '../services/Email.service.js'
 
 export default {
-	props: [],
 	template: `
     <button class="fa pencil btn-compose flex" @click="compose">
       <span>Compose</span>
@@ -24,7 +23,7 @@ export default {
 				</div>
 			</form>
 		</section>
-`,
+	`,
 
 	data() {
 		return {
