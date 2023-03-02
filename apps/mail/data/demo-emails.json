@@ -1,13 +1,13 @@
 [
   {
     "id": "FcrgZ",
-    "subject": "Miss you!",
-    "body": "Would love to catch up sometimes",
+    "subject": "Updates to Discord's Policies",
+    "body": "Transparency is important to us, and we want to let you know what's changing ahead of time so you can learn about what's new. These changes will take effect on March 27, 2023.",
     "isRead": false,
     "isStared":true,
     "sentAt" : 1677654900000,
     "removedAt" : null,
-    "from": "momo@momo.com",
+    "from": "notifications@discord.com",
     "to": "user@appsus.com"
   },
   {
@@ -18,7 +18,7 @@
     "isRead": false,
     "sentAt" : 1677521820000,
     "removedAt" : null,
-    "from": "momo@momo.com",
+    "from": "hello@fontawesome.com",
     "to": "user@appsus.com"
   },
   {
@@ -29,7 +29,7 @@
     "isRead": false,
     "sentAt" : 1677328260000,
     "removedAt" : null,
-    "from": "momo@momo.com",
+    "from": "gitlens@momo.com",
     "to": "user@appsus.com"
   },
   {
@@ -51,6 +51,17 @@
     "isRead": false,
     "sentAt" : 1646085600000,
     "removedAt" : null,
+    "from": "momo@momo.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "Ze8ri",
+    "subject": "Changes to the Google Cloud Platform",
+    "body": "We are writing to let you know about the following updates to the Third-Party Subprocessors we engage for Google Cloud Platform",
+    "isStared":false,
+    "isRead": false,
+    "sentAt" : 1646085600000,
+    "removedAt" : 1646085600000,
     "from": "momo@momo.com",
     "to": "user@appsus.com"
   }
