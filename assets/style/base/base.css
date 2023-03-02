@@ -9,7 +9,7 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	color: var(--clr4);
+	color: var(--clr-google-font);
 	font-family: 'roboto', 'sans-serif';
 }
 

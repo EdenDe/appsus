@@ -2,7 +2,7 @@ export default {
   props: ['note'],
   template: `
     <section class="note-actions">
-      <button @click="pinNote(note)" class="fa pin" :class="{pinned: note.isPinned}"></button>
+     
       <button @click="toggleChoseColor" class="fa palette"></button>
       <div v-if="isChoseColor" class="pick-color">
         
@@ -24,9 +24,9 @@ export default {
     }
   },
   methods: {
-    pinNote(note) {
-      this.$emit('pin', note)
-    },
+    // pinNote(note) {
+    //   this.$emit('pin', note)
+    // },
     onCopy(note) {
       this.$emit('copy', note)
     },

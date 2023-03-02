@@ -1,7 +1,7 @@
 .note-actions{
   display: grid;
   grid-auto-flow: column;
-  justify-content: end;
+  justify-content: space-around;
 }
 .note-actions:last-child{
   margin-right: 10px;
@@ -11,18 +11,23 @@
   background-color: transparent;
   border: none;
   color: var(--clr4);
-  padding: 3px;
-  margin-bottom: 5px;
- font-size: 1em;
+  opacity: 0;
+  margin: 5px;
+  font-size: 1em;
+  transition: .3s;
+}
+
+.note-preview:hover .note-actions>*{
+  opacity: 1;
 }
 
 .note-actions>*:hover{
+  
+  
   color: var(--clr-keep-hover);
 }
 /* .note-actions>*:hover{
   color: var(--clr-keep-hover);
 } */
 
-.pinned {
-  color: var(--clr-gmail-tag);
-}
+

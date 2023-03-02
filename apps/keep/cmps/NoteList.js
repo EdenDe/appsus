@@ -11,6 +11,7 @@ export default {
     <ul class="note-list">
         <li v-for="note in notes" :key="note.id" class="note-preview" 
         :style="{backgroundColor: note.style.backgroundColor}">
+         <button @click="onPin(note)" class="btn-pin fa pin" :class="{pinned: note.isPinned}"></button>
           <component :is="note.type" :info="note.info" /> 
           <noteActions :note="note" @pin="onPin" @copy="onCopy" @remove="onRemove" @setBgColor="setBgColor"></noteActions>
 	        

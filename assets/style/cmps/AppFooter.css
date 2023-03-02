@@ -1,0 +1,10 @@
+.app-footer{
+  height: 5vh;
+  background-color: var(--clr-header);
+  color: var(--clr-keep-grey);
+  box-shadow: var(--box-shadow-top);
+}
+
+.app-footer>p{
+  margin: 0;
+}

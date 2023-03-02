@@ -1,6 +1,7 @@
 /* Setup */
 @import 'setup/vars.css';
 @import 'setup/typography.css';
+@import 'setup/mq.css';
 
 /* Base */
 @import 'base/base.css';
@@ -9,9 +10,13 @@
 @import 'base/forms.css';
 
 /* General Components */
-@import 'cmps/HomePage.css';
 @import 'cmps/AppHeader.css';
+@import 'cmps/AppFooter.css';
 @import 'cmps/UserMsg.css';
+
+/* PAGES */
+@import 'cmps/HomePage.css';
+@import 'cmps/AboutPage.css';
 
 /* Apps */
 /* MAIL */

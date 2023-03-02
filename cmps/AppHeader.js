@@ -1,6 +1,6 @@
 export default {
   template: `
-        <header class="app-header">
+        <header class="app-header full">
             <h1>AppSus</h1>
             <nav>
                 <router-link to="/">Home</router-link> | 

@@ -5,6 +5,8 @@
 	--clr4: rgb(96, 96, 96);
 	--clr5: rgb(0, 0, 0);
 
+	--clr-google-font: #3c4043;
+
 	--clr-google-bg: #ffffff;
 
 	--clr-gmail-txt: #001d35;
@@ -20,7 +22,7 @@
 
 	--clr-keep-active: #feefc3;
 	--clr-keep-hover: #89a1ac;
-	--clr-keep-grey: #e8eaed;
+	--clr-keep-grey: #a6a9ae;
 	--clr-keep-red: #e6c9a8;
 	--clr-keep-pink: #fdcfe8;
 	--clr-keep-purple: #d7aefb;
@@ -28,4 +30,8 @@
 	--clr-keep-green: #ccff90;
 
 	--border-radius: 5px;
+
+	--box-shadow-all: 0 1px 3px 0 rgba(60, 64, 67, 0.302), 0 4px 8px 3px rgba(60, 64, 67, 0.149);
+	--box-shadow-top: 1px 1px 7px 4px rgb(60 64 67 / 30%),
+		3px 4px 8px 3px rgb(60 64 67 / 15%);
 }

@@ -8,8 +8,8 @@ import UserMsg from './cmps/UserMsg.js'
 import labelPicker from './cmps/labelPicker.js'
 
 const options = {
-	template: `
-        <section>
+  template: `
+        <section class="main-layout">
             <AppHeader />
             <RouterView />
             <AppFooter />
@@ -17,12 +17,12 @@ const options = {
             <!-- <labelPicker/> -->
         </section>
     `,
-	components: {
-		AppHeader,
-		AppFooter,
-		UserMsg,
-		labelPicker,
-	},
+  components: {
+    AppHeader,
+    AppFooter,
+    UserMsg,
+    labelPicker,
+  },
 }
 
 const app = createApp(options)

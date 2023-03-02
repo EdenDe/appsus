@@ -13,7 +13,12 @@ export default {
   template: `
     
       <section class="note-index">
+
+        <section class="search-filter "> 
+          <div class="fa magnifying-glass flex align-center justify-center circle-hover"></div>
           <input v-model="searchKey" type="search" placeholder="Search"/>
+      </section>
+      
         <NoteFilter @onSetFilter="onSetFilterBy" />
         <RouterLink to="/note/edit" class="btn-new-note">Add Note</RouterLink>
         <NoteList 

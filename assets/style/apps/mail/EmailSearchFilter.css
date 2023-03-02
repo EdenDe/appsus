@@ -1,6 +1,7 @@
 .search-filter {
 	position: relative;
 	width: 100%;
+	transition: all .4s;
 }
 
 .search-filter .magnifying-glass {
@@ -26,3 +27,8 @@
 	outline: none;
 	background-color: var(--clr-gmail-input-focus);
 }
+
+.search-filter input:hover {
+	box-shadow: var(--box-shadow-all);
+}
+
