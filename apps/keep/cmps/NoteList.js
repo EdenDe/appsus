@@ -8,7 +8,7 @@ import NoteVideo from './NoteVideo.js'
 export default {
   props: ['notes'],
   template: `
-    <ul class="note-list">
+    <ul class="note-list clean-list">
         <li v-for="note in notes" :key="note.id" class="note-preview" 
         :style="{backgroundColor: note.style.backgroundColor}" @click="toggleEditor()">
   

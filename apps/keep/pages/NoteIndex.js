@@ -15,11 +15,11 @@ export default {
     
       <section class="note-index">
         <section class="search-filter "> 
+          <RouterLink to="note/edit" class="btn-new-note fa plus" title="Add Note"></RouterLink>
           <div class="fa magnifying-glass flex align-center justify-center circle-hover"></div>
           <input v-model="searchKey" type="search" placeholder="Search"/>
-          <NoteFilter @onSetFilter="onSetFilterBy" />
+          <NoteFilter @onSetFilter="onSetFilterBy"/>
         </section>
-        <RouterLink to="note/edit" class="btn-new-note">Add Note</RouterLink>
         <NoteList 
         :notes="pinnedNotes"
         v-if="notes"
