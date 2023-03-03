@@ -1,16 +1,22 @@
+
 @media(max-width: 520px){
   .main-layout{
     grid-template-columns: 1fr;
   }
+  .main-layout > *:not(.full){
+    grid-column: 1/-1;
+  }
 }
+
+
 /* MEDUIM */
 /* @media (min-width: 720px) {
   .main-layout {
     grid-template-columns: 1fr;
   }
 
-  /* .main-header .btn-open-hamburger,
-  .main-header .btn-close-hamburger {
+  /* .app-header .btn-open-hamburger,
+  .app-header .btn-close-hamburger {
     display: none;
   } */
 
@@ -71,7 +77,7 @@
     grid-column: 2;
   }
 
-  .main-header .main-menu a {
+  .app-header .main-menu a {
     width: 130px;
     height: 130px;
   }

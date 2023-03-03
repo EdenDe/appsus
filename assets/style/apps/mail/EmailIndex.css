@@ -1,7 +1,10 @@
 .mail-index {
-	background-color: var(--clr-bg-color-mail);
-	height: 78vh;
+	height: 80vh;
 	position: relative;
+}
+
+.mail-index>*:not(header){
+	background-color: var(--clr-bg-color-mail);
 }
 
 .mail-index .bars {

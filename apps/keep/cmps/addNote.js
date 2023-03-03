@@ -20,8 +20,7 @@ export default {
             <selectType :isAdd="true" :initType="initType" @setType="setType" ></selectType>
         </div>
         <div class="form-btns flex align-center justify-between"> 
-          <!-- <RouterLink to="/note" class="form-back">Close</RouterLink> -->
-          <button type="submit" class="form-save">Close</button>
+           <button type="submit" class="form-save">Close</button>
         </div>
       </form>
     </section>
