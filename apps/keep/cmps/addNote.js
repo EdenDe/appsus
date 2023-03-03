@@ -1,5 +1,6 @@
 import { noteService } from '../services/note.service.js'
 import {
+  eventBus,
   showErrorMsg,
   showSuccessMsg,
 } from '../../../services/event-bus.service.js'
@@ -7,17 +8,19 @@ import {
 import selectType from './selectType.js'
 
 export default {
+  emits: ['save'],
+  name: 'addNote',
   template: `
-    <section @submit.prevent="save" class="note-edit">	
+    <section class="note-edit">	
       <h2>Add a note</h2>
-      <form @keyup.enter="onSave">
+      <form  @submit.prevent="save">
         <div> 
           <input type="text" v-model="input" :placeholder="setPlaceHolder" name="title" />
             <selectType :isAdd="true" @setType="setType"></selectType>
         </div>
         <div class="form-btns flex align-center justify-between"> 
-          <RouterLink to="/note" class="form-back">Close</RouterLink>
-          <button @click.prevent="onSave" type="submit" class="form-save">Save</button>
+          <!-- <RouterLink to="/note" class="form-back">Close</RouterLink> -->
+          <button type="submit" class="form-save">Close</button>
         </div>
       </form>
     </section>
@@ -50,10 +53,14 @@ export default {
     })
   },
   methods: {
-    onSave() {
+    save() {
+      // debugger
+
       this.setInfo()
+
+      // this.$emit('save', this.note)
+      eventBus.emit('save', this.note)
       this.$router.push('/note')
-      this.$emit('save', this.note)
     },
     setInfo() {
       if (this.currType === 'NoteImg' || this.currType === 'NoteVideo') {

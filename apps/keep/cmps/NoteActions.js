@@ -1,5 +1,7 @@
 export default {
   props: ['note'],
+  emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
+  name: 'NoteActions',
   template: `
     <section class="note-actions">
      

@@ -1,18 +1,19 @@
 export default {
   props: ['info'],
+  name: 'NoteTodos',
   template: `
   <ul class="todo-list clean-list">
       <li v-for="todo in info.todos" >
         <button v-if="todo.doneAt" class="fa-regular checked-box" @click="toggleDone(todo)"></button>
         <button v-if="!todo.doneAt" class="fa-regular check-box" @click="toggleDone(todo)"></button>
-        <textarea v-model="todo.txt" :class="{done: todo.doneAt}" class="edit-txt edit-todo" @input="fitContent($event)"></textarea>
+        <p  contenteditable="true" :class="{done: todo.doneAt}" class="edit-txt edit-todo" @input="oninput($event)">{{todo.txt}}</p>
       </li>
   </ul>
   `,
   methods: {
-    fitContent(ev) {
-      ev.target.style.height = ev.target.scrollHeight + 'px'
-      this.$emit('save', this.info.todos)
+    oninput(ev) {
+      this.info.title = ev.target.innerText
+      this.$emit('save', this.info.title)
     },
 
     toggleDone(todo) {

@@ -60,10 +60,9 @@ margin-bottom: 5px;
   color: var(--clr-gmail-tag);
 }
   
-.note-preview>h1{
+.note-preview>p{
   margin: 0;
   margin-left: .6em;
-  margin-bottom: .6em;
 }
 
 .note-preview>ul{
@@ -123,10 +122,12 @@ margin-bottom: 5px;
   color: var(--clr-google-font);
 }
 
+
+
 .todo-list>li{
   display: grid;
+  grid-template-columns: .5fr 2fr;
   grid-auto-flow: column;
-  justify-items: end;
   align-items: baseline;
 }
 

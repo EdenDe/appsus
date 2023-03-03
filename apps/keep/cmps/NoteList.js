@@ -7,6 +7,7 @@ import NoteVideo from './NoteVideo.js'
 
 export default {
   props: ['notes'],
+  name: 'NotesList',
   emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
   template: `
     <ul class="note-list clean-list">
@@ -50,7 +51,6 @@ export default {
       this.$emit('setBgColor', color, noteId)
     },
   },
-  emits: {},
   components: {
     NoteActions,
     NoteTxt,

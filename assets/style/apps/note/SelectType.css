@@ -1,0 +1,32 @@
+.selectType>* {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+.active-type {
+  color: var(--clr-google-font);
+  scale: 1.2;
+}
+
+
+.selectType>*:not(.active-type) {
+  color: var(--clr3);
+  scale: 1.1;
+}
+
+.selectType>*:not(.active-type):hover {
+  scale: 1.1;
+}
+.note-index .selectType {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  top: 30%;
+  right: 10px;
+}
+  
+.note-index .selectType>*:hover {
+  scale: 1.1;
+}

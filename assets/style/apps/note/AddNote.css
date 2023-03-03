@@ -43,26 +43,6 @@
 	margin-bottom: 5px;
 }
 
-.active-type {
-  color: var(--clr3);
-  scale: 1.2;
-}
-
-.note-edit .selectType > * {
-	background-color: transparent;
-	border: none;
-}
-
-.note-edit .selectType {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.note-edit .selectType > *:not(.active-type):hover {
-	scale: 1.1;
-}
-
 .screen {
 	position: absolute;
 	inset: 0;

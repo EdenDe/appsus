@@ -2,10 +2,10 @@ export default {
   props: ['isAdd'],
   template: `
     <section class="selectType">
-          <button @click="setType('NoteTxt')" class="fa txt" :class="{'active-type': type.NoteTxt}" title="Text"></button>
-          <button @click="setType('NoteTodos')" class="fa list" :class="{'active-type': type.NoteTodos}" title="List"></button>
-          <button @click="setType('NoteImg')" class="fa-regular image" :class="{'active-type': type.NoteImg}" title="Image"></button>
-          <button @click="setType('NoteVideo')" class="fa video" :class="{'active-type': type.NoteVideo}" title="Video"></button>	
+          <div @click.stop="setType('NoteTxt')" class="fa txt" :class="{'active-type': type.NoteTxt}" title="Text"></div>
+          <div @click.stop="setType('NoteTodos')" class="fa list" :class="{'active-type': type.NoteTodos}" title="List"></div>
+          <div @click.stop="setType('NoteImg')" class="fa-regular image" :class="{'active-type': type.NoteImg}" title="Image"></div>
+          <div @click.stop="setType('NoteVideo')" class="fa video" :class="{'active-type': type.NoteVideo}" title="Video"></div>	
     </section>
   `,
 
@@ -13,9 +13,9 @@ export default {
     return {
       type: {
         NoteTxt: true,
-        NoteTodos: false,
-        NoteImg: false,
-        NoteVideo: false,
+        NoteTodos: this.isAdd ? false : true,
+        NoteImg: this.isAdd ? false : true,
+        NoteVideo: this.isAdd ? false : true,
       },
       currType: 'NoteTxt',
     }

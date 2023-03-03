@@ -34,5 +34,7 @@
 @import 'apps/note/AddNote.css';
 @import 'apps/note/NoteActions.css';
 @import 'apps/note/NoteTopSection.css';
+@import 'apps/note/SelectType.css';
+
 
 @import 'setup/mq.css';

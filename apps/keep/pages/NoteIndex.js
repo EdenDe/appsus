@@ -6,16 +6,18 @@ import NoteList from '../cmps/NoteList.js'
 import addNote from '../cmps/addNote.js'
 
 import {
+  eventBus,
   showErrorMsg,
   showSuccessMsg,
 } from '../../../services/event-bus.service.js'
 
 export default {
+  emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
   template: `
     
       <section class="note-index">
         <section class="search-filter "> 
-          <RouterLink to="note/edit" @save="savedNote" class="btn-new-note fa plus" title="Add Note"></RouterLink>
+          <RouterLink to="/note/edit" class="btn-new-note fa plus" title="Add Note"></RouterLink>
           <div class="fa magnifying-glass flex align-center justify-center circle-hover"></div>
           <input v-model="searchKey" type="search" placeholder="Search"/>
           <NoteFilter @onSetFilter="onSetFilterBy"/>
@@ -23,7 +25,7 @@ export default {
         <NoteList 
         :notes="pinnedNotes"
         v-if="notes"
-        @save="savedNote"
+        @save="save"
         @pin="pin"
         @remove="remove"
         @copy="copy"
@@ -32,7 +34,7 @@ export default {
         <NoteList 
         :notes="filteredNotes"
         v-if="notes"
-        @save="savedNote"
+        @save="save"
         @pin="pin"
         @remove="remove"
         @copy="copy"
@@ -60,6 +62,8 @@ export default {
         this.notes = notes
       })
       .catch(console.log)
+
+    eventBus.on('save', this.save)
   },
   computed: {
     filteredNotes() {
@@ -107,7 +111,7 @@ export default {
           showErrorMsg('Note copied failed')
         })
     },
-    savedNote(note) {
+    save(note) {
       console.log('saving')
       noteService
         .save(note)

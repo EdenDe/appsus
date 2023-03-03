@@ -7,14 +7,14 @@ export default {
   
 
   <!-- <template v-if="isEdited"> -->
-    <textarea v-model="info.title" class="edit-txt edit-title" @input="fitContent($event)"></textarea>
+    <p contenteditable="true" class="edit-txt edit-title" @input="onInput($event)">{{info.title}}</p>
   <!-- </template> -->
   
 
   `,
   methods: {
-    fitContent(ev) {
-      ev.target.style.height = ev.target.scrollHeight + 'px'
+    onInput(ev) {
+      this.info.title = ev.target.innerText
       this.$emit('save', this.info.title)
     },
   },
