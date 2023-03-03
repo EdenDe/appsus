@@ -9,7 +9,7 @@ export default {
 			<RouterLink to="/mail" class="fa back circle-hover flex align-center justify-center" title="back"> </RouterLink>
 			<button class="fa trash-can circle-hover flex align-center justify-center" @click="remove" title="ramove"></button>
 			<button class="fa filledStar" @click="toggleStar"> </button>
-			<RouterLink to="/addNote" @click="saveAsNote" class="fa-regular file circle-hover" title="Save as Note"> </RouterLink>
+			<button @click="saveAsNote" class="fa-regular file circle-hover" title="Save as Note"> </button>
 		</div>
     <section class="email-details" >
      <h2>{{mail.subject}}</h2> 
@@ -63,7 +63,9 @@ export default {
 			emailService.save(this.mail).catch(console.log)
 		},
 		saveAsNote() {
-			utilService.setQueryParams({ body: this.mail.body })
+			utilService.setQueryParams({ title: this.mail.body })
+			//this.$router.push('/note/edit')
+			this.$router.push('/note/edit')
 		},
 		toggleStar() {
 			//TODO: toggle star using event bus maybe?

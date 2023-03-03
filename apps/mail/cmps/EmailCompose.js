@@ -1,3 +1,4 @@
+import { utilService } from '../../../services/util.service.js'
 import { emailService } from '../services/Email.service.js'
 
 export default {
@@ -26,6 +27,12 @@ export default {
 			formData: emailService.getEmptyMail(),
 			minimize: false,
 		}
+	},
+	created() {
+		this.formData.body = utilService.getValFromParam('body') || ''
+		this.formData.subject = utilService.getValFromParam('subject') || ''
+
+		console.log(this.formData)
 	},
 	methods: {
 		send() {
