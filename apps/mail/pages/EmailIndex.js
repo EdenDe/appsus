@@ -4,6 +4,7 @@ import EmailSearchFilter from '../cmps/EmailSearchFilter.js'
 import EmailCompose from '../cmps/EmailCompose.js'
 
 export default {
+	name: 'EmailIndex',
 	template: `
   <section class="mail-index flex-column full" >
 		<header class="flex align-center justify-between hamburger-logo-container"> 
@@ -17,7 +18,7 @@ export default {
 				<RouterLink to="/mail/compose" class="form-back">
 					<button class="fa pencil btn-compose flex">
 						<span>Compose</span>
-				</button>
+					</button>
 				</RouterLink>
 				<EmailFileFilter @setFilter="setFilter" />
 			</aside>

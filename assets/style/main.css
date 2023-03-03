@@ -12,6 +12,7 @@
 @import 'cmps/AppHeader.css';
 @import 'cmps/AppFooter.css';
 @import 'cmps/UserMsg.css';
+@import 'cmps/ToolTip.css';
 
 /* PAGES */
 @import 'cmps/HomePage.css';
@@ -35,6 +36,5 @@
 @import 'apps/note/NoteActions.css';
 @import 'apps/note/NoteTopSection.css';
 @import 'apps/note/SelectType.css';
-
 
 @import 'setup/mq.css';

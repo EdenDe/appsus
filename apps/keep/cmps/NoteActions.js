@@ -1,10 +1,10 @@
 import { utilService } from '../../../services/util.service.js'
 
 export default {
-  props: ['note'],
-  emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
-  name: 'NoteActions',
-  template: `
+	props: ['note'],
+	emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
+	name: 'NoteActions',
+	template: `
     <section class="note-actions">
      
       <button class="btn-palette fa palette" title="Change Color">
@@ -24,23 +24,29 @@ export default {
         </button>
     </section>
   `,
-  methods: {
-    sendNote() {
-      utilService.setQueryParams({
-        subject: 'my note',
-        body: this.note.info.title,
-      })
-      this.$router.push('/mail/compose')
-    },
-    onCopy(note) {
-      this.$emit('copy', note)
-    },
-    onRemove(noteId) {
-      this.$emit('remove', noteId)
-    },
-    setBgColor(color, noteId) {
-      this.$emit('setBgColor', color, noteId)
-    },
-  },
-  computed: {},
+	methods: {
+		sendNote() {
+			let body
+			if (this.note.type === 'NoteTxt') body = this.note.info.title
+			else if (this.note.type === 'NoteTodos')
+				body = this.note.info.todos.map(todo => todo.txt).join('\n')
+			else body = this.note.info.url
+
+			utilService.setQueryParams({
+				subject: 'my note',
+				body: body,
+			})
+			this.$router.push('/mail/compose')
+		},
+		onCopy(note) {
+			this.$emit('copy', note)
+		},
+		onRemove(noteId) {
+			this.$emit('remove', noteId)
+		},
+		setBgColor(color, noteId) {
+			this.$emit('setBgColor', color, noteId)
+		},
+	},
+	computed: {},
 }

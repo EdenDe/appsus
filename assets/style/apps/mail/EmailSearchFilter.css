@@ -1,7 +1,7 @@
 .search-filter {
 	position: relative;
 	width: 100%;
-	transition: all .4s;
+	transition: all 0.4s;
 }
 
 .search-filter .magnifying-glass {
@@ -31,4 +31,3 @@
 .search-filter input:hover {
 	box-shadow: var(--box-shadow-all);
 }
-

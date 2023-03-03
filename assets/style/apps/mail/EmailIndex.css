@@ -1,9 +1,10 @@
 .mail-index {
-	height: 80vh;
+	height: 77vh;
 	position: relative;
+	padding: 0 5px;
 }
 
-.mail-index>*:not(header){
+.mail-index > *:not(header) {
 	background-color: var(--clr-bg-color-mail);
 }
 
@@ -20,7 +21,6 @@
 
 .hamburger-logo-container {
 	padding: 5px;
-	padding-inline-end: 20px;
 	gap: 10px;
 }
 
@@ -31,4 +31,5 @@
 
 .mail-index main {
 	gap: 5px;
+	height: 100%;
 }

@@ -14,7 +14,7 @@
 	margin-left: 2px;
 }
 
-.filledStar {
+.mail-preview .filledStar {
 	color: var(--clr-gmail-tag);
 }
 
@@ -65,4 +65,22 @@
 .mail-preview p:last-of-type {
 	font-size: 0.9em;
 	justify-self: center;
+}
+
+.preview-email-options > * {
+	background-color: transparent;
+	border: none;
+	color: var(--clr-gmail-font);
+	width: 25px;
+	height: 25px;
+}
+.preview-email-options {
+	position: absolute;
+	right: 2px;
+	background-color: inherit;
+	display: none;
+}
+
+.mail-preview:hover .preview-email-options {
+	display: block;
 }

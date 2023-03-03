@@ -34,14 +34,19 @@
 	margin-bottom: 10px;
 }
 
-.details-options > * {
+.details-options *:not(div) {
 	background-color: transparent;
 	border: none;
 	width: 25px;
 	height: 25px;
 	color: var(--clr4);
+	position: relative;
 }
 
-.details-options .file {
+.details-options div {
 	margin-left: auto;
+}
+
+.email-details-container .filledStar {
+	color: var(--clr-gmail-tag);
 }
