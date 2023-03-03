@@ -26,9 +26,15 @@ export default {
   `,
   methods: {
     sendNote() {
+      let body
+      if (this.note.type === 'NoteTxt') body = this.note.info.title
+      else if (this.note.type === 'NoteTodos')
+        body = this.note.info.todos.map((todo) => todo.txt).join('\n')
+      else body = this.note.info.url
+
       utilService.setQueryParams({
-        subject: 'My Note',
-        body: this.note.info.title,
+        subject: 'my note',
+        body: body,
       })
       this.$router.push('/mail/compose')
     },

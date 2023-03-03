@@ -30,15 +30,19 @@ function query(criteria) {
 		)
 
 		if (criteria.status === 'inbox') {
-			filteredList = filteredList.filter(mail => mail.sentAt && mail.to === getUser().email)
+			filteredList = filteredList.filter(
+				mail => mail.sentAt && mail.to === getUser().email && !mail.removedAt
+			)
 		} else if (criteria.status === 'sent') {
-			filteredList = filteredList.filter(mail => mail.sentAt && mail.from === getUser().email)
+			filteredList = filteredList.filter(
+				mail => mail.sentAt && mail.from === getUser().email && !mail.removedAt
+			)
 		} else if (criteria.status === 'trash') {
 			filteredList = filteredList.filter(mail => mail.removedAt)
 		} else if (criteria.status === 'draft') {
-			filteredList = filteredList.filter(mail => !mail.sentAt)
+			filteredList = filteredList.filter(mail => !mail.sentAt && !mail.removedAt)
 		} else if (criteria.status === 'starred') {
-			filteredList = filteredList.filter(mail => mail.isStared)
+			filteredList = filteredList.filter(mail => mail.isStared && !mail.removedAt)
 		}
 
 		return filteredList.sort((a, b) => new Date(b.sentAt) - new Date(a.sentAt))

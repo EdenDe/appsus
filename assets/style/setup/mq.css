@@ -1,13 +1,11 @@
-
-@media(max-width: 520px){
-  .main-layout{
-    grid-template-columns: 1fr;
-  }
-  .main-layout > *:not(.full){
-    grid-column: 1/-1;
-  }
+@media (max-width: 520px) {
+	.main-layout {
+		grid-template-columns: 1fr;
+	}
+	.main-layout > *:not(.full) {
+		grid-column: 1/-1;
+	}
 }
-
 
 /* MEDUIM */
 /* @media (min-width: 720px) {
@@ -84,38 +82,60 @@
 
 } */
 
-@media (max-width: 800px) {
-	.mail-body {
-		display: none;
-	}
-	.mail-preview {
-		grid-template-columns:
-			30px
-			minmax(200px, 1fr)
-			minmax(30vw, 2fr)
-			minmax(100px, 1fr);
-	}
-	.mail-list {
-		width: 80vw;
-	}
-}
-
 @media (max-width: 650px) {
 	.mail-preview {
-		display: flex;
-		gap: 5px;
-		width: 100%;
+		padding: 10px;
+		grid-template-columns: 2fr 0.5fr;
+	}
+	.email-subject {
+		grid-row: 2;
+	}
+	.email-from {
+		grid-row: 1;
 	}
 	.mail-preview > * {
 		padding: 0;
 	}
-	.mail-preview > *:last-child {
-		display: none;
+	.btn-star {
+		place-self: center;
+	}
+	.mail-preview > :is(.btn-star, .email-date) {
+		grid-column: 2;
+	}
+	.mail-preview > :not(.btn-star, .email-date) {
+		grid-column: 1;
 	}
 	.mail-file-filters {
 		min-width: none;
 	}
 	:is(.filter-file-name, .unread-number, .btn-compose > span) {
+		display: none;
+	}
+
+	.active-filter .filter-icon {
+		border-radius: 100%;
+		background-color: var(--clr-active-filter);
+	}
+
+	.filter-icon:not(.active-filter *):hover {
+		border-radius: 100%;
+		background-color: var(--clr-gmail-hover);
+	}
+
+	.mail-filter .file-filter {
+		width: fit-content;
+		background-color: transparent;
+		margin-inline-end: 0;
+	}
+
+	.mail-filter .file-filter:not(.active-filter):hover {
+		background-color: transparent;
+	}
+	.mail-file-filters {
+		min-width: fit-content;
+	}
+
+	.mail-preview:hover .preview-email-options {
 		display: none;
 	}
 }

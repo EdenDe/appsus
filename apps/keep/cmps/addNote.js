@@ -2,6 +2,7 @@ import { noteService } from '../services/note.service.js'
 import { eventBus, showErrorMsg, showSuccessMsg } from '../../../services/event-bus.service.js'
 
 import selectType from './SelectType.js'
+import { utilService } from '../../../services/util.service.js'
 
 export default {
 	emits: ['save'],
@@ -35,6 +36,8 @@ export default {
 		if (!noteId) {
 			this.currType = 'NoteTxt'
 			this.note = noteService.getEmptyNote(this.currType)
+			this.input = utilService.getValFromParam('title') || ''
+			utilService.deleteQueryParam('title')
 			return
 		}
 		noteService.get(noteId).then(note => {
@@ -46,7 +49,7 @@ export default {
 	methods: {
 		save() {
 			this.setInfo()
-
+			console.log(this.note)
 			if (this.input !== '') {
 				eventBus.emit('save', this.note)
 			}
@@ -76,6 +79,7 @@ export default {
 
 		setType(type) {
 			this.currType = type
+			this.note.type = this.currType
 		},
 	},
 	computed: {

@@ -1,0 +1,21 @@
+.tooltip:hover span {
+	position: absolute;
+	left: 0;
+	top: 100%;
+
+	display: block;
+	z-index: 1;
+
+	width: fit-content;
+	height: fit-content;
+	color: var(--clr-gmail-read);
+	background-color: #121212a8;
+	border-radius: var(--border-radius);
+	font-size: 10px;
+	padding: 5px 5px;
+	text-decoration: none;
+}
+
+.tooltip span {
+	display: none;
+}

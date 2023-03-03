@@ -31,8 +31,8 @@ export default {
 	created() {
 		this.formData.body = utilService.getValFromParam('body') || ''
 		this.formData.subject = utilService.getValFromParam('subject') || ''
-
-		console.log(this.formData)
+		utilService.deleteQueryParam('body')
+		utilService.deleteQueryParam('subject')
 	},
 	methods: {
 		send() {

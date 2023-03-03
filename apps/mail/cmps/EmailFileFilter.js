@@ -1,3 +1,4 @@
+import { eventBus } from '../../../services/event-bus.service.js'
 import { emailService } from '../services/Email.service.js'
 
 export default {
@@ -31,13 +32,7 @@ export default {
 	},
 	created() {
 		this.unreadCount()
-		//TODO: try to use event bus every change instead
-		this.unreadUpdatesInterval = setInterval(() => {
-			this.unreadCount()
-		}, 10000)
-	},
-	unmounted() {
-		clearInterval(this.unreadUpdatesInterval)
+		eventBus.on('countUnreadFilters', this.unreadCount)
 	},
 	methods: {
 		setFilter(filter) {
