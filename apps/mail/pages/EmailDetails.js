@@ -1,11 +1,15 @@
+import { utilService } from '../../../services/util.service.js'
 import { emailService } from '../services/Email.service.js'
 
 export default {
+	name: 'EmailDetails',
 	template: `
 	 <section v-if="mail" class="email-details-container">
 		<div class="details-options">
-			<RouterLink to="/mail" class="fa back circle-hover flex align-center justify-center"> </RouterLink>
-			<button class="fa trash-can circle-hover flex align-center justify-center" @click="remove"></button>
+			<RouterLink to="/mail" class="fa back circle-hover flex align-center justify-center" title="back"> </RouterLink>
+			<button class="fa trash-can circle-hover flex align-center justify-center" @click="remove" title="ramove"></button>
+			<button class="fa filledStar" @click="toggleStar"> </button>
+			<RouterLink to="/addNote" @click="saveAsNote" class="fa-regular file circle-hover" title="Save as Note"> </RouterLink>
 		</div>
     <section class="email-details" >
      <h2>{{mail.subject}}</h2> 
@@ -13,7 +17,7 @@ export default {
       <p>{{mail.from}}</p>
       <p>{{dateFormatted}}</p>
      </div>
-     <p>{{mail.body}}</p>
+     <p class="email-body">{{mail.body}}</p>
     </section>
 	 </section> 
   `,
@@ -57,6 +61,12 @@ export default {
 		},
 		updateToRead() {
 			emailService.save(this.mail).catch(console.log)
+		},
+		saveAsNote() {
+			utilService.setQueryParams({ body: this.mail.body })
+		},
+		toggleStar() {
+			//TODO: toggle star using event bus maybe?
 		},
 	},
 	computed: {

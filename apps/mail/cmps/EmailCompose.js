@@ -21,7 +21,6 @@ export default {
 			</form>
 		</section>
 	`,
-
 	data() {
 		return {
 			formData: emailService.getEmptyMail(),
