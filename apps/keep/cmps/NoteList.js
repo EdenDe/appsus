@@ -7,13 +7,14 @@ import NoteVideo from './NoteVideo.js'
 
 export default {
   props: ['notes'],
+  emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
   template: `
     <ul class="note-list clean-list">
         <li v-for="note in notes" :key="note.id" class="note-preview" 
         :style="{backgroundColor: note.style.backgroundColor}" @click="toggleEditor()">
   
          <button @click="onPin(note)" class="btn-pin fa pin" :class="{pinned: note.isPinned}"></button>
-          <component :is="note.type" :info="note.info" @save="save(note)" /> 
+          <component :is="note.type" :info="note.info" @save="onSave(note)" /> 
           <noteActions :note="note" @pin="onPin" @copy="onCopy" @remove="onRemove" @setBgColor="setBgColor"></noteActions>
 	        
         </li>  
@@ -27,8 +28,7 @@ export default {
   },
 
   methods: {
-    save(note) {
-      console.log(note)
+    onSave(note) {
       this.$emit('save', note)
     },
     onPin(note) {
@@ -50,6 +50,7 @@ export default {
       this.$emit('setBgColor', color, noteId)
     },
   },
+  emits: {},
   components: {
     NoteActions,
     NoteTxt,

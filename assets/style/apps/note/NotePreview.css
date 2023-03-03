@@ -6,20 +6,19 @@ margin: auto;
 margin-bottom: 5px;
 }
 
-.note-preview{
-  height: fit-content;
+.note-preview>textarea{
+  margin: auto;
+  margin-top: 0;
 }
 
-.note-preview>ul{
-  list-style: none;
-}
+
 
 .edit-txt{
   background-color: transparent;
   border: none;
   color: var(--clr-google-font);
   width: 90%;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .edit-txt:focus{
@@ -127,6 +126,8 @@ margin-bottom: 5px;
 .todo-list>li{
   display: grid;
   grid-auto-flow: column;
+  justify-items: end;
+  align-items: baseline;
 }
 
 .done{

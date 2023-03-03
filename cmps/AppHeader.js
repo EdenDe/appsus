@@ -1,12 +1,12 @@
 export default {
   template: `
         <header class="app-header full">
-            <h1>AppSus</h1>
+            <router-link to="/" class="fa logo"> AppSus</router-link>  
             <nav>
-                <router-link to="/">Home</router-link> | 
+                <router-link to="/">Home</router-link>  
+                <router-link to="/mail">Mail</router-link>
+                <router-link to="/note">Keep</router-link>
                 <router-link to="/about">About</router-link>
-                <router-link to="/mail">mail</router-link>
-                <router-link to="/note">keep</router-link>
             </nav>
         </header>
     `,

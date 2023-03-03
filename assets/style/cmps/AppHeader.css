@@ -1,15 +1,38 @@
 .app-header {
+	display: grid;
+	grid-auto-flow: column;
+	align-items: baseline;
+	color: var(--clr3);
 	background-color: var(--clr-google-bg);
-	color: var(--secondary-clr1);
 	box-shadow: var(--box-shadow-all);
-	height: 15vh;
+	height: 10vh;
 	padding: 1em;
-	margin-bottom: 8px;
+	margin-bottom: 20px;
+	font-family: 'roboto bold';
+}
+
+.app-header nav{
+	justify-self: flex-end;
+}
+.logo{
+	font-size: 2em;
+	color: var(--clr-google-font);
+	transition: .3s all;
 }
 
 .app-header nav a {
 	margin-inline-end: 3vw;
+	transition: .3s all;
 }
+
+.app-header nav a:hover{
+	color: var(--clr-keep-hover);
+}
+
+
+
+
+
 
 /* @media (max-width: 720px) {
 	.app-header {
