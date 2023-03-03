@@ -2,10 +2,7 @@ import { emailService } from '../services/Email.service.js'
 
 export default {
 	template: `
-    <button class="fa pencil btn-compose flex" @click="compose">
-      <span>Compose</span>
-    </button>
-		<section class="email-compose" v-if="composing">
+		<section class="email-compose" >
 			<header class="flex justify-between align-center" @click="minimize=!minimize"> 
 				<h3>New message</h3>
 				<div class="btns-compose-options flex justify-center align-center">
@@ -29,7 +26,6 @@ export default {
 		return {
 			formData: emailService.getEmptyMail(),
 			minimize: false,
-			composing: false,
 		}
 	},
 	methods: {
@@ -47,10 +43,7 @@ export default {
 		},
 		closeCompose() {
 			this.formData = emailService.getEmptyMail()
-			this.composing = false
-		},
-		compose() {
-			this.composing = true
+			this.$router.push('/mail')
 		},
 	},
 }

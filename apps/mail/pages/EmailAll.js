@@ -6,6 +6,7 @@ export default {
 	template: `
     <section>
       <EmailList :mails="mails" v-if="mails" @toggleStar="toggleStar"/>
+			<RouterView/>
     </section>  
   `,
 	created() {

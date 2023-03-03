@@ -14,7 +14,11 @@ export default {
 		</header>
 		<main class="flex main"> 
 			<aside class="mail-file-filters" :class="{'icons-only':iconsOnly}"> 
-				<EmailCompose />
+				<RouterLink to="/mail/compose" class="form-back">
+					<button class="fa pencil btn-compose flex">
+						<span>Compose</span>
+				</button>
+				</RouterLink>
 				<EmailFileFilter @setFilter="setFilter" />
 			</aside>
 			<RouterView :criteria="criteria"/>
