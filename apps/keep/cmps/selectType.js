@@ -1,31 +1,42 @@
 export default {
-  props: ['isAdd'],
+  props: ['isAdd', 'initType'],
+  name: 'selectType',
   template: `
     <section class="selectType">
-          <div @click.stop="setType('NoteTxt')" class="fa txt" :class="{'active-type': type.NoteTxt}" title="Text"></div>
-          <div @click.stop="setType('NoteTodos')" class="fa list" :class="{'active-type': type.NoteTodos}" title="List"></div>
-          <div @click.stop="setType('NoteImg')" class="fa-regular image" :class="{'active-type': type.NoteImg}" title="Image"></div>
-          <div @click.stop="setType('NoteVideo')" class="fa video" :class="{'active-type': type.NoteVideo}" title="Video"></div>	
+          <div @click="setType('NoteTxt')" class="fa txt" :class="{'active-type': types.NoteTxt}" title="Text"></div>
+          <div @click="setType('NoteTodos')" class="fa list" :class="{'active-type': types.NoteTodos}" title="List"></div>
+          <div @click="setType('NoteImg')" class="fa-regular image" :class="{'active-type': types.NoteImg}" title="Image"></div>
+          <div @click="setType('NoteVideo')" class="fa video" :class="{'active-type': types.NoteVideo}" title="Video"></div>	
     </section>
   `,
 
   data() {
     return {
-      type: {
-        NoteTxt: true,
-        NoteTodos: this.isAdd ? false : true,
-        NoteImg: this.isAdd ? false : true,
-        NoteVideo: this.isAdd ? false : true,
+      types: {
+        NoteTxt: false,
+        NoteTodos: false,
+        NoteImg: false,
+        NoteVideo: false,
       },
-      currType: 'NoteTxt',
+      currType: this.initType,
     }
   },
-
+  created() {
+    // console.log('hi')t
+    // if (!this.initType) return
+    console.log(this.initType)
+    console.log(this.isAdd)
+    this.types[this.initType] = true
+    console.log(this.types)
+    // this.setType(this.initType)
+  },
   methods: {
     setType(type) {
-      this.type[type] = !this.type[type]
-      if (this.isAdd) this.type[this.currType] = !this.type[this.currType]
+      this.types[type] = !this.types[type]
+      if (this.isAdd) this.types[type] = !this.types[type]
       this.currType = type
+      console.log(this.currType)
+
       this.$emit('setType', type)
     },
   },

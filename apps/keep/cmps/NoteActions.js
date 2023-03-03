@@ -15,7 +15,7 @@ export default {
         <button class="btn-pick-color btn-green" @click="setBgColor('#ccff90', note.id)" title="Green"></button>
       </div>
       </button>
-      <RouterLink :to="'/note/edit/'+note.id" class="fa pencil" title="Edit"></RouterLink>		
+      <RouterLink :to="'/note/edit/'+note.id" :isAdd="true" :initType="note" class="fa pencil" title="Edit"></RouterLink>		
       <button @click="onCopy(note)" class="fa-regular copy" title="Copy"></button>
         <button @click="onRemove(note.id)" class="btn-remove fa trash-can" title="Delete">
         </button>

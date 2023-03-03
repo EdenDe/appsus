@@ -8,6 +8,7 @@ import {
 import selectType from './selectType.js'
 
 export default {
+  props: ['initType'],
   emits: ['save'],
   name: 'addNote',
   template: `
@@ -16,7 +17,7 @@ export default {
       <form  @submit.prevent="save">
         <div> 
           <input type="text" v-model="input" :placeholder="setPlaceHolder" name="title" />
-            <selectType :isAdd="true" @setType="setType"></selectType>
+            <selectType :isAdd="true" :initType="initType" @setType="setType" ></selectType>
         </div>
         <div class="form-btns flex align-center justify-between"> 
           <!-- <RouterLink to="/note" class="form-back">Close</RouterLink> -->
@@ -28,7 +29,7 @@ export default {
   `,
   data() {
     return {
-      note: noteService.getEmptyNote(this.currType),
+      note: null,
       showModal: false,
       type: {
         NoteTxt: true,
@@ -41,25 +42,28 @@ export default {
     }
   },
   created() {
+    console.log(this.initType)
     const { noteId } = this.$route.params
 
-    if (!noteId) return
+    if (!noteId) {
+      this.note = noteService.getEmptyNote(this.currType)
+      return
+    }
 
     noteService.get(noteId).then((note) => {
+      // console.log(note)
       this.note = note
-      console.log(note)
-      this.input = this.setTodosInput(note) || note.info.url || note.info.title
       this.setType(note.type)
+      this.input = this.setTodosInput(note) || note.info.url || note.info.title
     })
   },
   methods: {
     save() {
-      // debugger
-
       this.setInfo()
-
-      // this.$emit('save', this.note)
-      eventBus.emit('save', this.note)
+      console.log(this.input)
+      if (this.input !== '') {
+        eventBus.emit('save', this.note)
+      }
       this.$router.push('/note')
     },
     setInfo() {
