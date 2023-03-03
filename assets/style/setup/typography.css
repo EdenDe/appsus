@@ -107,6 +107,9 @@
 .fa-regular.star::before {
 	content: '\f005';
 }
+.fa-regular.envelop::before {
+	content: '\f0e0';
+}
 
 .fa-regular.user-group::before {
 	content: '\f500';

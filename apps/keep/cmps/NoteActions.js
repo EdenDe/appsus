@@ -1,8 +1,10 @@
+import { utilService } from '../../../services/util.service.js'
+
 export default {
-	props: ['note'],
-	emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
-	name: 'NoteActions',
-	template: `
+  props: ['note'],
+  emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
+  name: 'NoteActions',
+  template: `
     <section class="note-actions">
      
       <button class="btn-palette fa palette" title="Change Color">
@@ -17,20 +19,28 @@ export default {
       </button>
       <RouterLink :to="'/note/edit/'+note.id" class="fa pencil" title="Edit"></RouterLink>		
       <button @click="onCopy(note)" class="fa-regular copy" title="Copy"></button>
+      <button @click="sendNote" class="fa-regular envelop" title="Send"></button>
         <button @click="onRemove(note.id)" class="btn-remove fa trash-can" title="Delete">
         </button>
     </section>
   `,
-	methods: {
-		onCopy(note) {
-			this.$emit('copy', note)
-		},
-		onRemove(noteId) {
-			this.$emit('remove', noteId)
-		},
-		setBgColor(color, noteId) {
-			this.$emit('setBgColor', color, noteId)
-		},
-	},
-	computed: {},
+  methods: {
+    sendNote() {
+      utilService.setQueryParams({
+        subject: 'my note',
+        body: this.note.info.title,
+      })
+      this.$router.push('/mail/compose')
+    },
+    onCopy(note) {
+      this.$emit('copy', note)
+    },
+    onRemove(noteId) {
+      this.$emit('remove', noteId)
+    },
+    setBgColor(color, noteId) {
+      this.$emit('setBgColor', color, noteId)
+    },
+  },
+  computed: {},
 }
