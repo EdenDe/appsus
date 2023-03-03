@@ -3,6 +3,8 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
 
+import demoMails from '../data/demo-emails.json' assert { type: 'json' }
+
 const MAIL_KEY = 'mailDB'
 
 _createMails()
@@ -20,7 +22,7 @@ function query(criteria) {
 	return storageService.query(MAIL_KEY).then(mails => {
 		const regex = new RegExp('^' + criteria.txt, 'i')
 
-		console.log(criteria)
+		//TODO: sort by date
 		let filteredList = mails.filter(
 			mail =>
 				(criteria.isRead === null || mail.isRead === criteria.isRead) &&
@@ -82,10 +84,6 @@ function getEmptyMail() {
 function _createMails() {
 	let mails = utilService.loadFromStorage(MAIL_KEY)
 	if (!mails || !mails.length) {
-		fetch('../data/demo-emails.json')
-			.then(res => res.json())
-			.then(res => {
-				utilService.saveToStorage(MAIL_KEY, res)
-			})
+		utilService.saveToStorage(MAIL_KEY, demoMails)
 	}
 }

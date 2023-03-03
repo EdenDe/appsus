@@ -31,6 +31,7 @@ export default {
 	},
 	created() {
 		this.unreadCount()
+		//TODO: try to use event bus every change instead
 		this.unreadUpdatesInterval = setInterval(() => {
 			this.unreadCount()
 		}, 10000)

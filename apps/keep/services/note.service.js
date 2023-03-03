@@ -2,6 +2,8 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
 
+import demoNotes from '../data/demo-notes.json' assert { type: 'json' }
+
 const NOTE_KEY = 'noteDB'
 
 _createNotes()
@@ -68,11 +70,7 @@ function getInfo(type) {
 function _createNotes() {
 	let notes = utilService.loadFromStorage(NOTE_KEY)
 	if (!notes || !notes.length) {
-		fetch('../data/demo-notes.json')
-			.then(res => res.json())
-			.then(res => {
-				utilService.saveToStorage(NOTE_KEY, res)
-			})
+		utilService.saveToStorage(NOTE_KEY, demoNotes)
 	}
 }
 
