@@ -1,8 +1,8 @@
 export default {
-  props: ['note'],
-  emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
-  name: 'NoteActions',
-  template: `
+	props: ['note'],
+	emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
+	name: 'NoteActions',
+	template: `
     <section class="note-actions">
      
       <button class="btn-palette fa palette" title="Change Color">
@@ -15,22 +15,22 @@ export default {
         <button class="btn-pick-color btn-green" @click="setBgColor('#ccff90', note.id)" title="Green"></button>
       </div>
       </button>
-      <RouterLink :to="'/note/edit/'+note.id" :isAdd="true" :initType="note" class="fa pencil" title="Edit"></RouterLink>		
+      <RouterLink :to="'/note/edit/'+note.id" class="fa pencil" title="Edit"></RouterLink>		
       <button @click="onCopy(note)" class="fa-regular copy" title="Copy"></button>
         <button @click="onRemove(note.id)" class="btn-remove fa trash-can" title="Delete">
         </button>
     </section>
   `,
-  methods: {
-    onCopy(note) {
-      this.$emit('copy', note)
-    },
-    onRemove(noteId) {
-      this.$emit('remove', noteId)
-    },
-    setBgColor(color, noteId) {
-      this.$emit('setBgColor', color, noteId)
-    },
-  },
-  computed: {},
+	methods: {
+		onCopy(note) {
+			this.$emit('copy', note)
+		},
+		onRemove(noteId) {
+			this.$emit('remove', noteId)
+		},
+		setBgColor(color, noteId) {
+			this.$emit('setBgColor', color, noteId)
+		},
+	},
+	computed: {},
 }

@@ -1,7 +1,7 @@
 export default {
-  props: ['isAdd', 'initType'],
-  name: 'selectType',
-  template: `
+	props: ['filters', 'currType'],
+	name: 'selectType',
+	template: `
     <section class="selectType">
           <div @click="setType('NoteTxt')" class="fa txt" :class="{'active-type': types.NoteTxt}" title="Text"></div>
           <div @click="setType('NoteTodos')" class="fa list" :class="{'active-type': types.NoteTodos}" title="List"></div>
@@ -10,34 +10,26 @@ export default {
     </section>
   `,
 
-  data() {
-    return {
-      types: {
-        NoteTxt: false,
-        NoteTodos: false,
-        NoteImg: false,
-        NoteVideo: false,
-      },
-      currType: this.initType,
-    }
-  },
-  created() {
-    // console.log('hi')t
-    // if (!this.initType) return
-    console.log(this.initType)
-    console.log(this.isAdd)
-    this.types[this.initType] = true
-    console.log(this.types)
-    // this.setType(this.initType)
-  },
-  methods: {
-    setType(type) {
-      this.types[type] = !this.types[type]
-      if (this.isAdd) this.types[type] = !this.types[type]
-      this.currType = type
-      console.log(this.currType)
-
-      this.$emit('setType', type)
-    },
-  },
+	data() {
+		return {
+			types: {
+				NoteTxt: this.filters ? this.filters['NoteTxt'] : false,
+				NoteTodos: this.filters ? this.filters['NoteTodos'] : false,
+				NoteImg: this.filters ? this.filters['NoteImg'] : false,
+				NoteVideo: this.filters ? this.filters['NoteVideo'] : false,
+			},
+			activeType: this.currType,
+		}
+	},
+	created() {
+		this.types[this.currType] = true
+	},
+	methods: {
+		setType(type) {
+			this.types[type] = !this.types[type]
+			if (!this.filters) this.types[this.activeType] = !this.types[this.activeType]
+			this.activeType = type
+			this.$emit('setType', type)
+		},
+	},
 }
