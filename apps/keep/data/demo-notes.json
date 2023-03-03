@@ -1,4 +1,27 @@
  [
+   {
+    "id": "n102",
+    "type": "NoteImg",
+    "isPinned": false,
+    "info": {
+    "url": "https://cdn.pixabay.com/photo/2014/04/14/20/11/pink-324175_960_720.jpg"
+    },
+    "style": {
+    "backgroundColor": "#e6c9a8"
+    } 
+  },
+    {
+    "id": "n131",
+    "createdAt": 1112222,
+    "type": "NoteTxt",
+    "isPinned": true,
+    "style": {
+      "backgroundColor": "#ccff90"
+    },
+    "info": {
+      "title": "I can buy myself flowers!"
+    }
+  },
   {
     "id": "n101",
     "createdAt": 1112222,
@@ -8,43 +31,43 @@
       "backgroundColor": "#aecbfa"
     },
     "info": {
-      "title": "Fullstack Me Baby!"
+      "title": "I didn't wanna leave you \nI didn't wanna lie"
     }
   },
   {
     "id": "n121",
     "createdAt": 1112222,
     "type": "NoteTxt",
-    "isPinned": true,
+    "isPinned": false,
     "style": {
       "backgroundColor": "#aecbfa"
     },
     "info": {
-      "title": "wowoowowowo!"
-    }
-  },
-  {
-    "id": "n131",
-    "createdAt": 1112222,
-    "type": "NoteTxt",
-    "isPinned": true,
-    "style": {
-      "backgroundColor": "#aecbfa"
-    },
-    "info": {
-      "title": "note today!"
+      "title": "We were right 'til we weren't \nBuilt a home and watched it burn"
     }
   },
   {
     "id": "n141",
     "createdAt": 1112222,
     "type": "NoteTxt",
-    "isPinned": true,
+    "isPinned": false,
     "style": {
       "backgroundColor": "#aecbfa"
     },
     "info": {
-      "title": "Hey!"
+      "title": "I can take myself dancing \nAnd I can hold my own hand"
+    }
+  }, 
+  {
+    "id": "n141",
+    "createdAt": 1112222,
+    "type": "NoteTxt",
+    "isPinned": false,
+    "style": {
+      "backgroundColor": "#ccff90"
+    },
+    "info": {
+      "title": "I can love me better, baby......"
     }
   }, 
   {
@@ -52,35 +75,50 @@
     "type": "NoteImg",
     "isPinned": false,
     "info": {
-    "url": "https://cdn.pixabay.com/photo/2014/04/14/20/11/pink-324175_960_720.jpg"
+    "url": "https://cdn.pixabay.com/photo/2015/06/19/20/13/sunset-815270_960_720.jpg"
     },
     "style": {
-    "backgroundColor": "#aecbfa"
+    "backgroundColor": "#d7aefb"
     } 
   },
   {
     "id": "n102",
     "type": "NoteVideo",
-    "isPinned": false,
+    "isPinned": true,
     "info": {
-    "url": "https://www.youtube.com/embed/t5YnU8gPnYM"
+    "url": "https://www.youtube.com/embed/1tMC4-cL-N8" 
     },
     "style": {
-    "backgroundColor": "#aecbfa"
+    "backgroundColor": "#fdcfe8"
     } 
   },
   {
     "id": "n103",
     "type": "NoteTodos",
-    "isPinned": false,
+    "isPinned": true,
     "info": {
       "todos": [
-        { "txt": "Driving license", "doneAt": null },
-        { "txt": "Coding power", "doneAt": 187111111 }
+        { "txt": "Buy myself flowers", "doneAt": null },
+        { "txt": "Write my name in the sand", "doneAt": 187111111 },
+        { "txt": "Talk to myself for hours", "doneAt": null }
         ]
     }, 
      "style": {
-    "backgroundColor": "#aecbfa"
+    "backgroundColor": "#d7aefb"
+    } 
+  },
+    {
+    "id": "n103",
+    "type": "NoteTodos",
+    "isPinned": false,
+    "info": {
+      "todos": [
+        { "txt": "Paint my nails - cherry red", "doneAt": null },
+        { "txt": "Hold my own hand", "doneAt": 187111111 }
+        ]
+    }, 
+     "style": {
+    "backgroundColor": "#e6c9a8"
     } 
   }
 

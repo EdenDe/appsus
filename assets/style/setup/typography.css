@@ -95,6 +95,10 @@
 	content: '\2b';
 }
 
+.fa.logo::before {
+	content: '\e51e';
+}
+
 /* regular */
 .fa-regular.clock::before {
 	content: '\f017';

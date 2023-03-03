@@ -8,16 +8,16 @@ import selectType from './selectType.js'
 
 export default {
   template: `
-    <section class="note-edit">	
+    <section @submit.prevent="save" class="note-edit">	
       <h2>Add a note</h2>
-      <form @submit.prevent="save">
+      <form @keyup.enter="onSave">
         <div> 
           <input type="text" v-model="input" :placeholder="setPlaceHolder" name="title" />
             <selectType :isAdd="true" @setType="setType"></selectType>
         </div>
         <div class="form-btns flex align-center justify-between"> 
-          <button type="submit" class="form-save">Save</button>
           <RouterLink to="/note" class="form-back">Close</RouterLink>
+          <button @click.prevent="onSave" type="submit" class="form-save">Save</button>
         </div>
       </form>
     </section>
@@ -50,19 +50,10 @@ export default {
     })
   },
   methods: {
-    save() {
+    onSave() {
       this.setInfo()
-      console.log(this.note)
-
-      noteService
-        .save(this.note)
-        .then((note) => {
-          showSuccessMsg('note saved')
-          this.$router.push('/note')
-        })
-        .catch((err) => {
-          showErrorMsg('Note Save Failed')
-        })
+      this.$router.push('/note')
+      this.$emit('save', this.note)
     },
     setInfo() {
       if (this.currType === 'NoteImg' || this.currType === 'NoteVideo') {

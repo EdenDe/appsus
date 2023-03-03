@@ -3,14 +3,13 @@
   column-gap: 1em;
   align-content: center;
   margin-bottom: 1em;
+  
+}
 
-}
-.note-list:first-child{
-  column-span: all;
-}
 .note-list > .note-preview{
   display: grid;
   margin-bottom: 1em;
   break-inside: avoid;
   border-radius: var(--border-radius);
+  min-height: 140px;
 }
