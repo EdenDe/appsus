@@ -5,11 +5,9 @@ export default {
   emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
   name: 'NoteActions',
   template: `
-    <section class="note-actions">
-     
+    <section class="note-actions"> 
       <button class="btn-palette fa palette" title="Change Color">
-      <div  class="pick-color" >
-        
+      <div class="pick-color" >       
         <button class="btn-pick-color btn-red" @click="setBgColor('#e6c9a8', note.id)" title="Red"></button>
         <button class="btn-pick-color btn-pink" @click="setBgColor('#fdcfe8', note.id)" title="Pink"></button>
         <button class="btn-pick-color btn-purple" @click="setBgColor('#d7aefb', note.id)" title="Purple"></button>
