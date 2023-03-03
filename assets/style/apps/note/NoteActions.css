@@ -1,6 +1,7 @@
 .note-actions{
   display: grid;
   grid-auto-flow: column;
+  align-items: center;
   justify-content: space-around;
   margin-bottom: 0.4em;
 }

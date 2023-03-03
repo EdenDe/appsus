@@ -27,7 +27,7 @@ export default {
   methods: {
     sendNote() {
       utilService.setQueryParams({
-        subject: 'my note',
+        subject: 'My Note',
         body: this.note.info.title,
       })
       this.$router.push('/mail/compose')
