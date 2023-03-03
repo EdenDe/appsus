@@ -6,19 +6,19 @@ export default {
   name: 'NoteActions',
   template: `
     <section class="note-actions"> 
-      <button class="btn-palette fa palette" title="Change Color">
+      <button class="btn-palette fa palette">
       <div class="pick-color" >       
-        <button class="btn-pick-color btn-red" @click="setBgColor('#e6c9a8', note.id)" title="Red"></button>
-        <button class="btn-pick-color btn-pink" @click="setBgColor('#fdcfe8', note.id)" title="Pink"></button>
-        <button class="btn-pick-color btn-purple" @click="setBgColor('#d7aefb', note.id)" title="Purple"></button>
-        <button class="btn-pick-color btn-blue" @click="setBgColor('#aecbfa', note.id)" title="Blue"></button>
-        <button class="btn-pick-color btn-green" @click="setBgColor('#ccff90', note.id)" title="Green"></button>
+        <button class="btn-pick-color btn-red tooltip" @click="setBgColor('#e6c9a8', note.id)"><span>Red</span></button>
+        <button class="btn-pick-color btn-pink tooltip" @click="setBgColor('#fdcfe8', note.id)"><span>Pink</span></button>
+        <button class="btn-pick-color btn-purple tooltip" @click="setBgColor('#d7aefb', note.id)"><span>Purple</span></button>
+        <button class="btn-pick-color btn-blue tooltip" @click="setBgColor('#aecbfa', note.id)"><span>Blue</span></button>
+        <button class="btn-pick-color btn-green tooltip" @click="setBgColor('#ccff90', note.id)"><span>Green</span></button>
       </div>
       </button>
-      <RouterLink :to="'/note/edit/'+note.id" class="fa pencil" title="Edit"></RouterLink>		
-      <button @click="onCopy(note)" class="fa-regular copy" title="Copy"></button>
-      <button @click="sendNote" class="fa-regular envelop" title="Send"></button>
-        <button @click="onRemove(note.id)" class="btn-remove fa trash-can" title="Delete">
+      <RouterLink :to="'/note/edit/'+note.id" class="fa pencil tooltip"><span>Edit</span></RouterLink>		
+      <button @click="onCopy(note)" class="fa-regular copy tooltip"><span>Copy</span></button>
+      <button @click="sendNote" class="fa-regular envelop tooltip"><span>Send</span></button>
+        <button @click="onRemove(note.id)" class="btn-remove fa trash-can tooltip"><span>Delete</span>
         </button>
     </section>
   `,

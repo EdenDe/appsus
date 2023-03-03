@@ -1,7 +1,10 @@
 export default {
-	template: `
-        <section class="home-page">
-            <h1>Home sweet home</h1>
-        </section>
+  template: `
+        
+            <div class="hero full">
+	<h1>Relax <span>We will take care of everything else</span></h1>
+</div>
+    
+        
     `,
 }

@@ -1,12 +1,20 @@
-.tooltip:hover span {
+.tooltip{
+	position: relative;
+}
+.tooltip span {
+	display: none;
+}
+
+.tooltip:hover> span {
 	position: absolute;
-	left: 0;
+	/* top: 5px;
+		left: 5px; */
+	left: -30px;
 	top: 100%;
 
 	display: block;
-	z-index: 1;
-
-	width: fit-content;
+	
+	width: max-content;
 	height: fit-content;
 	color: var(--clr-gmail-read);
 	background-color: #121212a8;
@@ -15,7 +23,14 @@
 	padding: 5px 5px;
 	text-decoration: none;
 }
-
-.tooltip span {
-	display: none;
+.btn-star.tooltip:hover>span{
+left: 30px;
 }
+
+.preview-email-options>:last-child.tooltip:hover>span{
+left: -50px;
+}
+
+/* .note-actions .tooltip:hover>span{
+	top: 0;
+} */
