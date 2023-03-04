@@ -70,11 +70,17 @@
 }
 
 .dynamic {
+	min-width: 120px;
 	text-transform: capitalize;
 	font-size: 1.3em;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	
 }
 
-.animate__animated.animate__fadeIn {
-	animation-duration: 0.5s;
+.dynamic:hover{
+	background-color: rgba(99, 108, 110, 0.3);
+	border-radius: var(--border-radius);
+	
+	/* color: var(--clr3); */
 }
+

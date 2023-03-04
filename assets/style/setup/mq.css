@@ -19,12 +19,17 @@
 		font-size: 20px;
 		border-radius: 20px;
 		padding: 10px;
-
+	
 		/* background-color: var(--grey-clr-3); */
 		border: none;
 	}
+
 	.app-header nav a {
 		margin-inline-end: 0;
+		margin-bottom: 0;
+		padding: 5px;
+		border-top: 1px solid #ebebeb;
+		height: 10px;
 	}
 
 	.menu-open .main-menu > a:first-child {
@@ -38,7 +43,7 @@
 	}
 
 	.menu-open .main-menu > a:hover {
-		/* color: var(--blue-clr-2); */
+		color: var(--blue-clr-2);
 	}
 
 	.main-menu {
