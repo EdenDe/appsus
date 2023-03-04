@@ -7,7 +7,7 @@ import AppFooter from './cmps/AppFooter.js'
 import UserMsg from './cmps/UserMsg.js'
 
 const options = {
-	nam: 'mainApp',
+	name: 'mainApp',
 	template: `
         <section class="main-layout">
             <AppHeader />
@@ -16,7 +16,6 @@ const options = {
             <UserMsg />
         </section>
     `,
-
 	components: {
 		AppHeader,
 		AppFooter,

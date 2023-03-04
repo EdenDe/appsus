@@ -1,5 +1,5 @@
 import { eventBus } from '../../../services/event-bus.service.js'
-import { emailService } from '../services/Email.service.js'
+import { emailService } from '../services/email.service.js'
 
 import EmailList from '../cmps/EmailList.js'
 import EmptyMailList from '../cmps/EmptyMailList.js'
