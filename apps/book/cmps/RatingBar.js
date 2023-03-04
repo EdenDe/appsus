@@ -1,7 +1,7 @@
 export default {
 	props: ['rating', 'enableChange'],
 	template: `
-      <ul class="customRatingBarStyle" >
+      <ul class="customRatingBarStyle clean-list" >
         <li v-for="rate in maxRating" @click="setRating(rate)" class="star">
             <img :src="rate <= rating? starImgFilled : startImgCorner" class="starImgStyle">
         </li>

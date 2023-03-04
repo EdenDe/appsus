@@ -6,7 +6,7 @@ import { bookService } from '../services/book.service.js'
 export default {
 	template: `
 	<template v-if="book">
-		<nav>
+		<nav class="book-details-nav flex align-center">
 			<RouterLink to="/book" class="btn-back"> back</RouterLink>
 			<RouterLink :to="'/book/'+ book.prevBookId">Previous</RouterLink> 
 			<RouterLink :to="'/book/'+ book.nextBookId">Next</RouterLink>

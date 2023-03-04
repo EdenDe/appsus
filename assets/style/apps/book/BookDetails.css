@@ -16,17 +16,22 @@
 	gap: 10px;
 }
 
-nav {
-	display: flex;
+.book-details-nav {
+	margin-bottom: 10px;
 	gap: 20px;
 	margin-inline-start: 10px;
 	position: relative;
 	font-size: 14px;
 }
 
+.book-details-nav > a {
+	min-height: fit-content;
+}
+
 .btn-back {
 	right: 10px;
-	top: 5px;
+	top: 50%;
+	transform: translateY(-50%);
 	position: absolute;
 	background-color: transparent;
 	border: none;

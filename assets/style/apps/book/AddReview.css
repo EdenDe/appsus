@@ -15,7 +15,6 @@
 
 .book-review form {
 	display: grid;
-	width: max(50vw, 200px);
 
 	margin: auto;
 	gap: 10px;
@@ -44,11 +43,10 @@
 	border-radius: 10px;
 }
 
-.book-review form input:not[type='radio'] {
+.book-review form input:not([type='radio']) {
 	padding: 5px;
 	border-radius: 10px;
-	width: 50%;
-	min-width: 200px;
+	width: 200px;
 }
 
 legend {
@@ -81,11 +79,6 @@ fieldset {
 	width: 100%;
 	justify-content: center;
 	text-align: center;
-}
-
-.book-review form input[type='date'] {
-	width: 50%;
-	min-width: 100px;
 }
 
 .customRatingBarStyle {
