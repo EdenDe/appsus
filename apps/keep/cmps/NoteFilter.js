@@ -1,10 +1,10 @@
 import { utilService } from '../../../services/util.service.js'
-import selectType from './SelectType.js'
+import SelectType from './SelectType.js'
 
 export default {
 	name: 'noteFilter',
 	template: `
-    <selectType :filters="filters"  @setType="onSetFilters"></selectType>
+    <SelectType :filters="filters"  @setType="onSetFilters"/>
   
     `,
 	data() {
@@ -30,6 +30,6 @@ export default {
 	},
 
 	components: {
-		selectType,
+		SelectType,
 	},
 }

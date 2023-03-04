@@ -3,7 +3,6 @@ import { utilService } from '../../../services/util.service.js'
 
 import NoteFilter from '../cmps/NoteFilter.js'
 import NoteList from '../cmps/NoteList.js'
-import addNote from '../cmps/AddNote.js'
 
 import { eventBus, showErrorMsg, showSuccessMsg } from '../../../services/event-bus.service.js'
 
@@ -19,22 +18,22 @@ export default {
           <NoteFilter @onSetFilter="onSetFilterBy"/>
         </section>
         <NoteList 
-        :notes="pinnedNotes"
-        v-if="notes"
-        @save="save"
-        @pin="pin"
-        @remove="remove"
-        @copy="copy"
-        @setBgColor="setBgColor"
+					:notes="pinnedNotes"
+					v-if="notes"
+					@save="save"
+					@pin="pin"
+					@remove="remove"
+					@copy="copy"
+					@setBgColor="setBgColor"
         />
         <NoteList 
-        :notes="filteredNotes"
-        v-if="notes"
-        @save="save"
-        @pin="pin"
-        @remove="remove"
-        @copy="copy"
-        @setBgColor="setBgColor"
+					:notes="filteredNotes"
+					v-if="notes"
+					@save="save"
+					@pin="pin"
+					@remove="remove"
+					@copy="copy"
+					@setBgColor="setBgColor"
         />
       </section>
     `,
@@ -134,6 +133,5 @@ export default {
 	components: {
 		NoteFilter,
 		NoteList,
-		addNote,
 	},
 }
