@@ -9,7 +9,7 @@ export default {
   <section class="mail-index flex-column full" >
 		<header class="flex align-center justify-between hamburger-logo-container"> 
 			<button class="fa bars circle-hover" @click="toggleIconOnly">	</button>
-			<img src="../../../assets/img/gmail.jpg"/>
+			<img src="assets/img/gmail.jpg"/>
 			<span>Email</span>
 			<EmailSearchFilter @setFilter="setFilter"/>
 		</header>
