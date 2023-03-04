@@ -13,7 +13,7 @@
 	transform: translateY(-50%);
 }
 
-.search-filter input {
+.search-filter > input {
 	width: 100%;
 	border-radius: var(--border-radius);
 	padding: 15px;
@@ -22,12 +22,76 @@
 	border: none;
 }
 
-.search-filter input:focus {
+.search-filter > input:focus {
 	box-shadow: 0 0 4px 0px #808080c2;
 	outline: none;
 	background-color: var(--clr-gmail-input-focus);
 }
 
-.search-filter input:hover {
+.search-filter > input:hover {
+	box-shadow: var(--box-shadow-all);
+}
+
+.search-rule-filter {
+	position: absolute;
+	top: 50%;
+	width: 35px;
+	height: 35px;
+	right: 5px;
+	transform: translateY(-50%);
+}
+
+.rules-options {
+	display: none;
+	right: 0;
+	top: 8vh;
+	padding: 10px;
+	width: 100%;
+	background-color: var(--clr-google-bg);
+
+	position: absolute;
+	border-radius: var(--border-radius);
+	z-index: 999;
+}
+
+.show-list.rules-options {
+	display: grid;
+	gap: 5px;
+}
+
+.rules-options * {
+	gap: 15px;
+	align-items: end;
+}
+
+.rules-options label {
+	display: grid;
+	gap: 1vw;
+	grid-template-columns: 0.2fr 0.8fr;
+	font-size: 0.8rem;
+}
+
+.rules-options input {
+	padding: 5px;
+	border: none;
+	border-bottom: 1px solid grey;
+}
+
+.rules-options input:focus {
+	outline: none;
+}
+
+.search-filter form button {
+	background-color: #0b57d0;
+	color: white;
+	border-radius: 15px;
+	border: none;
+	padding: 5px 10px;
+
+	justify-self: end;
+	margin-top: 10px;
+}
+
+.search-filter form button:hover {
 	box-shadow: var(--box-shadow-all);
 }

@@ -1,9 +1,10 @@
 import { eventBus } from '../../../services/event-bus.service.js'
+
 export default {
 	props: ['mail'],
 	name: 'EmailPreview',
 	template: ` 
-  <article :class="{'mail-preview':true,'unread-mail':!mail.isRead}">
+  <article :class="{'mail-preview':true,'unread-mail':!mail.isRead}" >
 		<button :class="starIcon" class="btn-star circle-hover tooltip" @click.prevent="setStar">
 			<span> {{mail.isStared? '' : 'not '}} starred</span>
 		</button>

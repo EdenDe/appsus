@@ -2,6 +2,7 @@ import EmailAll from '../pages/EmailAll.js'
 import EmailFileFilter from '../cmps/EmailFileFilter.js'
 import EmailSearchFilter from '../cmps/EmailSearchFilter.js'
 import EmailCompose from '../cmps/EmailCompose.js'
+import { eventBus } from '../../../services/event-bus.service.js'
 
 export default {
 	name: 'EmailIndex',
@@ -11,40 +12,25 @@ export default {
 			<button class="fa bars circle-hover" @click="toggleIconOnly">	</button>
 			<img src="assets/img/gmail.jpg"/>
 			<span>Email</span>
-			<EmailSearchFilter @setFilter="setFilter"/>
+			<EmailSearchFilter/>
 		</header>
 		<main class="flex main"> 
 			<aside class="mail-file-filters" :class="{'icons-only':iconsOnly}"> 
-				<RouterLink to="/mail/compose" class="form-back">
-					<button class="fa pencil btn-compose flex">
-						<span>Compose</span>
-					</button>
+				<RouterLink to="/mail/compose" class="fa pencil btn-compose flex">
+					<span>Compose</span>
 				</RouterLink>
-				<EmailFileFilter @setFilter="setFilter" />
+				<EmailFileFilter />
 			</aside>
-			<RouterView :criteria="criteria"/>
+			<RouterView />
 		</main>
   </section>
     `,
 	data() {
 		return {
-			criteria: {
-				status: 'inbox',
-				txt: '',
-				isRead: null,
-				isStared: null,
-				lables: [],
-			},
 			iconsOnly: false,
 		}
 	},
 	methods: {
-		setFilter(filters) {
-			for (let filter in filters) {
-				this.criteria[filter] = filters[filter]
-			}
-			this.criteria = { ...this.criteria }
-		},
 		toggleIconOnly() {
 			this.iconsOnly = !this.iconsOnly
 		},

@@ -19,7 +19,7 @@
 		font-size: 20px;
 		border-radius: 20px;
 		padding: 10px;
-	
+
 		/* background-color: var(--grey-clr-3); */
 		border: none;
 	}
@@ -43,7 +43,7 @@
 	}
 
 	.menu-open .main-menu > a:hover {
-		color: var(--blue-clr-2);
+		background-color: var(--clr-gmail-hover);
 	}
 
 	.main-menu {
@@ -80,7 +80,13 @@
 		position: absolute;
 		inset: 0;
 		top: 10vh;
+		z-index: 1;
 		background-color: rgba(128, 128, 128, 0.39);
+	}
+
+	/* email-search-filter */
+	.rules-options label {
+		grid-template-columns: 1fr;
 	}
 }
 
@@ -112,9 +118,7 @@
 		display: none;
 	}
 	/* filters */
-	.mail-file-filters {
-		min-width: none;
-	}
+
 	:is(.filter-file-name, .unread-number, .btn-compose > span) {
 		display: none;
 	}

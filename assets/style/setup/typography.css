@@ -99,6 +99,14 @@
 	content: '\e51e';
 }
 
+.fa.filter::before {
+	content: '\f0b0';
+}
+
+.fa.sort::before {
+	content: '\f0dc';
+}
+
 /* regular */
 .fa-regular.clock::before {
 	content: '\f017';

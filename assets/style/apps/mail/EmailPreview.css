@@ -10,6 +10,7 @@
 	padding: 5px;
 	font-size: 13px;
 	background-color: var(--clr-gmail-read);
+
 	border-bottom: 0.5px solid #80808035;
 	margin-left: 2px;
 }
@@ -55,7 +56,7 @@
 }
 
 .mail-preview.unread-mail {
-	background-color: var(--clr-bg-color-mail);
+	background-color: var(--clr-google-bg);
 }
 
 .mail-preview.unread-mail p {
@@ -65,6 +66,7 @@
 .mail-preview p:last-of-type {
 	font-size: 0.9em;
 	justify-self: center;
+	padding: 0;
 }
 
 .preview-email-options > * {

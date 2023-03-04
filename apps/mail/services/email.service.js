@@ -3,9 +3,10 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
 
-// import demoMails from '../data/demo-emails.json' assert { type: 'json' }
+import demoMails from '../data/demo-emails.json' assert { type: 'json' }
 
 const MAIL_KEY = 'mailDB'
+let sortBy = 'date'
 
 _createMails()
 
@@ -16,37 +17,72 @@ export const emailService = {
 	save,
 	getEmptyMail,
 	getUser,
+	setSort,
+	getEmptyTxtFilters,
 }
 
 function query(criteria) {
 	return storageService.query(MAIL_KEY).then(mails => {
-		const regex = new RegExp('^' + criteria.txt, 'i')
+		let filteredList = _filterByText(mails, criteria.search)
 
-		//TODO: sort by date
-		let filteredList = mails.filter(
-			mail =>
-				(criteria.isRead === null || mail.isRead === criteria.isRead) &&
-				(regex.test(mail.subject) || regex.test(mail.body) || regex.test(mail.from))
+		filteredList = filteredList.filter(
+			mail => criteria.isRead === null || mail.isRead === criteria.isRead
+		)
+		filteredList = _filterByStatus(filteredList, criteria.status)
+		filteredList = filteredList.filter(
+			mail => criteria.isStared === null || mail.isStared === criteria.isStared
 		)
 
-		if (criteria.status === 'inbox') {
-			filteredList = filteredList.filter(
-				mail => mail.sentAt && mail.to === getUser().email && !mail.removedAt
-			)
-		} else if (criteria.status === 'sent') {
-			filteredList = filteredList.filter(
-				mail => mail.sentAt && mail.from === getUser().email && !mail.removedAt
-			)
-		} else if (criteria.status === 'trash') {
-			filteredList = filteredList.filter(mail => mail.removedAt)
-		} else if (criteria.status === 'draft') {
-			filteredList = filteredList.filter(mail => !mail.sentAt && !mail.removedAt)
-		} else if (criteria.status === 'starred') {
-			filteredList = filteredList.filter(mail => mail.isStared && !mail.removedAt)
+		if (sortBy === 'date') {
+			return filteredList.sort((a, b) => new Date(b.sentAt) - new Date(a.sentAt))
+		} else {
+			return filteredList.sort((a, b) => a.subject.localeCompare(b.subject))
 		}
-
-		return filteredList.sort((a, b) => new Date(b.sentAt) - new Date(a.sentAt))
 	})
+}
+
+function _filterByStatus(mails, status) {
+	if (status === 'trash') {
+		return mails.filter(mail => mail.removedAt)
+	} else if (status === 'starred') {
+		return mails.filter(mail => mail.isStared)
+	} else if (status === 'inbox') {
+		return mails.filter(mail => mail.sentAt && mail.to === getUser().email && !mail.removedAt)
+	} else if (status === 'sent') {
+		return mails.filter(mail => mail.sentAt && mail.from === getUser().email && !mail.removedAt)
+	} else if (status === 'draft') {
+		return mails.filter(mail => !mail.sentAt && !mail.removedAt)
+	}
+}
+
+function _filterByText(mails, search) {
+	if (!search.to && !search.from && !search.subject && !search.hasWords) {
+		const regex = new RegExp(search.txt, 'i')
+		return mails.filter(mail => regex.test(mail.subject) || regex.test(mail.body))
+	}
+	const regExpTo = new RegExp(search.to || null, 'i')
+	const regExpFrom = new RegExp(search.from || null, 'i')
+	const regExpSubject = new RegExp(search.subject || null, 'i')
+	const regExpHas = new RegExp(search.hasWords || null, 'i')
+
+	return mails.filter(
+		mail =>
+			regExpTo.test(mail.to) ||
+			regExpFrom.test(mail.from) ||
+			regExpSubject.test(mail.subject) ||
+			regExpHas.test(mail.body)
+	)
+}
+
+function getEmptyTxtFilters() {
+	return {
+		txt: null,
+		to: null,
+		from: null,
+		subject: null,
+		hasWords: null,
+		noWords: null,
+	}
 }
 
 function get(mailId) {
@@ -85,9 +121,13 @@ function getEmptyMail() {
 	}
 }
 
+function setSort(sort) {
+	sortBy = sort
+}
+
 function _createMails() {
 	let mails = utilService.loadFromStorage(MAIL_KEY)
 	if (!mails || !mails.length) {
-		//utilService.saveToStorage(MAIL_KEY, demoMails)
+		utilService.saveToStorage(MAIL_KEY, demoMails)
 	}
 }
