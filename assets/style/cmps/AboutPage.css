@@ -15,4 +15,29 @@
 .card {
 	display: grid;
 	text-align: center;
+	position: relative;
+	width: 200px;
+	box-shadow: var(--box-shadow-all);
+	border-radius: var(--border-radius);
+}
+
+.card p{
+	position: absolute;
+	left: 20px;
+	top: 70%;
+	display: none;
+	color: var(--clr3);
+	background-color: rgba(64, 63, 63, 0.5);
+	font-size: 2em;
+
+	border-radius: var(--border-radius);
+
+}
+
+.card:hover p{
+display: block;
+}
+
+.card:hover{
+	opacity: 0.9;
 }

@@ -1,11 +1,88 @@
 [
   {
+    "id": "FccgZ",
+    "subject": "ALOOOOO!",
+    "body": "Coding Academy Jan 2023 rooooooooolllllles!!!!1!1!!",
+    "isRead": false,
+    "isStared":true,
+    "sentAt" : 1677655900000,
+    "removedAt" : null,
+    "from": "gaykadosh333@codingAcademy.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "F3cgZ",
+    "subject": "ALOOOOO!",
+    "body": "Coding Academy jun 2023 rooooooooolllllles!!!!1!1!!",
+    "isRead": false,
+    "isStared":true,
+    "sentAt" : null,
+    "removedAt" : null,
+    "from": "gaykadosh333@codingAcademy.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "F3olgZ",
+    "subject": "Your next vacation start here",
+    "body": "HAHAHAHAHAHAHA!! IN YOUR DREAMS!",
+    "isRead": false,
+    "isStared":true,
+    "sentAt" : 1677655900000,
+    "removedAt" : null,
+    "from": "gaykadosh333@codingAcademy.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "F97olgZ",
+    "subject": "ועכשיו לקטע קוד",
+    "body": "function on(eventName, listener) {\n const callListener = ({ detail }) => {\n listener(detail)\n}\nwindow.addEventListener(eventName, callListener)\nreturn () => {\nwindow.removeEventListener(eventName, callListener)\n}\n}\n",
+    "isRead": false,
+    "isStared":true,
+    "sentAt" : 1677655900000,
+    "removedAt" : null,
+    "from": "gaykadosh333@codingAcademy.com",
+    "to": "user@appsus.com"
+  },
+  {
     "id": "FcrgZ",
     "subject": "Updates to Discord's Policies",
     "body": "Transparency is important to us, and we want to let you know what's changing ahead of time so you can learn about what's new. These changes will take effect on March 27, 2023.",
     "isRead": false,
     "isStared":true,
     "sentAt" : 1677654900000,
+    "removedAt" : null,
+    "from": "notifications@discord.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "Fc98gZ",
+    "subject": "Updates to Discord's Policies",
+    "body": "Transparency is important to us, and we want to let you know what's changing ahead of time so you can learn about what's new. These changes will take effect on March 27, 2023.",
+    "isRead": false,
+    "isStared":true,
+    "sentAt" : null,
+    "removedAt" : null,
+    "from": "notifications@discord.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "Fcr6Z",
+    "subject": "Updates to Discord's Policies",
+    "body": "Transparency is important to us, and we want to let you know what's changing ahead of time so you can learn about what's new. These changes will take effect on March 27, 2023.",
+    "isRead": false,
+    "isStared":true,
+    "sentAt" : 1677654900000,
+    "removedAt" : 1677654900000,
+    "from": "notifications@discord.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "Fc4gZ",
+    "subject": "Updates to Discord's Policies",
+    "body": "Transparency is important to us, and we want to let you know what's changing ahead of time so you can learn about what's new. These changes will take effect on March 27, 2023.",
+    "isRead": false,
+    "isStared":true,
+    "sentAt" : null,
     "removedAt" : null,
     "from": "notifications@discord.com",
     "to": "user@appsus.com"
@@ -28,6 +105,17 @@
     "isStared":false,
     "isRead": false,
     "sentAt" : 1677328260000,
+    "removedAt" : 1677328260000,
+    "from": "gitlens@momo.com",
+    "to": "user@appsus.com"
+  },
+  {
+    "id": "ZJoI3",
+    "subject": "Your GitLens Pro Trial is ending!",
+    "body": "Hey there,Today is the last day of your GitLens Pro trial. To continue using the powerful GitLens+ features like the Commit Graph, richer integration with GitLab Self-Managed, Worktrees and Visual File History with your private repos, upgrade to a paid GitLens plan. If you don't need access to GitLens+ features with private repos, no action is needed! You can continue to use these features for free with public repos forever.",
+    "isStared":false,
+    "isRead": false,
+    "sentAt" : null,
     "removedAt" : null,
     "from": "gitlens@momo.com",
     "to": "user@appsus.com"
@@ -43,15 +131,46 @@
     "from": "user@appsus.com",
     "to": "momo@momo.com"
   }, 
+  {
+    "id": "PEe6J",
+    "subject": "Dine out at women-owned restaurants",
+    "body": "Near and far, women restaurateurs are changing the game in the dining industry. \n This Women's History Month, indulge in a tasty meal at a women-owned restaurant locals love in Manhattan.",
+    "isStared":true,
+    "isRead": true,
+    "sentAt" : 1674654240500,
+    "removedAt" : null,
+    "from": "no-reply@mail.yelp.com",
+    "to": "momo@momo.com"
+  }, 
    {
     "id": "Ze8ri",
     "subject": "OpenWeatherMap API Instruction",
     "body": "API key: Your API key is adsgksdmgklnkh1124nlsdf, Within the next couple of hours, it will be activated and ready to use - You can later create more API keys on your account page - Please, always use your API key in each API call",
     "isStared":false,
     "isRead": false,
-    "sentAt" : 1646085600000,
+    "sentAt" : 1646085600320,
     "removedAt" : null,
     "from": "momo@momo.com",
+    "to": "user@appsus.com"
+  },
+  { "id": "Ze8rr",
+    "subject": "Email verification required",
+    "body": "Thanks for signing up to The Movie Database (TMDB). Before we can continue, we need to validate your email address.",
+    "isStared":false,
+    "isRead": true,
+    "sentAt" : 1646085696500,
+    "removedAt" : null,
+    "from": "no-reply@themoviedb.org",
+    "to": "user@appsus.com"
+  },
+  { "id": "ZZ8rr",
+    "subject": "Reset Your Font Awesome Password",
+    "body": "It looks like someone submitted a request to reset your Font Awesome password. There's nothing to do or worry about if it wasn't you. You can keep on keeping on. \n If this was you, reset your password here and get back into your accou",
+    "isStared":false,
+    "isRead": true,
+    "sentAt" : 1646085698790,
+    "removedAt" : null,
+    "from": "hello@fontawesome.com",
     "to": "user@appsus.com"
   },
   {
@@ -60,7 +179,7 @@
     "body": "We are writing to let you know about the following updates to the Third-Party Subprocessors we engage for Google Cloud Platform",
     "isStared":false,
     "isRead": false,
-    "sentAt" : 1646085600000,
+    "sentAt" : 1646085607600,
     "removedAt" : 1646085600000,
     "from": "momo@momo.com",
     "to": "user@appsus.com"
