@@ -37,12 +37,12 @@ export default {
 	methods: {
 		setFilter(filter) {
 			this.filters.status = filter
-			this.$emit('setFilter', this.filters)
+			eventBus.emit('setFilter', this.filters)
 		},
 		unreadCount() {
 			this.filterBy.forEach(filter => {
 				emailService
-					.query({ status: filter.filterName, isRead: false, isStared: null, txt: '' })
+					.query({ status: filter.filterName, isRead: false, isStared: null, search: { txt: '' } })
 					.then(res => {
 						filter.unreadCount = res.length
 					})

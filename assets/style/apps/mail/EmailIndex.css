@@ -3,7 +3,7 @@
 	padding: 0 5px;
 }
 
-.mail-index > *:not(header) {
+.mail-index {
 	background-color: var(--clr-bg-color-mail);
 }
 

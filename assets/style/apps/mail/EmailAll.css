@@ -1,0 +1,43 @@
+.email-all {
+	background-color: var(--clr-google-bg);
+	overflow-y: auto;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	width: 100%;
+}
+
+.filter-sort-btns > * {
+	background-color: transparent;
+	border: none;
+	color: var(--clr-google-font);
+	width: 25px;
+	height: 25px;
+}
+
+.tooltip:hover > span {
+	left: 0;
+}
+
+.email-all :is(.filter-options, .sort-options) {
+	background-color: var(--clr-google-bg);
+	z-index: 2;
+	position: absolute;
+	border-radius: var(--border-radius);
+	padding: 3px;
+}
+
+.email-all :is(.filter-options, .sort-options) > * {
+	padding: 5px;
+}
+
+.email-all :is(.filter-options, .sort-options) > *:hover {
+	background-color: var(--clr-gmail-hover);
+}
+
+:is(.filter-options, .sort-options) {
+	display: none;
+}
+
+.show-list:is(.filter-options, .sort-options) {
+	display: block;
+}

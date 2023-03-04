@@ -30,6 +30,7 @@
 @import 'apps/mail/EmailCompose.css';
 @import 'apps/mail/EmailDetails.css';
 @import 'apps/mail/EmptyEmailList.css';
+@import 'apps/mail/EmailAll.css';
 
 /* NOTE */
 @import 'apps/note/NoteIndex.css';

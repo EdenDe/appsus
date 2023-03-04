@@ -70,8 +70,7 @@ export default {
 			this.$router.push('/note/edit')
 		},
 		toggleStar() {
-			//FIXME: toggle star
-			eventBus.emit('toggleStar', this.mailId)
+			eventBus.emit('toggleStar', this.mail.id)
 		},
 	},
 	computed: {
