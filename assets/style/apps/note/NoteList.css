@@ -1,13 +1,16 @@
 .note-list{
   columns: 4 220px;
   column-gap: 1em;
+  row-gap: 1em;
   align-content: center;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
+  
   
 }
 
 .note-list > .note-preview{
   display: grid;
+  align-items: center;
   margin-bottom: 1em;
   break-inside: avoid;
   border-radius: var(--border-radius);
