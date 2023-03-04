@@ -1,11 +1,11 @@
-.tooltip{
+.tooltip {
 	position: relative;
 }
 .tooltip span {
 	display: none;
 }
 
-.tooltip:hover> span {
+.tooltip:hover > span {
 	position: absolute;
 	/* top: 5px;
 		left: 5px; */
@@ -13,22 +13,22 @@
 	top: 100%;
 
 	display: block;
-	
+
 	width: max-content;
 	height: fit-content;
 	color: var(--clr-gmail-read);
 	background-color: #121212a8;
 	border-radius: var(--border-radius);
-	font-size: 10px;
+	font-size: 0.8em;
 	padding: 5px 5px;
 	text-decoration: none;
 }
-.btn-star.tooltip:hover>span{
-left: 30px;
+.btn-star.tooltip:hover > span {
+	left: 30px;
 }
 
-.preview-email-options>:last-child.tooltip:hover>span{
-left: -50px;
+.preview-email-options > :last-child.tooltip:hover > span {
+	left: -50px;
 }
 
 /* .note-actions .tooltip:hover>span{

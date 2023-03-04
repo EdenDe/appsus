@@ -25,7 +25,9 @@
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
 	min-width: 30vw;
+	max-width: 150px;
 	z-index: 1;
+	font-size: 1em;
 }
 
 .email-compose h3 {
@@ -46,9 +48,13 @@
 	gap: 5px;
 }
 
+.email-compose :is(.trash-can, .minimize, .close) {
+	font-size: 1em;
+}
+
 .email-compose input,
 textarea {
-	font-size: 12px;
+	font-size: 1em;
 	padding: 5px;
 	margin: 5px;
 	border: none;
@@ -73,6 +79,7 @@ textarea:focus {
 	border: none;
 	margin-inline-start: 10px;
 	padding: 5px 10px;
+	font-size: 1em;
 }
 
 .email-compose form button[type='submit']:hover {
