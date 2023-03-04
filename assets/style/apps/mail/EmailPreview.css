@@ -61,6 +61,7 @@
 
 .mail-preview.unread-mail p {
 	font-family: 'roboto bold', Calibri, 'san serif';
+	font-weight: bold;
 }
 
 .mail-preview p:last-of-type {
