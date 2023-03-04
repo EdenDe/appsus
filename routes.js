@@ -4,7 +4,7 @@ import EmailIndex from './apps/mail/pages/EmailIndex.js'
 import EmailDetail from './apps/mail/pages/EmailDetails.js'
 import EmailAll from './apps/mail/pages/EmailAll.js'
 import note from './apps/keep/pages/NoteIndex.js'
-import AddNote from './apps/keep/cmps/addNote.js'
+import AddNote from './apps/keep/cmps/AddNote.js'
 import EmailCompose from './apps/mail/cmps/EmailCompose.js'
 
 const { createRouter, createWebHashHistory } = VueRouter

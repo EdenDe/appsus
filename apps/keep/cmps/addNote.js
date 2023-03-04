@@ -1,7 +1,7 @@
 import { noteService } from '../services/note.service.js'
 import { eventBus, showErrorMsg, showSuccessMsg } from '../../../services/event-bus.service.js'
 
-import selectType from './SelectType.js'
+import SelectType from './SelectType.js'
 import { utilService } from '../../../services/util.service.js'
 
 export default {
@@ -13,7 +13,7 @@ export default {
       <form  @submit.prevent="save">
         <div> 
           <input type="text" v-model="input" :placeholder="setPlaceHolder" name="title" />
-          <selectType :filters="null" :currType="currType" @setType="setType"></selectType>
+          <SelectType :filters="null" :currType="currType" @setType="setType"/>
         </div>
         <div class="form-btns flex align-center justify-between"> 
            <button type="submit" class="form-save">Close</button>
@@ -90,6 +90,6 @@ export default {
 		},
 	},
 	components: {
-		selectType,
+		SelectType,
 	},
 }
