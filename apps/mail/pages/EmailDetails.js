@@ -48,8 +48,12 @@ export default {
 	},
 	methods: {
 		remove() {
-			eventBus.emit('removeMail', this.mail)
-			this.back()
+			if (this.mail.removedAt) {
+				emailService.remove(this.mailId).then(this.back).catch(console.log)
+			} else {
+				this.mail.removedAt = Date.now()
+				emailService.save(this.mail).then(this.back).catch(console.log)
+			}
 		},
 		back() {
 			this.$router.push('/mail')
@@ -60,17 +64,22 @@ export default {
 				.then(mail => {
 					this.mail = mail
 					if (!mail.isRead) {
-						eventBus.emit('toggleRead', this.mailId)
+						this.mail.isRead = true
+						this.updateMail()
 					}
 				})
 				.catch(console.log)
+		},
+		updateMail() {
+			emailService.save(this.mail).catch(console.log)
 		},
 		saveAsNote() {
 			utilService.setQueryParams({ title: this.mail.body })
 			this.$router.push('/note/edit')
 		},
 		toggleStar() {
-			eventBus.emit('toggleStar', this.mail.id)
+			this.mail.isStared = !this.mail.isStared
+			this.updateMail()
 		},
 	},
 	computed: {

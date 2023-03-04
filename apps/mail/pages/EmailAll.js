@@ -22,8 +22,8 @@ export default {
 				<button class="fa sort circle-hover tooltip" @click="showSortOptions=!showSortOptions">
 					<span>sort</span>
 					<ul class="sort-options clean-list" :class="{'show-list':showSortOptions}">
-						<li @click="sortBy='Date'">Date</li>
-						<li @click="sortBy='Title'">Title</li>
+						<li @click="sortBy='date'">Date</li>
+						<li @click="sortBy='subject'">Subject</li>
 					</ul>
 				</button>
 			</section>
@@ -95,14 +95,12 @@ export default {
 			this.saveMail(mail)
 		},
 		removeMail(mailToDelete) {
-			const mailIdx = this.mails.findIndex(mail => mail.id === mailToDelete.id)
-			if (mailIdx === -1) return
-			this.mails.splice(mailIdx, 1)
+			this.mails = this.mails.filter(mail => mail.id !== mailToDelete.id)
 
 			if (mailToDelete.removedAt) {
 				emailService.remove(mailToDelete.id).then(this.getMails).catch(console.log)
 			} else {
-				mailToDelete.removedAt = new Date()
+				mailToDelete.removedAt = Date.now()
 				this.saveMail(mailToDelete)
 			}
 		},

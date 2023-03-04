@@ -55,13 +55,11 @@ export default {
 			bookService
 				.save(this.book)
 				.then(() => {
-					//FIXME
-					//eventBus.emit('show-msg', { txt: 'Book saved', type: 'success' })
+					showSuccessMsg('Book saved')
 					this.$router.push('/books')
 				})
 				.catch(() => {
-					//FIXME
-					eventBus.emit('show-msg', { txt: 'Book Save Failed', type: 'error' })
+					showErrorMsg('Book Save Failed')
 				})
 		},
 	},

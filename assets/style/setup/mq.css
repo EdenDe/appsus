@@ -43,7 +43,7 @@
 	}
 
 	.menu-open .main-menu > a:hover {
-		/* color: var(--blue-clr-2); */
+		background-color: var(--clr-gmail-hover);
 	}
 
 	.main-menu {
@@ -80,6 +80,7 @@
 		position: absolute;
 		inset: 0;
 		top: 10vh;
+		z-index: 1;
 		background-color: rgba(128, 128, 128, 0.39);
 	}
 

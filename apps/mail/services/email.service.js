@@ -6,7 +6,7 @@ import { storageService } from '../../../services/async-storage.service.js'
 import demoMails from '../data/demo-emails.json' assert { type: 'json' }
 
 const MAIL_KEY = 'mailDB'
-let sortBy
+let sortBy = 'date'
 
 _createMails()
 
@@ -33,7 +33,7 @@ function query(criteria) {
 			mail => criteria.isStared === null || mail.isStared === criteria.isStared
 		)
 
-		if (setSort === 'date') {
+		if (sortBy === 'date') {
 			return filteredList.sort((a, b) => new Date(b.sentAt) - new Date(a.sentAt))
 		} else {
 			return filteredList.sort((a, b) => a.subject.localeCompare(b.subject))

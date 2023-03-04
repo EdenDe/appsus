@@ -47,13 +47,11 @@ export default {
 			bookService
 				.remove(bookId)
 				.then(books => {
-					//FIXME
-					//eventBusService.emit('show-msg', { txt: 'Book Removed', type: 'success' })
+					showSuccessMsg('Book saved')
 					this.books = books
 				})
 				.catch(err => {
-					//FIXME
-					//eventBusService.emit('show-msg', { txt: 'Book Removed Failed', type: 'error' })
+					showErrorMsg('Book Save Failed')
 				})
 		},
 		savedBook(book) {
