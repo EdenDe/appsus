@@ -5,12 +5,4 @@ export default {
     <p>No Emails To Show</p>
   </section>
 `,
-	data() {
-		return {}
-	},
-	methods: {},
-	computed: {},
-	created() {},
-	components: {},
-	emits: [],
 }

@@ -1,4 +1,3 @@
-import LongTxt from '../../../cmps/LongTxt.js'
 import { eventBus } from '../../../services/event-bus.service.js'
 export default {
 	props: ['mail'],
@@ -55,9 +54,5 @@ export default {
 		starIcon() {
 			return this.isStar ? 'fa filledStar' : 'fa-regular star'
 		},
-	},
-
-	components: {
-		LongTxt,
 	},
 }
