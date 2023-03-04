@@ -8,19 +8,24 @@ export default {
   data() {
     return {
       words: ['emails', 'notes', 'books'],
-      word: '',
-      counter: 0,
+      word: 'emails',
+      counter: 1,
+      intervalId: 0,
     }
   },
-  created() {},
+  created() {
+    this.intervalId = setInterval(() => {
+      if (this.counter === 3) this.counter = 0
+      this.word = this.words[this.counter]
+      this.counter++
+    }, 3000)
+  },
   computed: {
     wordToShow() {
-      setInterval(() => {
-        if (this.counter === 3) this.counter = 0
-        this.word = this.words[this.counter]
-        this.counter++
-      }, 3000)
       return this.word
     },
+  },
+  unmounted() {
+    this.intervalId = clearInterval()
   },
 }
