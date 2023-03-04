@@ -1,7 +1,4 @@
 .mail-list {
 	background-color: var(--clr-google-bg);
-	flex: 1;
-	height: 100%;
-	flex-basis: 80vw;
 	overflow-y: auto;
 }

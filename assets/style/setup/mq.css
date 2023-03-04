@@ -7,82 +7,8 @@
 	}
 }
 
-/* MEDUIM */
-/* @media (min-width: 720px) {
-  .main-layout {
-    grid-template-columns: 1fr;
-  }
-
-  /* .app-header .btn-open-hamburger,
-  .app-header .btn-close-hamburger {
-    display: none;
-  } */
-
-/* .modal {
-    top: 20vh;
-    left: 10vw;
-    height: 60vh;
-    width: 80vw;
-  } */
-
-/* .btn-close-modal {
-    top: 21vh;
-    right: 10vw;
-  } */
-/* 
-  .modal-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(89, 88, 88, 0.6);
-    cursor: pointer;
-    pointer-events: none;
-    opacity: 0;
-
-    transition: opacity 0.6s;
-  } */
-
-/* body.modal-open .modal-screen {
-    pointer-events: auto;
-    opacity: 1;
-  }
-
-  p {
-    margin: 0 0 0.2em;
-  } */
-/* 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0 0 0.2em;
-    line-height: 1;
-  } */
-/* } */
-
-/* LARGE */
-
-/* @media (min-width: 850px) {
-  .main-layout {
-    grid-template-columns: minmax(20px, 1fr) minmax(auto, 1100px) minmax(20px, 1fr);
-  }
-
-  .main-layout>*:not(.full) {
-    grid-column: 2;
-  }
-
-  .app-header .main-menu a {
-    width: 130px;
-    height: 130px;
-  }
-
-} */
-
 @media (max-width: 650px) {
+	/* mail-preview */
 	.mail-preview {
 		padding: 10px;
 		grid-template-columns: 2fr 0.5fr;
@@ -105,37 +31,33 @@
 	.mail-preview > :not(.btn-star, .email-date) {
 		grid-column: 1;
 	}
+	.mail-preview:hover .preview-email-options {
+		display: none;
+	}
+	/* filters */
 	.mail-file-filters {
 		min-width: none;
 	}
 	:is(.filter-file-name, .unread-number, .btn-compose > span) {
 		display: none;
 	}
-
 	.active-filter .filter-icon {
 		border-radius: 100%;
 		background-color: var(--clr-active-filter);
 	}
-
 	.filter-icon:not(.active-filter *):hover {
 		border-radius: 100%;
 		background-color: var(--clr-gmail-hover);
 	}
-
 	.mail-filter .file-filter {
 		width: fit-content;
 		background-color: transparent;
 		margin-inline-end: 0;
 	}
-
 	.mail-filter .file-filter:not(.active-filter):hover {
 		background-color: transparent;
 	}
 	.mail-file-filters {
 		min-width: fit-content;
-	}
-
-	.mail-preview:hover .preview-email-options {
-		display: none;
 	}
 }

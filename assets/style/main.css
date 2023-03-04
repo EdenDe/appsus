@@ -27,6 +27,7 @@
 @import 'apps/mail/EmailSearchFilter.css';
 @import 'apps/mail/EmailCompose.css';
 @import 'apps/mail/EmailDetails.css';
+@import 'apps/mail/EmptyEmailList.css';
 
 /* NOTE */
 @import 'apps/note/NoteIndex.css';
