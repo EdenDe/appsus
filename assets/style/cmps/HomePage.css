@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
 
+
 .home-page {
 	height: 81vh;
 	background: linear-gradient(
@@ -71,5 +72,9 @@
 .dynamic {
 	text-transform: capitalize;
 	font-size: 1.3em;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.animate__animated.animate__fadeIn {
+	animation-duration: 0.5s;
 }
