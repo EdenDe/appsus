@@ -1,0 +1,59 @@
+.book-edit {
+	display: grid;
+	gap: 10px;
+	background-color: #f5f5f55f;
+	padding: 30px;
+	border-radius: 10px;
+}
+
+.book-edit form {
+	display: grid;
+	place-self: center;
+	gap: 10px;
+}
+
+.flex-row-container {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+}
+
+.book-edit h2 {
+	margin: 5px;
+	text-align: center;
+	font-size: 35px;
+	font-weight: bold;
+	color: #7230b0;
+}
+
+.book-edit input,
+textarea,
+select {
+	border-radius: 10px;
+	padding: 5px;
+	flex: 1;
+}
+
+.book-edit .form-save {
+	background: linear-gradient(90deg, #b48cd9 0%, #7230b0 85%);
+	border: none;
+	color: white;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 14px;
+}
+
+.book-edit .form-save:hover {
+	opacity: 0.8;
+}
+
+.book-edit .form-back {
+	color: #7230b0;
+	border: none;
+	background-color: transparent;
+	justify-self: center;
+}
+
+.book-edit .form-back:hover {
+	opacity: 0.8;
+}

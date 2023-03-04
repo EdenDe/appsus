@@ -1,0 +1,114 @@
+.book-review {
+	width: 80vw;
+	background-color: #6f3b97a1;
+	padding: 10px;
+	border-radius: 10px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+.book-review h3 {
+	font-size: 25px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.book-review form {
+	display: grid;
+	width: max(50vw, 200px);
+
+	margin: auto;
+	gap: 10px;
+}
+
+.book-review form > * {
+	place-self: center;
+}
+
+.book-review form button {
+	padding: 5px;
+	font-size: 16px;
+
+	color: whitesmoke;
+	background-color: transparent;
+	border: 3px solid transparent;
+	border-radius: 10px;
+}
+
+.book-review form button:hover {
+	border-color: whitesmoke;
+}
+
+.book-review form input {
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.book-review form input:not[type='radio'] {
+	padding: 5px;
+	border-radius: 10px;
+	width: 50%;
+	min-width: 200px;
+}
+
+legend {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.rate-by-text {
+	width: 100%;
+	max-width: 150px;
+	font-size: 12px;
+}
+
+.book-review input[type='radio'] {
+	margin-inline-end: 5px;
+	appearance: none;
+	border: 2px solid snow;
+}
+
+.book-review input[type='radio']:checked {
+	background-color: #580a77;
+}
+
+fieldset {
+	display: flex;
+	gap: 5px;
+	font-size: 14px;
+	border: none;
+	padding: 5px;
+	width: 100%;
+	justify-content: center;
+	text-align: center;
+}
+
+.book-review form input[type='date'] {
+	width: 50%;
+	min-width: 100px;
+}
+
+.customRatingBarStyle {
+	display: flex;
+	justify-content: space-between;
+	gap: 5px;
+}
+
+.customRatingBarStyle > div.star {
+	background-color: transparent;
+	flex: 1;
+}
+
+.book-review .starImgStyle {
+	cursor: pointer;
+}
+
+.customRatingBarStyle .star .starImgStyle {
+	width: max(25px, 5vw);
+	height: max(25px, 5vh);
+}
+
+.rate-by-select select {
+	width: 50px;
+	color: black;
+}

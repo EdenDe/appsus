@@ -1,0 +1,50 @@
+.app-header {
+	background-color: #e5d7f2;
+	position: sticky;
+	top: 0;
+	padding-top: 1vh;
+	z-index: 1;
+	height: 11vh;
+}
+
+.app-header section {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+
+	background-color: whitesmoke;
+	height: 7vh;
+	border-radius: 10px;
+}
+
+.app-header img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 11vh;
+}
+
+.app-header nav {
+	display: flex;
+	column-gap: 5vw;
+	padding-bottom: 2px;
+}
+
+.app-header nav a {
+	display: flex;
+	text-decoration: none;
+	column-gap: 5vw;
+	font-weight: bold;
+	font-size: 17px;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+
+.app-header nav a:hover {
+	background-color: #7230b0be;
+	color: whitesmoke;
+}
+
+.app-header nav:last-child {
+	margin-inline-end: 20px;
+}

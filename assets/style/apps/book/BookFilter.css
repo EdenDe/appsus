@@ -1,0 +1,12 @@
+.book-filter {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.book-filter input {
+	padding: 5px;
+	font-size: 12px;
+	border-radius: 10px;
+	background-color: rgba(245, 245, 245, 0.729);
+}

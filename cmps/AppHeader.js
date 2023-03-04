@@ -7,7 +7,7 @@ export default {
         <hr>
         <router-link to="/mail">Email</router-link>
         <router-link to="/note">Keep</router-link>
-        <router-link to="/note">Book</router-link>
+        <router-link to="/book">Book</router-link>
         <hr>
         <router-link to="/about">About</router-link>
       </nav>
