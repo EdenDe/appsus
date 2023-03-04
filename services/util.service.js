@@ -6,6 +6,7 @@ export const utilService = {
 	loadFromStorage,
 	saveToStorage,
 	getRandomInt,
+	animateCSS,
 }
 
 function setQueryParams(newParams) {
@@ -59,4 +60,21 @@ function getRandomInt(min, max) {
 	min = Math.ceil(min)
 	max = Math.floor(max)
 	return Math.floor(Math.random() * (max - min)) + min
+}
+
+function animateCSS(el, animation) {
+	const prefix = 'animate__'
+	return new Promise((resolve, reject) => {
+		const animationName = `${prefix}${animation}`
+
+		el.classList.add(`${prefix}animated`, animationName)
+
+		// When the animation ends, we clean the classes and resolve the Promise
+		function handleAnimationEnd(event) {
+			event.stopPropagation()
+			el.classList.remove(`${prefix}animated`, animationName)
+			resolve('Animation ended')
+		}
+		el.addEventListener('animationend', handleAnimationEnd, { once: true })
+	})
 }
