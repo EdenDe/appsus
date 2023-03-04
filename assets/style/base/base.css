@@ -10,7 +10,7 @@ body {
 	margin: 0;
 	padding: 0;
 	color: var(--clr-google-font);
-	font-family: 'roboto', 'sans-serif';
+	font-family: 'roboto', Calibri, 'sans-serif';
 }
 
 h1,
@@ -24,7 +24,7 @@ h6 {
 }
 
 p {
-	margin: 0 0 .5em;
+	margin: 0 0 0.5em;
 }
 
 a {
@@ -55,5 +55,3 @@ nav a {
 .debug * {
 	outline: 1px solid gold;
 }
-
-

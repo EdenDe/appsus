@@ -1,136 +1,132 @@
-.note-preview>iframe,
-.note-preview>img{
-width: 90%;
-border-radius: var(--border-radius);
-margin: auto;
-margin-bottom: 5px;
+.note-preview > iframe,
+.note-preview > img {
+	width: 90%;
+	border-radius: var(--border-radius);
+	margin: auto;
+	margin-bottom: 5px;
 }
 
-.note-preview>textarea{
-  margin: auto;
-  margin-top: 0;
+.note-preview > textarea {
+	margin: auto;
+	margin-top: 0;
 }
 
-
-
-.edit-txt{
-  background-color: transparent;
-  border: none;
-  color: var(--clr-google-font);
-  width: 90%;
-  overflow: clip;
+.edit-txt {
+	background-color: transparent;
+	border: none;
+	color: var(--clr-google-font);
+	width: 90%;
+	overflow: clip;
 }
 
-.edit-txt:focus{
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: var(--border-radius);
+.edit-txt:focus {
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: var(--border-radius);
 }
 
-.edit-title{
-  font-family: 'roboto bold';
-  font-size: 1.2em;
+.edit-title {
+	font-family: 'roboto bold', Calibri, 'san serif';
+	font-size: 1.2em;
 }
 
-.edit-todo{
-  font-family: roboto;
-  font-size: 1.1em
+.edit-todo {
+	font-family: roboto;
+	font-size: 1.1em;
 }
 
-.btn-pin{
-  width: 20px;
-  background-color: transparent;
-  border: none;
-  color: var(--clr4);
-  opacity: 0;
-  margin: 7px;
-  padding: 0;
-  font-size: 1em;
-  transition: .3s;  
+.btn-pin {
+	width: 20px;
+	background-color: transparent;
+	border: none;
+	color: var(--clr4);
+	opacity: 0;
+	margin: 7px;
+	padding: 0;
+	font-size: 1em;
+	transition: 0.3s;
 }
 
-.btn-pin:hover{
-  opacity: 0.8;
+.btn-pin:hover {
+	opacity: 0.8;
 }
 
-.note-preview:hover .btn-pin{
-  opacity: 1;
+.note-preview:hover .btn-pin {
+	opacity: 1;
 }
 
 .pinned {
-  color: var(--clr-gmail-tag);
-}
-  
-.note-preview>p{
-  margin: 0;
-  margin-left: .6em;
+	color: var(--clr-gmail-tag);
 }
 
-.note-preview>ul{
-  margin-bottom: .4em;
+.note-preview > p {
+	margin: 0;
+	margin-left: 0.6em;
 }
 
-.pick-color{
-  opacity: 0;
-  display: grid;
-  grid-auto-flow: column;
-  max-width: 220px;
-  background-color: var(--clr-keep-grey);
-  padding: 5px;
-  position: absolute;
-  border-radius: var(--border-radius);
-  transition: .3s;
+.note-preview > ul {
+	margin-bottom: 0.4em;
 }
 
-.btn-palette:hover .pick-color{
-  opacity: 1;
+.pick-color {
+	opacity: 0;
+	display: grid;
+	grid-auto-flow: column;
+	max-width: 220px;
+	background-color: var(--clr-keep-grey);
+	padding: 5px;
+	position: absolute;
+	border-radius: var(--border-radius);
+	transition: 0.3s;
 }
 
-.btn-pick-color{
-  /* opacity: 0; */
-  width: 30px;
-  height: 30px;
-  margin: 2px;
-  border: none;
-  border-radius: var(--border-radius);
+.btn-palette:hover .pick-color {
+	opacity: 1;
 }
 
-.btn-pick-color:hover{
-  scale: 1.2;
+.btn-pick-color {
+	/* opacity: 0; */
+	width: 30px;
+	height: 30px;
+	margin: 2px;
+	border: none;
+	border-radius: var(--border-radius);
 }
 
-.btn-red{
-  background-color: var(--clr-keep-red);
-}
-.btn-pink{
-  background-color: var(--clr-keep-pink);
-}
-.btn-purple{
-  background-color: var(--clr-keep-purple);
-}
-.btn-blue{
-  background-color: var(--clr-keep-blue);
-}
-.btn-green{
-  background-color: var(--clr-keep-green);
+.btn-pick-color:hover {
+	scale: 1.2;
 }
 
-.checked-box, 
-.check-box{
-  background-color: transparent;
-  border: none;
-  font-size: 1.1em;
-  color: var(--clr-google-font);
+.btn-red {
+	background-color: var(--clr-keep-red);
+}
+.btn-pink {
+	background-color: var(--clr-keep-pink);
+}
+.btn-purple {
+	background-color: var(--clr-keep-purple);
+}
+.btn-blue {
+	background-color: var(--clr-keep-blue);
+}
+.btn-green {
+	background-color: var(--clr-keep-green);
 }
 
-
-
-.todo-list>li{
-  display: grid;
-  grid-template-columns: .5fr 2fr;
-  grid-auto-flow: column;
-  align-items: baseline;
+.checked-box,
+.check-box {
+	background-color: transparent;
+	border: none;
+	font-size: 1.1em;
+	color: var(--clr-google-font);
 }
 
-.done{
-  text-decoration: line-through;
+.todo-list > li {
+	display: grid;
+	grid-template-columns: 0.5fr 2fr;
+	grid-auto-flow: column;
+	align-items: baseline;
+}
+
+.done {
+	text-decoration: line-through;
 }

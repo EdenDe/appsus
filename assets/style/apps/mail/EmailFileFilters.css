@@ -25,7 +25,7 @@
 
 .active-filter {
 	background-color: var(--clr-active-filter);
-	font-family: 'roboto bold';
+	font-family: 'roboto bold', Calibri, 'san serif';
 	color: var(--clr-gmail-txt);
 }
 
@@ -56,7 +56,7 @@
 .unread-number {
 	position: absolute;
 	right: 10px;
-	font-family: 'roboto bold';
+	font-family: 'roboto bold', Calibri, 'san serif';
 	font-size: 0.9em;
 }
 
