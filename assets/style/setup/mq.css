@@ -5,6 +5,76 @@
 	.main-layout > *:not(.full) {
 		grid-column: 1/-1;
 	}
+
+	.app-header .btn-ham {
+		display: flex;
+		position: absolute;
+		right: 20px;
+
+		justify-content: center;
+		align-self: center;
+
+		width: 40px;
+		height: 40px;
+		font-size: 20px;
+		border-radius: 20px;
+		padding: 10px;
+
+		/* background-color: var(--grey-clr-3); */
+		border: none;
+	}
+	.app-header nav a {
+		margin-inline-end: 0;
+	}
+
+	.menu-open .main-menu > a:first-child {
+		margin-inline-end: 0;
+	}
+
+	.main-menu > a {
+		padding: 20px;
+		width: 90%;
+		border: none;
+	}
+
+	.menu-open .main-menu > a:hover {
+		/* color: var(--blue-clr-2); */
+	}
+
+	.main-menu {
+		transform: translateX(-100%);
+		position: absolute;
+
+		left: 0;
+		top: 10vh;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		height: calc(100% - 10vh);
+		width: 70%;
+		background-color: var(--clr-google-bg);
+		border-radius: 10px;
+	}
+
+	.menu-open :is(hr, .screen) {
+		display: block;
+	}
+
+	.menu-open .main-menu {
+		transform: translateX(0);
+		transition: 1s transform;
+		border-radius: 0;
+		z-index: 2;
+	}
+
+	.menu-open .screen {
+		position: absolute;
+		inset: 0;
+		top: 10vh;
+		background-color: rgba(128, 128, 128, 0.39);
+	}
 }
 
 @media (max-width: 650px) {
