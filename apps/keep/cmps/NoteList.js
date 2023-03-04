@@ -6,10 +6,10 @@ import NoteImg from './NoteImg.js'
 import NoteVideo from './NoteVideo.js'
 
 export default {
-	props: ['notes'],
-	name: 'NotesList',
-	emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
-	template: `
+  props: ['notes'],
+  name: 'NotesList',
+  emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
+  template: `
     <ul class="note-list clean-list">
         <li v-for="note in notes" :key="note.id" class="note-preview" 
         :style="{backgroundColor: note.style.backgroundColor}" @click="toggleEditor()">
@@ -22,40 +22,40 @@ export default {
       </ul>
       <RouterView/>
     `,
-	data() {
-		return {
-			isEditing: false,
-		}
-	},
+  data() {
+    return {
+      isEditing: false,
+    }
+  },
 
-	methods: {
-		onSave(note) {
-			this.$emit('save', note)
-		},
-		onPin(note) {
-			this.$emit('pin', note)
-		},
-		toggleEditor() {
-			this.isEditing = !this.isEditing
-		},
-		onRemove(noteId) {
-			this.$emit('remove', noteId)
-		},
-		onCopy(note) {
-			this.$emit('copy', note)
-		},
-		toggleChoseColor() {
-			this.isChoseColor = !this.isChoseColor
-		},
-		setBgColor(color, noteId) {
-			this.$emit('setBgColor', color, noteId)
-		},
-	},
-	components: {
-		NoteActions,
-		NoteTxt,
-		NoteTodos,
-		NoteImg,
-		NoteVideo,
-	},
+  methods: {
+    onSave(note) {
+      this.$emit('save', note)
+    },
+    onPin(note) {
+      this.$emit('pin', note)
+    },
+    toggleEditor() {
+      this.isEditing = !this.isEditing
+    },
+    onRemove(noteId) {
+      this.$emit('remove', noteId)
+    },
+    onCopy(note) {
+      this.$emit('copy', note)
+    },
+    toggleChoseColor() {
+      this.isChoseColor = !this.isChoseColor
+    },
+    setBgColor(color, noteId) {
+      this.$emit('setBgColor', color, noteId)
+    },
+  },
+  components: {
+    NoteActions,
+    NoteTxt,
+    NoteTodos,
+    NoteImg,
+    NoteVideo,
+  },
 }
