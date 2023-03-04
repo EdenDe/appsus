@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
 
+
 .home-page {
 	height: 81vh;
 	background: linear-gradient(
@@ -69,7 +70,17 @@
 }
 
 .dynamic {
+	min-width: 120px;
 	text-transform: capitalize;
 	font-size: 1.3em;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	
 }
+
+.dynamic:hover{
+	background-color: rgba(99, 108, 110, 0.3);
+	border-radius: var(--border-radius);
+	
+	/* color: var(--clr3); */
+}
+

@@ -6,12 +6,13 @@ import NoteImg from './NoteImg.js'
 import NoteVideo from './NoteVideo.js'
 
 export default {
-	props: ['notes'],
-	name: 'NotesList',
-	emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
-	template: `
-    <ul class="note-list clean-list">
-        <li v-for="note in notes" :key="note.id" class="note-preview" 
+  props: ['notes'],
+  name: 'NotesList',
+  emits: ['save', 'pin', 'copy', 'remove', 'setBgColor'],
+  template: `
+	<!-- <draggable v-model="notes" tag="ul"  class="note-list clean-list"> -->
+    <ul class="note-list clean-list" >
+        <li v-for="note in notes" draggable="true" @dragstart="dragStart" @dragover.prevent="dragOver" @drop.prevent="drop" :data-id="note.id" :key="note.id" class="note-preview" 
         :style="{backgroundColor: note.style.backgroundColor}" @click="toggleEditor()">
   
          <button @click="onPin(note)" class="btn-pin fa pin" :class="{pinned: note.isPinned}"></button>
@@ -20,42 +21,54 @@ export default {
 	        
         </li>  
       </ul>
+			 <!-- </draggable> -->
       <RouterView/>
     `,
-	data() {
-		return {
-			isEditing: false,
-		}
-	},
+  data() {
+    return {
+      isEditing: false,
+    }
+  },
 
-	methods: {
-		onSave(note) {
-			this.$emit('save', note)
-		},
-		onPin(note) {
-			this.$emit('pin', note)
-		},
-		toggleEditor() {
-			this.isEditing = !this.isEditing
-		},
-		onRemove(noteId) {
-			this.$emit('remove', noteId)
-		},
-		onCopy(note) {
-			this.$emit('copy', note)
-		},
-		toggleChoseColor() {
-			this.isChoseColor = !this.isChoseColor
-		},
-		setBgColor(color, noteId) {
-			this.$emit('setBgColor', color, noteId)
-		},
-	},
-	components: {
-		NoteActions,
-		NoteTxt,
-		NoteTodos,
-		NoteImg,
-		NoteVideo,
-	},
+  methods: {
+    dragStart(ev) {
+      ev.dataTransfer.effectAllowed = 'move'
+      ev.dataTransfer.setData('text', ev.target.dataset.id)
+    },
+    dragOver() {},
+    drop(ev) {
+      const noteId = ev.dataTransfer.getData('text')
+      // const currNote = document.querySelector([data-id = ${noteId}]`)
+
+      // ev.target.appendChild()
+    },
+    onSave(note) {
+      this.$emit('save', note)
+    },
+    onPin(note) {
+      this.$emit('pin', note)
+    },
+    toggleEditor() {
+      this.isEditing = !this.isEditing
+    },
+    onRemove(noteId) {
+      this.$emit('remove', noteId)
+    },
+    onCopy(note) {
+      this.$emit('copy', note)
+    },
+    toggleChoseColor() {
+      this.isChoseColor = !this.isChoseColor
+    },
+    setBgColor(color, noteId) {
+      this.$emit('setBgColor', color, noteId)
+    },
+  },
+  components: {
+    NoteActions,
+    NoteTxt,
+    NoteTodos,
+    NoteImg,
+    NoteVideo,
+  },
 }

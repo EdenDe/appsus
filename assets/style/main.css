@@ -1,6 +1,7 @@
 /* Setup */
 @import 'setup/vars.css';
 @import 'setup/typography.css';
+@import '../../lib/animate.css';
 
 /* Base */
 @import 'base/base.css';
