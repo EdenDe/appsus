@@ -1,15 +1,18 @@
 import { eventBus } from '../../../services/event-bus.service.js'
+import { emailService } from '../services/email.service.js'
+
 import EmailList from '../cmps/EmailList.js'
-import { emailService } from '../services/Email.service.js'
+import EmptyMailList from '../cmps/EmptyMailList.js'
 
 export default {
 	props: ['criteria'],
 	name: 'EmailAll',
 	template: `
-    <section>
-      <EmailList :mails="mails" v-if="mails" />
+	<template v-if="mails"> 
+      <EmailList :mails="mails" v-if="mails.length > 0" />
+			<EmptyMailList v-else/>
 			<RouterView/>
-    </section>  
+	</template>
   `,
 	created() {
 		this.getMails()
@@ -71,5 +74,6 @@ export default {
 	},
 	components: {
 		EmailList,
+		EmptyMailList,
 	},
 }

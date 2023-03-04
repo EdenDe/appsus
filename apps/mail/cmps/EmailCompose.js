@@ -1,5 +1,5 @@
 import { utilService } from '../../../services/util.service.js'
-import { emailService } from '../services/Email.service.js'
+import { emailService } from '../services/email.service.js'
 
 export default {
 	template: `

@@ -11,32 +11,29 @@
 	font-family: 'roboto bold';
 }
 
-.app-header nav{
+.app-header :is(hr, .screen) {
+	display: none;
+}
+
+.app-header nav {
 	justify-self: flex-end;
 }
-.logo{
+
+.logo {
 	font-size: 2em;
 	color: var(--clr-google-font);
-	transition: .3s all;
+	transition: 0.3s all;
 }
 
 .app-header nav a {
 	margin-inline-end: 3vw;
-	transition: .3s all;
+	transition: 0.3s all;
 }
 
-.app-header nav a:hover{
+.app-header nav a:hover {
 	color: var(--clr-keep-hover);
 }
 
-
-
-
-
-
-/* @media (max-width: 720px) {
-	.app-header {
-		background-color: var(--clr-google-bg);
-		color: var(--secondary-clr2);
-	}
-} */
+.app-header .btn-ham {
+	display: none;
+}

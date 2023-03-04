@@ -12,7 +12,6 @@ export default {
       </li>
     </ul>
     </template>
-
   </section>
   `,
 

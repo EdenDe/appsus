@@ -1,9 +1,0 @@
-{
-  "name": "my-app",
-  "type": "module",
-  "dependencies": {
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0",
-    "vuedraggable": "^4.1.0"
-  }
-}

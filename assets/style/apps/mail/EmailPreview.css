@@ -76,11 +76,16 @@
 }
 .preview-email-options {
 	position: absolute;
-	right: 2px;
+	right: 1vw;
 	background-color: inherit;
 	display: none;
 }
 
 .mail-preview:hover .preview-email-options {
 	display: block;
+	justify-self: center;
+}
+
+.mail-preview:hover .email-date {
+	display: none;
 }
