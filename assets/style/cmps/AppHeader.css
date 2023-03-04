@@ -6,7 +6,7 @@
 	background-color: var(--clr-google-bg);
 	box-shadow: var(--box-shadow-all);
 	height: 10vh;
-	padding-top: .5em;
+	padding-top: 0.5em;
 	margin-bottom: 20px;
 	font-family: 'roboto bold';
 }
@@ -17,13 +17,15 @@
 
 .app-header nav {
 	justify-self: flex-end;
+	align-self: center;
 }
 
 .logo {
-	padding-left: .2em;
+	padding-left: 0.2em;
 	font-size: 2em;
 	color: var(--clr-google-font);
 	transition: 0.3s all;
+	align-self: center;
 }
 
 .app-header nav a {

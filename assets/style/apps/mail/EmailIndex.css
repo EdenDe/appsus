@@ -10,6 +10,7 @@
 .mail-index .bars {
 	width: 40px;
 	height: 40px;
+	font-size: 1.1em;
 	border: none;
 	background-color: transparent;
 }
@@ -24,8 +25,8 @@
 }
 
 .hamburger-logo-container img {
-	width: 25px;
-	height: 20px;
+	width: 35px;
+	height: 30px;
 }
 
 .mail-index main {

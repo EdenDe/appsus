@@ -1,11 +1,12 @@
 .mail-filter .file-filter {
-	font-size: 13px;
+	font-size: 1em;
 	gap: 2vw;
 	padding-inline-start: 0.5em;
 	border-end-end-radius: 20px;
 	border-start-end-radius: 20px;
 	position: relative;
 	cursor: pointer;
+	padding: 2px;
 }
 
 .mail-filter .file-filter > *:first-of-type {
@@ -56,7 +57,7 @@
 	position: absolute;
 	right: 10px;
 	font-family: 'roboto bold';
-	font-size: 10px;
+	font-size: 0.9em;
 }
 
 .icons-only .unread-number {

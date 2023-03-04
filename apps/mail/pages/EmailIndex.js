@@ -11,7 +11,6 @@ export default {
 		<header class="flex align-center justify-between hamburger-logo-container"> 
 			<button class="fa bars circle-hover" @click="toggleIconOnly">	</button>
 			<img src="assets/img/gmail.jpg"/>
-			<span>Email</span>
 			<EmailSearchFilter/>
 		</header>
 		<main class="flex main"> 

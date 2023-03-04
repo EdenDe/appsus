@@ -8,7 +8,7 @@
 		minmax(5vw, 0.5fr);
 
 	padding: 5px;
-	font-size: 13px;
+	font-size: 1em;
 	background-color: var(--clr-gmail-read);
 
 	border-bottom: 0.5px solid #80808035;

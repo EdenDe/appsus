@@ -6,12 +6,18 @@
 	width: 100%;
 }
 
-.filter-sort-btns > * {
+.filter-sort-btns {
+	display: flex;
+	gap: 5px;
+}
+
+.filter-sort-btns > button {
 	background-color: transparent;
 	border: none;
 	color: var(--clr-google-font);
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
+	font-size: 1.2em;
 }
 
 .tooltip:hover > span {
