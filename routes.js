@@ -20,7 +20,6 @@ const routerOptions = {
 			path: '/about',
 			component: AboutUs,
 		},
-		// mail
 		{
 			path: '/mail',
 			component: EmailIndex,
@@ -43,8 +42,6 @@ const routerOptions = {
 				},
 			],
 		},
-
-		// notes
 		{
 			path: '/note',
 			component: note,
@@ -54,6 +51,10 @@ const routerOptions = {
 					component: AddNote,
 				},
 			],
+		},
+		{
+			path: '/:catchAll(.*)',
+			component: HomePage,
 		},
 	],
 }
