@@ -1,0 +1,26 @@
+.review {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 10px;
+	position: relative;
+}
+
+.review span:first-of-type {
+	font-weight: bold;
+}
+
+.review span:last-of-type {
+	font-size: 12px;
+}
+
+.review .btn-remove {
+	position: absolute;
+	top: 2px;
+	right: 5px;
+	background-color: transparent;
+	border: none;
+}

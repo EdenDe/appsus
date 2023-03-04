@@ -13,6 +13,8 @@
 @import 'cmps/AppFooter.css';
 @import 'cmps/UserMsg.css';
 @import 'cmps/ToolTip.css';
+@import 'cmps/Loader.css';
+@import 'cmps/LongTxt.css';
 
 /* PAGES */
 @import 'cmps/HomePage.css';
@@ -37,5 +39,16 @@
 @import 'apps/note/NoteActions.css';
 @import 'apps/note/NoteTopSection.css';
 @import 'apps/note/SelectType.css';
+
+/* BOOK */
+@import 'apps/book/BookDetails.css';
+@import 'apps/book/BookEdit.css';
+@import 'apps/book/BookFilter.css';
+@import 'apps/book/BookIndex.css';
+@import 'apps/book/BookList.css';
+@import 'apps/book/BookPreview.css';
+@import 'apps/book/AddReview.css';
+@import 'apps/book/Review.css';
+@import 'apps/book/BookAdd.css';
 
 @import 'setup/mq.css';

@@ -1,0 +1,14 @@
+.btn-new-book {
+	display: inline-block;
+	background-color: transparent;
+	padding: 5px;
+	margin: 3px;
+	margin-bottom: 5px;
+	color: #7230b0;
+	border: 2px solid transparent;
+	border-radius: 10px;
+}
+
+.btn-new-book:hover {
+	border-color: #7230b0;
+}
