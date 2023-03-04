@@ -49,10 +49,19 @@
   white-space: nowrap;
 }
 
-.hero>h1 span {
+.hero>h1 span:not(.dynamic) {
   display: block;
   margin-top: 1em;
   font-size: 40px;
   font-weight: 300;
 }
 
+.home-nav{
+  height: 80vh;
+}
+
+.dynamic{
+  text-transform: capitalize;
+  font-size: 1.3em;
+  transition: all 0.3s ease-in-out;
+}

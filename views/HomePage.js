@@ -2,9 +2,25 @@ export default {
   template: `
         
             <div class="hero full">
-	<h1>Relax <span>We will take care of everything else</span></h1>
-</div>
-    
-        
+        	    <h1>Relax <span>We will take care of your's <span class="dynamic">{{wordToShow}}</span></span></h1>
+            </div>             
     `,
+  data() {
+    return {
+      words: ['emails', 'notes', 'books'],
+      word: '',
+      counter: 0,
+    }
+  },
+  created() {},
+  computed: {
+    wordToShow() {
+      setInterval(() => {
+        if (this.counter === 3) this.counter = 0
+        this.word = this.words[this.counter]
+        this.counter++
+      }, 3000)
+      return this.word
+    },
+  },
 }
