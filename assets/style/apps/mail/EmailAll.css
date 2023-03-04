@@ -34,6 +34,7 @@
 
 .email-all :is(.filter-options, .sort-options) > * {
 	padding: 5px;
+	font-size: 0.8em;
 }
 
 .email-all :is(.filter-options, .sort-options) > *:hover {
