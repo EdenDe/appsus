@@ -87,7 +87,8 @@ export default {
 			return this.$route.params.mailId
 		},
 		dateFormatted() {
-			const date = new Date(this.mail.sentAt)
+			if (!this.mail.sentAt) return ''
+			const date = new Date()
 			return new Intl.DateTimeFormat('en-He', {
 				dateStyle: 'medium',
 				timeStyle: 'short',
