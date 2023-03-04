@@ -34,11 +34,15 @@
 	margin-bottom: 3rem;
 }
 
+.details-options > * {
+	font-size: 1em;
+}
+
 .details-options *:not(div) {
 	background-color: transparent;
 	border: none;
-	width: 25px;
-	height: 25px;
+	width: 40px;
+	height: 40px;
 	color: var(--clr4);
 	position: relative;
 }

@@ -14,7 +14,7 @@ export default {
 				<span>Ramove</span>
 			</button>
 			<div> 
-				<button :class="starIcon" @click="toggleStar" class="tooltip">
+				<button :class="starIcon" @click="toggleStar" class="circle-hover tooltip">
 					<span> {{mail.isStared? 'Starred' : 'Not starred'}}</span>
 				</button>		
 				<button @click="saveAsNote" class="fa-regular file circle-hover tooltip"> 
