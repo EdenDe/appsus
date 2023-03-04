@@ -76,12 +76,11 @@ function _filterByText(mails, search) {
 
 function getEmptyTxtFilters() {
 	return {
-		txt: null,
+		txt: '',
 		to: null,
 		from: null,
 		subject: null,
 		hasWords: null,
-		noWords: null,
 	}
 }
 

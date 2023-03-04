@@ -24,7 +24,7 @@
 	gap: 10px;
 }
 
-.hamburger-logo-container img {
+.hamburger-logo-container > img {
 	width: 35px;
 	height: 30px;
 }

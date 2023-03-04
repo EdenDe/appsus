@@ -1,4 +1,5 @@
 import { eventBus } from '../../../services/event-bus.service.js'
+import { emailService } from '../services/email.service.js'
 
 export default {
 	template: `
@@ -7,7 +8,7 @@ export default {
     <input v-model="search.txt" @input="onSearch"/>
 		<div
 			class="search-rule-filter flex align-center tooltip justify-center circle-hover"
-			@click="showTxtRules=!showTxtRules"
+			@click="onToggleShow"
 		>
 			<span>search options</span>
 			<img src="assets/img/searchFilter.png"/>
@@ -25,7 +26,10 @@ export default {
 			<label>	Has the words
 				<input v-model="search.hasWords"/>
 			</label>
-			<button> Search </button>
+			<div class="flex justify-center align-center"> 
+				<button type="submit"> Search </button>
+				<button type="button" @click="onClearFilters"> Clear filters </button>
+			</div>
 		</form>
   </section>
 `,
@@ -46,9 +50,16 @@ export default {
 		onSearch() {
 			eventBus.emit('setFilter', { search: this.search })
 		},
+		onClearFilters() {
+			this.search = emailService.getEmptyTxtFilters()
+		},
 		onFilter() {
 			this.showTxtRules = false
 			this.onSearch()
+		},
+		onToggleShow() {
+			this.showTxtRules = !this.showTxtRules
+			if (!this.showTxtRules) this.onSearch()
 		},
 	},
 }
