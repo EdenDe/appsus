@@ -3,7 +3,7 @@ import AboutUs from './views/AboutUs.js'
 import EmailIndex from './apps/mail/pages/EmailIndex.js'
 import EmailDetail from './apps/mail/pages/EmailDetails.js'
 import EmailAll from './apps/mail/pages/EmailAll.js'
-import Note from './apps/keep/pages/NoteIndex.js'
+import note from './apps/keep/pages/NoteIndex.js'
 import AddNote from './apps/keep/cmps/AddNote.js'
 import EmailCompose from './apps/mail/cmps/EmailCompose.js'
 
@@ -30,13 +30,13 @@ const routerOptions = {
 					props: true,
 					children: [
 						{
-							path: '/compose',
+							path: 'compose',
 							component: EmailCompose,
 						},
 					],
 				},
 				{
-					path: '/:mailId',
+					path: ':mailId',
 					component: EmailDetail,
 					props: false,
 				},
@@ -44,18 +44,34 @@ const routerOptions = {
 		},
 		{
 			path: '/note',
-			component: Note,
+			component: note,
 			children: [
 				{
-					path: '/edit/:noteId?',
+					path: 'edit/:noteId?',
 					component: AddNote,
 				},
 			],
 		},
-		{
-			path: '/:catchAll(.*)',
-			component: HomePage,
-		},
+		// {
+		// 	path: '/books',
+		// 	component: BookIndex,
+		// },
+		// {
+		// 	path: '/books/:bookId',
+		// 	component: BookDetails,
+		// },
+		// {
+		// 	path: '/books/edit/:bookId?',
+		// 	component: BookEdit,
+		// },
+		// {
+		// 	path: '/books/add/',
+		// 	component: AddBook,
+		// },
+		// {
+		// 	path: '/:catchAll(.*)',
+		// 	component: HomePage,
+		// },
 	],
 }
 

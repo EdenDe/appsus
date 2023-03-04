@@ -4,11 +4,12 @@ export default {
       <router-link to="/" class="fa logo">AppSus</router-link>  
       <nav class="main-menu">
         <router-link to="/">Home</router-link>  
-        <router-link to="/about">About</router-link>
         <hr>
         <router-link to="/mail">Email</router-link>
         <router-link to="/note">Keep</router-link>
         <router-link to="/note">Book</router-link>
+        <hr>
+        <router-link to="/about">About</router-link>
       </nav>
       <button :class="btnIcon" class="btn-ham" @click="openMenu = !openMenu"></button>
       <div class="screen" @click="openMenu = false"></div>
