@@ -1,5 +1,3 @@
-'use strict'
-
 function createEventEmitter(defaultHandler = null) {
 	const listenersMap = {}
 

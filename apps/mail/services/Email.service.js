@@ -3,7 +3,7 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
 
-import demoMails from '../data/demo-emails.json' assert { type: 'json' }
+// import demoMails from '../data/demo-emails.json' assert { type: 'json' }
 
 const MAIL_KEY = 'mailDB'
 
@@ -88,6 +88,6 @@ function getEmptyMail() {
 function _createMails() {
 	let mails = utilService.loadFromStorage(MAIL_KEY)
 	if (!mails || !mails.length) {
-		utilService.saveToStorage(MAIL_KEY, demoMails)
+		//utilService.saveToStorage(MAIL_KEY, demoMails)
 	}
 }
