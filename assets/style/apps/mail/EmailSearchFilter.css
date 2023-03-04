@@ -2,6 +2,7 @@
 	position: relative;
 	width: 100%;
 	transition: all 0.4s;
+	font-size: 1em;
 }
 
 .search-filter .magnifying-glass {
@@ -69,7 +70,6 @@
 	display: grid;
 	gap: 1vw;
 	grid-template-columns: 0.2fr 0.8fr;
-	font-size: 0.8rem;
 }
 
 .rules-options input {
