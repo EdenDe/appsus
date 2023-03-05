@@ -1,20 +1,57 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
 
-
 .home-page {
 	height: 81vh;
-	background: linear-gradient(
-				45deg,
-				rgba(255, 175, 189, 0.7),
-				rgba(100, 216, 243, 0.7),
-				rgba(234, 236, 198, 0.7),
-				rgba(245, 146, 176, 0.7),
-				rgba(52, 219, 216, 0.7)
-			)
-			0 0 / 1000% no-repeat,
+	background: linear-gradient(45deg,
+			rgba(255, 175, 189, 0.7),
+			rgba(100, 216, 243, 0.7),
+			rgba(234, 236, 198, 0.7),
+			rgba(245, 146, 176, 0.7),
+			rgba(52, 219, 216, 0.7)) 0 0 / 1000% no-repeat,
 		url(https://picsum.photos/g/2000/1200?image=443) 0 0 / cover no-repeat;
 	-webkit-animation: gradientAnimation 40s ease infinite;
 	animation: gradientAnimation 40s ease infinite;
+}
+
+.home-page > h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	color: var(--clr4);
+	font-family: 'Open Sans', sans-serif;
+	font-size: clamp(2.5rem, 6vw, 4rem);
+	text-align: center;
+	white-space: nowrap;
+}
+
+.home-page > h1 span:not(.dynamic) {
+	margin-top: 0.5em;
+	font-size: 0.5em;
+	font-weight: 300;
+}
+
+.home-nav {
+	height: 80vh;
+}
+
+.home-page-txt{
+	display: grid;
+	grid-auto-flow: column;
+	align-items: baseline;
+}
+
+.dynamic {
+	min-width: 3.3em;
+	text-transform: capitalize;
+	font-size: 1.3em;
+	transition: all 2s ease-in-out;
+}
+
+.dynamic:hover{
+	background-color: rgba(99, 108, 110, 0.3);
+	border-radius: var(--border-radius);
 }
 
 @-webkit-keyframes gradientAnimation {
@@ -44,48 +81,3 @@
 		background-position: 0% 30%, 0 0;
 	}
 }
-
-.home-page > h1 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	color: var(--clr4);
-	font-family: 'Open Sans', sans-serif;
-	font-size: clamp(2.5rem, 6vw, 4rem);
-	text-align: center;
-	white-space: nowrap;
-}
-
-.home-page > h1 span:not(.dynamic) {
-	
-	margin-top: 0.5em;
-	font-size: 0.5em;
-	font-weight: 300;
-}
-
-.home-nav {
-	height: 80vh;
-}
-
-.home-page-txt{
-	display: grid;
-	grid-auto-flow: column;
-	align-items: baseline;
-}
-
-.dynamic {
-	min-width: 3.3em;
-	text-transform: capitalize;
-	font-size: 1.3em;
-	transition: all 2s ease-in-out;
-}
-
-.dynamic:hover{
-	background-color: rgba(99, 108, 110, 0.3);
-	border-radius: var(--border-radius);
-	
-	/* color: var(--clr3); */
-}
-

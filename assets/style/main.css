@@ -1,15 +1,15 @@
-/* Setup */
+/* SETUP */
 @import 'setup/vars.css';
 @import 'setup/typography.css';
 @import '../../lib/animate.css';
 
-/* Base */
+/* BASE */
 @import 'base/base.css';
 @import 'base/helpers.css';
 @import 'base/layout.css';
 @import 'base/forms.css';
 
-/* General Components */
+/* GENARAL COMPONENTS */
 @import 'cmps/AppHeader.css';
 @import 'cmps/AppFooter.css';
 @import 'cmps/UserMsg.css';
@@ -21,7 +21,7 @@
 @import 'cmps/HomePage.css';
 @import 'cmps/AboutPage.css';
 
-/* Apps */
+/* APPS */
 /* MAIL */
 @import 'apps/mail/EmailIndex.css';
 @import 'apps/mail/EmailList.css';
