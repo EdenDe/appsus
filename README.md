@@ -1,7 +1,6 @@
 Deployed at: https://edende.github.io/appsus
 
 Tamar and I build Appsus, a google-like gmail, keep and book.
-Aiming to help users communicate via emails, keep track of few kinds of notes and buying books using google books API.
 Each app has it's full CRUDL support, responsive design. 
 
 Built using Vue.
