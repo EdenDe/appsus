@@ -1,7 +1,6 @@
 Deployed at: https://edende.github.io/appsus
 
-Tamar and I build Appsus, a google-like gmail, keep and book.
-Each app has it's full CRUDL support, responsive design. 
+This application was built in collaboration between Eden Derhy and Tamar Shalem. we build Appsus, a google-like gmail, keep and book. Each app has it's full CRUDL support, responsive design.
 
 Built using Vue.
 
